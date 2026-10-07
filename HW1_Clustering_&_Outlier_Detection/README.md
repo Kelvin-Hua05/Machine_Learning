@@ -136,30 +136,29 @@ $\mathrm{LOF}_k(o) \approx 1$ means $o$ is as dense as its neighbours; $\mathrm{
 
 Return to the seven stalls {1, 2, 3, 8, 9, 10, 25} from Part I.
 
-- $z$-score: Estimate $\mu$ and $\sigma$ by maximum likelihood and compute the $z$-score of the stall at 25. Is it flagged by the rule $\mid z\mid$ > 3? Explain why the outlier itself makes it harder to detect (the masking effect).
-- LOF: With $k$ = 2, compute $dist_2$, $N_2$, $lrd_2$, and $LOF_2$ for every stall. Which stall is the top outlier? Some stalls inside the two groups obtain $LOF_2$ > 1; explain why, and what this implies for choosing a threshold.
+- **$z$-score:** Estimate $\mu$ and $\sigma$ by maximum likelihood and compute the $z$-score of the stall at 25. Is it flagged by the rule $\mid z\mid$ > 3? Explain why the outlier itself makes it harder to detect (the masking effect).
+- **LOF:** With $k = 2$, compute $dist_2$, $N_2$, $lrd_2$, and $LOF_2$ for every stall. Which stall is the top outlier? Some stalls inside the two groups obtain $LOF_2$ > 1; explain why, and what this implies for choosing a threshold.
 
 ## (b) Proximity-Based Approaches
 
-- Write knn_score(X, k), returning $dist_k(o)$ for every point, and lof(X, k), implementing the definitions above with vectorised numpy operations.
-- Verify for $k$ = 20 that your LOF agrees to within $10^{-8}$ with scikit-learn’s LocalOutlierFactor, whose attribute negative_outlier_factor_stores the negated LOF. The duplicate removal in Part II (a) matters here: explain why exact duplicates break LOF.
-- Report the number of tracks with $LOF_{20}$ > 1.5 and list the five tracks with the largest LOF (name, artist, genre). Show the $k\text{NN}$ and LOF scores on the track map as colour intensity.
-- Sanity check: roughly 38 tracks should exceed $LOF_{20}$ = 1.5, and the largest value should be about 2.6.
+- Write `knn_score(X, k)`, returning $dist_k(o)$ for every point, and `lof(X, k)`, implementing the definitions above with vectorised numpy operations.
+- Verify for $k$ = 20 that your LOF agrees to within $10^{-8}$ with scikit-learn’s `LocalOutlierFactor`, whose attribute `negative_outlier_factor_stores` the negated LOF. The duplicate removal in Part II (a) matters here: explain why exact duplicates break LOF.
+- Report the number of tracks with $LOF_{20} > 1.5$ and list the five tracks with the largest LOF (name, artist, genre). Show the $k\text{NN}$ and LOF scores on the track map as colour intensity.
+- **Sanity check:** roughly 38 tracks should exceed $LOF_{20} = 1.5$, and the largest value should be about 2.6.
 
 ## (c) Clustering-Based and Isolation Approaches
 
-- Using the best $k$ = 4 solution of Part II (d), score each track by $\frac{dist(o,c_o)}{\operatorname{dist}(c_o)}$, its distance to its centroid divided by the average distance of that cluster’s members to the centroid.
-- Runsklearn.cluster.DBSCAN with $\varepsilon$ = 2.0 and min_samples=18 (twice the dimensionality; the
-neighbourhood includes the point itself, as in Part I (d)), and take its $m$ noise points as a binary detector. Sanity check: you should obtain one cluster and $m$ = 55 noise points.
-- Fit an IsolationForest with 200 trees and random_state=0; its negated score_samples serves as the outlier score.
+- Using the best $k = 4$ solution of Part II (d), score each track by $\text{dist}(o,c_o) / \text{dist}(c_o)$, its distance to its centroid divided by the average distance of that cluster’s members to the centroid.
+- Run `sklearn.cluster.DBSCAN` with $\varepsilon$ = 2.0 and `min_samples=18` (twice the dimensionality; the neighbourhood includes the point itself, as in Part I (d)), and take its $m$ noise points as a binary detector. **Sanity check:** you should obtain one cluster and $m = 55$ noise points.
+- Fit an `IsolationForest` with 200 trees and `random_state=0`; its negated `score_samples` serves as the outlier score.
 - On the track map, mark the $m$ highest scoring tracks of each detector. Which detectors agree most with the DBSCAN noise points, and why? Listen to (or look up) two flagged tracks: are they errors, or genuinely unusual music?
 
 ## (d) Evaluation with Injected Anomalies
 
 Real data have no outlier labels, so you will plant 20 anomalies of two kinds and append each set separately to $Z$ (with labels 1 for planted points and 0 otherwise):
 
-- Global: with rng = numpy.random.default_rng(0), draw $U$ = rng.normal(size=(20, 9)), normalise each row to unit length, and scale row $i$ by a radius drawn from rng.uniform(4, 6, (20, 1)).
-- Correlation-breaking: with rng = numpy.random.default_rng(1), fill the planted points column by column: for $j = 0, \ldots, 8$ in order, set column $j$ to Z`[rng.integers(0, n, 20), j]`. Every value is realistic on its own, but the combination is not, like a track that is simultaneously quiet, danceable, and fully instrumental.
+- **Global:** with rng = `numpy.random.default_rng(0)`, draw $U$ = `rng.normal(size=(20, 9))`, normalise each row to unit length, and scale row $i$ by a radius drawn from `rng.uniform(4, 6, (20, 1))`.
+- **Correlation-breaking:** with rng = numpy.random.default_rng(1), fill the planted points column by column: for $j = 0, \ldots, 8$ in order, set column $j$ to Z`[rng.integers(0, n, 20), j]`. Every value is realistic on its own, but the combination is not, like a track that is simultaneously quiet, danceable, and fully instrumental.
 
 Re-run every scoring detector ($k\text{NN}$ distance with $k$ = 20, $LOF_{20}$, the clustering-based score, and Isolation Forest) on each augmented set, refitting $k$-means with $k$ = 4 for the clustering-based score. Report a table of ROC AUC and precision among the top 20 scores for both anomaly types, plot the ROC curves, and report the precision, recall, and F1 of the DBSCAN noise detector.
 
