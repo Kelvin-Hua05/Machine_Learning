@@ -24,15 +24,15 @@ $$
 
 Seven stalls sit along a street at positions {1, 2, 3, 8, 9, 10, 25}. Run $k$-means with $k$ = 2 and squared Euclidean cost $\phi=\sum_x\min_c(x-c)^2$.
 
-- Initialisation A: Centroids: {1, 25}. Initialisation B: Centroids: {1, 2}. For each, list the assignments, centroids, and cost $\phi$ at every iteration until convergence.
+- **Initialisation A:** Centroids: {1, 25}. **Initialisation B:** Centroids: {1, 2}. For each, list the assignments, centroids, and cost $\phi$ at every iteration until convergence.
 - Which initialisation reaches the lower final cost? Is the other result a global optimum? Explain why $k$-means can converge to different solutions.
-- Farthest-first initialisation picks a first centroid and then repeatedly adds the point farthest from all chosen centroids. Starting from position 1, which centroids does it choose for $k$ = 2 and for $k$ = 3? Comment on how this strategy reacts to the stall at 25.
+- **Farthest-first** initialisation picks a first centroid and then repeatedly adds the point farthest from all chosen centroids. Starting from position 1, which centroids does it choose for $k$ = 2 and for $k$ = 3? Comment on how this strategy reacts to the stall at 25.
 
 ## (c) Hierarchical Clustering by Hand
 
 Along another street, five food carts stand at positions {0, 2, 3, 7, 12}; the distance between carts at $x$ and $y$ is \| x−y \|
 
-- Run agglomerative clustering with single link (MIN) and with complete link (MAX). For each, list the clusters merged at every step with the merge height, and draw the dendrogram.
+- Run agglomerative clustering with **single link (MIN)** and with **complete link (MAX)**. For each, list the clusters merged at every step with the merge height, and draw the dendrogram.
 - Cut each dendrogram into two clusters. Where does the cart at 7 end up in each case? Use this example to explain the chaining effect of single link.
 
 ## (d) DBSCAN by Hand
@@ -47,16 +47,16 @@ Return to the seven stalls in (b). Use $\varepsilon$ = 1 and $MinPts$ = 3, where
 The alliance has shortlisted four genres that could suit different zones of the market and now wants concrete playlists. You will prepare the data, implement $k$-means, study its sensitivity to initialisation, and test whether the moods it finds are real.
 
 ## 1. The Dataset
-We use the Spotify Tracks Dataset, which contains 114,000 tracks from 114 genres (1,000 tracks per genre), each described by metadata and audio features computed by Spotify.
+We use the **Spotify Tracks Dataset**, which contains 114,000 tracks from 114 genres (1,000 tracks per genre), each described by metadata and audio features computed by Spotify.
 
-- Features: the nine audio features danceability, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, and tempo.
-- Labels (not used for fitting): 'track_genre'. Keep 'track_name' and 'artists' for inspecting individual tracks.
-- Loading: download 'dataset.csv' from the dataset page, or read it directly in Colab with 'pandas.read_csv'('hf://datasets/maharshipandya/spotify-tracks-dataset/dataset.csv')
-- Track map: whenever a task asks you to show results on the track map, draw a scatter plot of the standardised acousticness (horizontal axis) against the standardised energy (vertical axis).
+- **Features:** the nine audio features danceability, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, and tempo.
+- **Labels (not used for fitting):** 'track_genre'. Keep 'track_name' and 'artists' for inspecting individual tracks.
+- **Loading:** download 'dataset.csv' from the dataset page, or read it directly in Colab with 'pandas.read_csv'('hf://datasets/maharshipandya/spotify-tracks-dataset/dataset.csv')
+- **Track map:** whenever a task asks you to show results on the track map, draw a scatter plot of the standardised acousticness (horizontal axis) against the standardised energy (vertical axis).
 
 ## 2. Setup
 
-For a set of centroids $C$, define the cost $\phi=\sum_x\min_{c\in C}\parallel x-c\parallel_2^2$ (the SSE). Let $\phi^{(0)}$ denote the cost under the initial centroids before any update, and $\phi^{(t)}$ the cost after the $t$-th iteration. For seeded initialisations, draw the first point as numpy.random.default_rng(seed).inntegers(n).
+For a set of centroids $C$, define the cost $\phi=\sum_x\min_{c\in C}\parallel x-c\parallel_2^2$ (the SSE). Let $\phi{(0)}$ denote the cost under the initial centroids before any update, and $\phi{(t)}$ the cost after the $t$-th iteration. For seeded initialisations, draw the first point as numpy.random.default_rng(seed).inntegers(n).
 
 ## 3. Tasks
 
@@ -159,11 +159,11 @@ neighbourhood includes the point itself, as in Part I (d)), and take its $m$ noi
 Real data have no outlier labels, so you will plant 20 anomalies of two kinds and append each set separately to $Z$ (with labels 1 for planted points and 0 otherwise):
 
 - Global: with rng = numpy.random.default_rng(0), draw $U$ = rng.normal(size=(20, 9)), normalise each row to unit length, and scale row $i$ by a radius drawn from rng.uniform(4, 6, (20, 1)).
-- Correlation-breaking: with rng = numpy.random.default_rng(1), fill the planted points column by column: for $j = 0, \ldots, 8$ in order, set column $j$ to Z[rng.integers(0, n, 20), j]. Every value is realistic on its own, but the combination is not, like a track that is simultaneously quiet, danceable, and fully instrumental.
+- Correlation-breaking: with rng = numpy.random.default_rng(1), fill the planted points column by column: for $j = 0, \ldots, 8$ in order, set column $j$ to Z`[rng.integers(0, n, 20), j]`. Every value is realistic on its own, but the combination is not, like a track that is simultaneously quiet, danceable, and fully instrumental.
 
 Re-run every scoring detector ($k$NN distance with $k$ = 20, $LOF_{20}$, the clustering-based score, and Isolation Forest) on each augmented set, refitting $k$-means with $k$ = 4 for the clustering-based score. Report a table of ROC AUC and precision among the top 20 scores for both anomaly types, plot the ROC curves, and report the precision, recall, and F1 of the DBSCAN noise detector.
 
 - Why would accuracy be a misleading metric here?
 - Which detectors succeed on global anomalies, and which remain useful on correlation-breaking ones? Relate your answer to the assumptions each family makes about normal data.
 - Recommend one detector to the alliance for screening new tracks before they enter a playlist, and justify it in three to four sentences.
-- Sanity check: every scoring detector should reach a ROC AUC above 0.95 on global anomalies, and DBSCAN should flag all 20 of them. On correlation-breaking anomalies, LOF should perform best at roughly 0.9, whereas Isolation Forest should drop to roughly 0.7.
+- **Sanity check:** every scoring detector should reach a ROC AUC above 0.95 on global anomalies, and DBSCAN should flag all 20 of them. On correlation-breaking anomalies, LOF should perform best at roughly 0.9, whereas Isolation Forest should drop to roughly 0.7.
