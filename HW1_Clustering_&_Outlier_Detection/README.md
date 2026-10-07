@@ -46,7 +46,7 @@ Return to the seven stalls in (b). Use $\varepsilon$ = 1 and $MinPts$ = 3, where
 
 The alliance has shortlisted four genres that could suit different zones of the market and now wants concrete playlists. You will prepare the data, implement $k$-means, study its sensitivity to initialisation, and test whether the moods it finds are real.
 
-## 1. The Dataset.
+## 1. The Dataset
 We use the Spotify Tracks Dataset, which contains 114,000 tracks from 114 genres (1,000 tracks per genre), each described by metadata and audio features computed by Spotify.
 
 - Features: the nine audio features danceability, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, and tempo.
@@ -54,11 +54,11 @@ We use the Spotify Tracks Dataset, which contains 114,000 tracks from 114 genres
 - Loading: download 'dataset.csv' from the dataset page, or read it directly in Colab with 'pandas.read_csv'('hf://datasets/maharshipandya/spotify-tracks-dataset/dataset.csv')
 - Track map: whenever a task asks you to show results on the track map, draw a scatter plot of the standardised acousticness (horizontal axis) against the standardised energy (vertical axis).
 
-## 2. Setup.
+## 2. Setup
 
 For a set of centroids $C$, define the cost $\phi=\sum_x\min_{c\in C}\parallel x-c\parallel_2^2$ (the SSE). Let $\phi^{(0)}$ denote the cost under the initial centroids before any update, and $\phi^{(t)}$ the cost after the $t$-th iteration. For seeded initialisations, draw the first point as numpy.random.default_rng(seed).inntegers(n).
 
-## 3. Tasks.
+## 3. Tasks
 
 ### (a) Data Preparation
 
@@ -101,9 +101,37 @@ For $k = 2, \ldots, 8$, run $k$-means with $k$-means++ initialisation over seeds
 
 Part II hinted that some tracks fit no mood: spoken recordings, live bootlegs, or pieces so quiet they are barely audible. You will now build outlier detectors from three families, check whether they agree, and evaluate them against anomalies whose identity you control.
 
-## 1. 
+## 1. Definitions
 
-## 2.
+Let $d(\cdot,\cdot)$ be Euclidean distance, $N_k(o)$ the set of the $k$ nearest neighbours of $o$ (excluding $o$ itself), and $\mathrm{dist}_k(o)$ the distance from $o$ to its $k$-th nearest neighbour.
+
+The Local Outlier Factor is defined through
+
+$$
+\mathrm{reach}_k(o\leftarrow o')=\max\{\mathrm{dist}_k(o'), d(o,o')\}
+$$
+
+$$
+\mathrm{lrd}_k(o)=
+\left(
+\frac{1}{|N_k(o)|}
+\sum_{o'\in N_k(o)}
+\mathrm{reach}_k(o\leftarrow o')
+\right)^{-1}
+$$
+
+$$
+\mathrm{LOF}_k(o)=
+\frac{1}{|N_k(o)|}
+\sum_{o'\in N_k(o)}
+\frac{\mathrm{lrd}_k(o')}{\mathrm{lrd}_k(o)}
+$$
+
+$\mathrm{LOF}_k(o) \approx 1$ means $o$ is as dense as its neighbours; $\mathrm{LOF}_k(o) > 1$ means it is sparser, suggesting an outlier.
+
+**Memory tip:** with $n \approx 3,400$, broadcasting an $n\times n\times9$ array needs almost 1GB; compute pairwise distances via $\parallel a-b\parallel^2=\parallel a\parallel^2+\parallel b\parallel^2-2a^\top b$ instead.
+
+## 2. Tasks
 ## (a)
 
 ## (b)
