@@ -2,7 +2,7 @@
 
 You will run each clustering method by hand on small examples and see why PCA must centre the data.
 
-## (a)
+## (a) Why Centre
 
 PCA computes the eigenvectors of the covariance matrix of the centred data.
 
@@ -20,7 +20,7 @@ $$
 - Centre $M$ by subtracting the column means to obtain $\widetilde{M}$. Compute the covariance matrix $$C=\frac{1}{4}\widetilde{M}^{\top}\widetilde{M}$$, together with its eigenvalues and unit eigenvectors.
 - The leading eigenvector changes after centring. Explain why, and state which direction PCA should report as the first principal component.
 
-## (b)
+## (b) $k$-means by Hand
 
 Seven stalls sit along a street at positions {1, 2, 3, 8, 9, 10, 25}. Run $k$-means with $k$ = 2 and squared Euclidean cost $\phi=\sum_x\min_c(x-c)^2$.
 
@@ -28,14 +28,14 @@ Seven stalls sit along a street at positions {1, 2, 3, 8, 9, 10, 25}. Run $k$-me
 - Which initialisation reaches the lower final cost? Is the other result a global optimum? Explain why $k$-means can converge to different solutions.
 - Farthest-first initialisation picks a first centroid and then repeatedly adds the point farthest from all chosen centroids. Starting from position 1, which centroids does it choose for $k$ = 2 and for $k$ = 3? Comment on how this strategy reacts to the stall at 25.
 
-## (c)
+## (c) Hierarchical Clustering by Hand
 
 Along another street, five food carts stand at positions {0, 2, 3, 7, 12}; the distance between carts at $x$ and $y$ is \| x−y \|
 
 - Run agglomerative clustering with single link (MIN) and with complete link (MAX). For each, list the clusters merged at every step with the merge height, and draw the dendrogram.
 - Cut each dendrogram into two clusters. Where does the cart at 7 end up in each case? Use this example to explain the chaining effect of single link.
 
-## (d)
+## (d) DBSCAN by Hand
 
 Return to the seven stalls in (b). Use $\varepsilon$ = 1 and $MinPts$ = 3, where the $\varepsilon$-neighbourhood of a point includes the point itself.
 
@@ -56,15 +56,23 @@ We use the Spotify Tracks Dataset, which contains 114,000 tracks from 114 genres
 
 ## 2 Setup.
 
-For a set of centroids $C$, define the cost $\phi=\sum_x\min_{c\in C}\|x-c\|_2^2$
+For a set of centroids $C$, define the cost $\phi=\sum_x\min_{c\in C}\parallel x-c\parallel_2^2$ (the SSE). Let $\phi^{(0)}$ denote the cost under the initial centroids before any update, and $\phi^{(t)}$ the cost after the $t$-th iteration. For seeded initialisations, draw the first point as numpy.random.default_rng(seed).inntegers(n).
 
-### (a)
+## 3 Tasks.
 
-### (b)
+### (a) Data Preparation
 
-### (c)
+- Keep the tracks whose track_genre is classical (seed).integers(n).
+genre is , hip-hop, mandopop, or metal. Remove rows
+with a duplicated track
+id, and then rows whose nine audio features exactly duplicate an earlier
+row (the same recording released on several albums).
 
-### (d)
+### (b) Implementation
+
+### (c) Initialisation Strategies
+
+### (d) Choosing k and Cluster Validity
 
 # Part III
 
