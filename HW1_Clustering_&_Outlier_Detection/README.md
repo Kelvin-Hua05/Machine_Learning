@@ -84,7 +84,7 @@ With $k$ = 4, compare three initialisations, each run with seeds 0, \ldots, 19:
 - Farthest-first: a random first point, then repeatedly the point with the largest distance to its nearest chosen centroid.
 - $k$-means++: a random first point, then each next point sampled with probability proportional to its squared distance to the nearest chosen centroid.
 
-For each strategy, plot $\phi(t)$ against $t$ for seed `0`, and report the median $\phi(0) and the minimum, median, and maximum $\phi(20) over the 20 seeds. Which strategy starts best and which ends best?
+For each strategy, plot $\phi(t)$ against $t$ for seed `0`, and report the median $\phi(0) and the minimum, median, and maximum $\phi(20)$ over the 20 seeds. Which strategy starts best and which ends best?
 
 - List the four tracks that farthest-first selects with seed 0 (name, artist, genre, and their most extreme features). Why are these tracks chosen, and what does this reveal about the sensitivity of farthest-first to outliers?
 - Sanity check: the best $\phi(20)$ over all runs should be close to $1.58\times10^4$.
@@ -136,59 +136,30 @@ $\mathrm{LOF}_k(o) \approx 1$ means $o$ is as dense as its neighbours; $\mathrm{
 
 Return to the seven stalls {1, 2, 3, 8, 9, 10, 25} from Part I.
 
-- z-score: Estimate µ and σ by maximum likelihood and compute the z-score of the stall at 25. Is it
-flagged by the rule |z| > 3? Explain why the outlier itself makes it harder to detect (the masking
-effect).
-- LOF: With k = 2, compute dist2, N2, lrd2, and LOF2 for every stall. Which stall is the top outlier?
-Some stalls inside the two groups obtain LOF2 > 1; explain why, and what this implies for
-choosing a threshold.
+- $z$-score: Estimate $\mu$ and $\sigma$ by maximum likelihood and compute the $z$-score of the stall at 25. Is it flagged by the rule $\mid z\mid$ > 3? Explain why the outlier itself makes it harder to detect (the masking effect).
+- LOF: With $k$ = 2, compute $dist_2$, $N_2$, $lrd_2$, and $LOF_2$ for every stall. Which stall is the top outlier? Some stalls inside the two groups obtain $LOF_2$ > 1; explain why, and what this implies for choosing a threshold.
 
 ## (b) Proximity-Based Approaches
 
-- Write knn
-score(X, k), returning distk(o) for every point, and lof(X, k), implementing the
-definitions above with vectorised numpy operations.
-• Verify for k = 20 that your LOF agrees to within 10−8 with scikit-learn’s LocalOutlierFactor,
-whose attribute negative
-outlier
-factor
-stores the negated LOF. The duplicate removal in
-Part II (a) matters here: explain why exact duplicates break LOF.
-• Report the number of tracks with LOF20 > 1.5 and list the five tracks with the largest LOF (name,
-artist, genre). Show the kNN and LOF scores on the track map as colour intensity.
-• Sanity check: roughly 38 tracks should exceed LOF20 = 1.5, and the largest value should be
-about 2.6.
+- Write knn_score(X, k), returning $dist_k(o)$ for every point, and lof(X, k), implementing the definitions above with vectorised numpy operations.
+- Verify for $k$ = 20 that your LOF agrees to within $10^{-8}$ with scikit-learn’s LocalOutlierFactor, whose attribute negative_outlier_factor_stores the negated LOF. The duplicate removal in Part II (a) matters here: explain why exact duplicates break LOF.
+- Report the number of tracks with $LOF_{20}$ > 1.5 and list the five tracks with the largest LOF (name, artist, genre). Show the $k$NN and LOF scores on the track map as colour intensity.
+- Sanity check: roughly 38 tracks should exceed $LOF_{20}$ = 1.5, and the largest value should be about 2.6.
 
 ## (c) Clustering-Based and Isolation Approaches
 
-• Using the best k = 4 solution of Part II (d), score each track by dist(o,co)/dist(co), its distance to
-its centroid divided by the average distance of that cluster’s members to the centroid.
-• Runsklearn.cluster.DBSCAN with ε = 2.0 and min
-samples=18 (twice the dimensionality; the
-neighbourhood includes the point itself, as in Part I (d)), and take its m noise points as a binary
-detector. Sanity check: you should obtain one cluster and m = 55 noise points.
-• Fit an IsolationForest with 200 trees and random
-as the outlier score.
-state=0; its negated score
-samples serves
-• On the track map, mark the m highest scoring tracks of each detector. Which detectors agree
-most with the DBSCAN noise points, and why? Listen to (or look up) two flagged tracks: are they
-errors, or genuinely unusual music?
+- Using the best $k$ = 4 solution of Part II (d), score each track by $\frac{dist(o,c_o)}{\operatorname{dist}(c_o)}$, its distance to its centroid divided by the average distance of that cluster’s members to the centroid.
+- Runsklearn.cluster.DBSCAN with $\varepsilon$ = 2.0 and min_samples=18 (twice the dimensionality; the
+neighbourhood includes the point itself, as in Part I (d)), and take its $m$ noise points as a binary detector. Sanity check: you should obtain one cluster and $m$ = 55 noise points.
+- Fit an IsolationForest with 200 trees and random_state=0; its negated score_samples serves as the outlier score.
+- On the track map, mark the $m$ highest scoring tracks of each detector. Which detectors agree most with the DBSCAN noise points, and why? Listen to (or look up) two flagged tracks: are they errors, or genuinely unusual music?
 
 ## (d) Evaluation with Injected Anomalies
 
- Real data have no outlier labels, so you will plant
-20 anomalies of two kinds and append each set separately to Z (with labels 1 for planted points and 0
-otherwise):
+Real data have no outlier labels, so you will plant 20 anomalies of two kinds and append each set separately to $Z$ (with labels 1 for planted points and 0 otherwise):
 
-• Global: with rng = numpy.random.default
-rng(0), draw U = rng.normal(size=(20, 9)),
-normalise each row to unit length, and scale row i by a radius drawn from rng.uniform(4, 6,
-(20, 1)).
-• Correlation-breaking: with rng = numpy.random.default
-rng(1), fill the planted points col
-umn by column: for j = 0,...,8 in order, set column j to Z[rng.integers(0, n, 20), j].
-Every value is realistic on its own, but the combination is not, like a track that is simultaneously
+- Global: with rng = numpy.random.default_rng(0), draw $U$ = rng.normal(size=(20, 9)), normalise each row to unit length, and scale row $i$ by a radius drawn from rng.uniform(4, 6, (20, 1)).
+- Correlation-breaking: with rng = numpy.random.default_rng(1), fill the planted points column by column: for $j = 0, \dots, 8$ in order, set column $j$ to Z[rng.integers(0, n, 20), j]. Every value is realistic on its own, but the combination is not, like a track that is simultaneously
 quiet, danceable, and fully instrumental.
 
 Re-run every scoring detector (kNN distance with k = 20, LOF20, the clustering-based score, and
