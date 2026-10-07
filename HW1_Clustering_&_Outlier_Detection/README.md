@@ -51,7 +51,7 @@ We use the **Spotify Tracks Dataset**, which contains 114,000 tracks from 114 ge
 
 - **Features:** the nine audio features `danceability`, `energy`, `loudness`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, and `tempo`.
 - **Labels (not used for fitting):** `track_genre`. Keep `track_name` and `artists` for inspecting individual tracks.
-- **Loading:** download `dataset.csv` from the dataset page, or read it directly in Colab with `pandas.read_csv`('hf://datasets/maharshipandya/spotify-tracks-dataset/dataset.csv')
+- **Loading:** download `dataset.csv` from the dataset page, or read it directly in Colab with `pandas.read_csv('hf://datasets/maharshipandya/spotify-tracks-dataset/dataset.csv')`
 - **Track map:** whenever a task asks you to show results on the track map, draw a scatter plot of the standardised acousticness (horizontal axis) against the standardised energy (vertical axis).
 
 ## 2. Setup
