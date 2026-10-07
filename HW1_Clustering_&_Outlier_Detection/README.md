@@ -143,7 +143,7 @@ Return to the seven stalls {1, 2, 3, 8, 9, 10, 25} from Part I.
 
 - Write knn_score(X, k), returning $dist_k(o)$ for every point, and lof(X, k), implementing the definitions above with vectorised numpy operations.
 - Verify for $k$ = 20 that your LOF agrees to within $10^{-8}$ with scikit-learn’s LocalOutlierFactor, whose attribute negative_outlier_factor_stores the negated LOF. The duplicate removal in Part II (a) matters here: explain why exact duplicates break LOF.
-- Report the number of tracks with $LOF_{20}$ > 1.5 and list the five tracks with the largest LOF (name, artist, genre). Show the $k$NN and LOF scores on the track map as colour intensity.
+- Report the number of tracks with $LOF_{20}$ > 1.5 and list the five tracks with the largest LOF (name, artist, genre). Show the $k\text{NN}$ and LOF scores on the track map as colour intensity.
 - Sanity check: roughly 38 tracks should exceed $LOF_{20}$ = 1.5, and the largest value should be about 2.6.
 
 ## (c) Clustering-Based and Isolation Approaches
@@ -161,7 +161,7 @@ Real data have no outlier labels, so you will plant 20 anomalies of two kinds an
 - Global: with rng = numpy.random.default_rng(0), draw $U$ = rng.normal(size=(20, 9)), normalise each row to unit length, and scale row $i$ by a radius drawn from rng.uniform(4, 6, (20, 1)).
 - Correlation-breaking: with rng = numpy.random.default_rng(1), fill the planted points column by column: for $j = 0, \ldots, 8$ in order, set column $j$ to Z`[rng.integers(0, n, 20), j]`. Every value is realistic on its own, but the combination is not, like a track that is simultaneously quiet, danceable, and fully instrumental.
 
-Re-run every scoring detector ($k$NN distance with $k$ = 20, $LOF_{20}$, the clustering-based score, and Isolation Forest) on each augmented set, refitting $k$-means with $k$ = 4 for the clustering-based score. Report a table of ROC AUC and precision among the top 20 scores for both anomaly types, plot the ROC curves, and report the precision, recall, and F1 of the DBSCAN noise detector.
+Re-run every scoring detector ($k\text{NN}$ distance with $k$ = 20, $LOF_{20}$, the clustering-based score, and Isolation Forest) on each augmented set, refitting $k$-means with $k$ = 4 for the clustering-based score. Report a table of ROC AUC and precision among the top 20 scores for both anomaly types, plot the ROC curves, and report the precision, recall, and F1 of the DBSCAN noise detector.
 
 - Why would accuracy be a misleading metric here?
 - Which detectors succeed on global anomalies, and which remain useful on correlation-breaking ones? Relate your answer to the assumptions each family makes about normal data.
