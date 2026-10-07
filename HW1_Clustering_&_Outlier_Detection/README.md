@@ -20,7 +20,7 @@ $$
 
 ## (b)
 
-Seven stalls sit at:
+Seven stalls sit along a street at positions $$\{1, 2, 3, 8, 9, 10, 25\}$$. Run $k$-means with $k$ = 2 and squared Euclidean cost $\phi=\sum_x\min_c(x-c)^2$.
 
 
 
