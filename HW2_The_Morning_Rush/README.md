@@ -68,7 +68,7 @@ The resulting files are on e3:
 ### (a) Exploration and Baseline
 
 - Explore how demand varies over time, across stations, and with the weather, using plots of your choice. Summarise the most important patterns in a few sentences.
-- Report the training and validation RMSE and $R^2$ of the provided baseline (`LinearRegression` on the four weather columns). Decide, with justification, whether to model a transformed target (e.g., $\log(1 + y)$) instead of $y$.
+- Report the training and validation RMSE and $R^2$ of the provided baseline (`LinearRegression` on the four weather columns). Decide, with justification, whether to model a transformed target (e.g., log(1 + $y$)) instead of $y$.
 
 ### (b) Feature Engineering
 
