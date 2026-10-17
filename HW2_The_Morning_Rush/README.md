@@ -6,6 +6,28 @@
 
 # Part I: Least Squares
 
+Before dispatching a fleet of trucks, every operator practises on a single station. In this part you will fit, regularize, and rescale a tiny regression model by hand.
+
+## 1. Notation
+
+## 2. The Toy Dataset
+
+## 3. Tasks
+
+
 # Part II: Feature Engineering and Scaling
 
+The operations centre has shared one month of real rental logs. You will turn raw timestamps and weather readings into features that capture how Taipei commutes.
+
+## 1. The Dataset: Taipei YouBike 2.0 Hourly Demand (Jan-Jun 2026)
+
+## 2. Tasks
+
+
 # Part II: Learning Curves and Forecasting
+
+A model that looks good on one split may still be starved of data or drowning in parameters. In this part, you will diagnose your models, fix them, and face the final week of March.
+
+## 1. Setup
+
+## 2. Tasks
