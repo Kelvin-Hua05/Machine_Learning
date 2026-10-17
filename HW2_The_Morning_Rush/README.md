@@ -13,7 +13,7 @@ Before dispatching a fleet of trucks, every operator practises on a single stati
 Let $X \in \mathbb{R}^{N \times d}$ be the design matrix and $y \in \mathbb{R}^N$ the targets. Ordinary least squares (OLS) and ridge regression minimize, respectively,
 
 $$
-J_{\text{OLS}}(w) = \frac{1}{2}\lVert y - Xw \rVert_2^2, \:
+J_{\text{OLS}}(w) = \frac{1}{2}\lVert y - Xw \rVert_2^2, \quad
 J_{\text{ridge}}(w) = \frac{1}{2}\lVert y - Xw \rVert_2^2 + \frac{\lambda}{2}\lVert w \rVert_2^2, \quad \lambda > 0.
 $$
 
