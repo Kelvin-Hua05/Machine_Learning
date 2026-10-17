@@ -17,7 +17,7 @@ J_{\text{OLS}}(w) = \frac{1}{2}\lVert y - Xw \rVert_2^2, \qquad
 J_{\text{ridge}}(w) = \frac{1}{2}\lVert y - Xw \rVert_2^2 + \frac{\lambda}{2}\lVert w \rVert_2^2, \quad \lambda > 0.
 $$
 
-For a single feature $x$ with intercept $w_0$ and slope $w_1$, let $S_{xx} = \sum_i \left(x^{(i)} - \bar{x}\right)^2, \qquad S_{xy} = \sum_i \left(x^{(i)} - \bar{x}\right)\left(y^{(i)} - \bar{y}\right).$ The intercept is **not** penalized, so the ridge slope is $w_1 = \frac{S_{xy}}{S_{xx} + \lambda}.$
+For a single feature $x$ with intercept $w_0$ and slope $w_1$, let $S_{xx} = \sum_i \left(x^{(i)} - \bar{x}\right)^2, \qquad$ and $S_{xy} = \sum_i \left(x^{(i)} - \bar{x}\right)\left(y^{(i)} - \bar{y}\right).$ The intercept is **not** penalized, so the ridge slope is $w_1 = \frac{S_{xy}}{S_{xx} + \lambda}.$
 
 ## 2. The Toy Dataset
 
