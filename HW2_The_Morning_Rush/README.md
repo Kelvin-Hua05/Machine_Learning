@@ -23,6 +23,11 @@ The operations centre has shared one month of real rental logs. You will turn ra
 
 ## 2. Tasks
 
+### (a)
+
+### (b) 
+
+### (c)
 
 # Part II: Learning Curves and Forecasting
 
@@ -31,3 +36,9 @@ A model that looks good on one split may still be starved of data or drowning in
 ## 1. Setup
 
 ## 2. Tasks
+
+### (a)
+
+### (b) 
+
+### (c)
