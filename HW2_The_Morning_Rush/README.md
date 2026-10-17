@@ -72,7 +72,7 @@ The resulting files are on e3:
 
 ### (b) Feature Engineering
 
-Starting from the baseline, design and evaluate a sequence of **at least three cumulative feature sets**, each motivated by a pattern you found in (a). Your sets should go beyond the raw columns, for example by deriving time features from `datetime`, encoding categorical variables, or adding interactions; the choice of features and encodings is yours.
+Starting from the baseline, design and evaluate a sequence of at least three **cumulative** feature sets, each motivated by a pattern you found in (a). Your sets should go beyond the raw columns, for example by deriving time features from `datetime`, encoding categorical variables, or adding interactions; the choice of features and encodings is yours.
 
 - Keep the model fixed across sets (e.g., Ridge with one regularization strength of your choice), and report the number of features, training RMSE, validation RMSE, and validation $R^2$ for each set in **one table**.
 - Explain which features helped most and why. For every encoding choice you made (e.g., how you represented time), justify it from the perspective of a linear model.
