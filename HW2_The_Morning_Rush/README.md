@@ -84,13 +84,6 @@ Choose one of your feature sets and compare at least three preprocessing options
 - Report the validation RMSE of every model and scaling combination in one table, together with the number of gradient descent iterations.
 - Explain each difference you observe using Part I(b).
 
-## References
-
-[^1]: https://data.taipei/dataset/detail?id=c5924c17-25db-4f1e-99c4-f8ada40f2445
-[^2]: https://codis.cwa.gov.tw/
-[^3]: https://data.gov.tw/dataset/14718
-[^4]: https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json
-
 # Part III: Learning Curves and Forecasting
 
 A model that looks good on one split may still be starved of data or drowning in parameters. In this part, you will diagnose your models, fix them, and face the final week of March.
@@ -115,3 +108,10 @@ Apply **one** remedy to each model that matches your diagnosis (e.g., richer fea
 ### (c) Leaderboard
 
 Select your final model using the validation set **only**, retrain it on all of `train.csv`, predict `test.csv` (clipping negative predictions to zero), and upload `submission.csv` to the class leaderboard. Report your test RMSE, which must beat the TA baseline (`LinearRegression` on the weather columns) for full marks, and comment in two or three sentences on whether your validation RMSE was a reliable estimate.
+
+# References
+
+[^1]: https://data.taipei/dataset/detail?id=c5924c17-25db-4f1e-99c4-f8ada40f2445
+[^2]: https://codis.cwa.gov.tw/
+[^3]: https://data.gov.tw/dataset/14718
+[^4]: https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json
