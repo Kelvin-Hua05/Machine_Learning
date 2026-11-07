@@ -72,84 +72,37 @@ to 3072 values, and subtract the mean training image (computed on the
 Dataset reference:
 [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html).
 
-### 2. The Module
+## 2. The Module
 
 Implement the following in `nn_numpy.py`, with each forward function
-returning a cache for its backward function:
+returning a `cache` for its backward function:
 
-  ------------------------------------------------------------------------------
-  Function                             Description
-  ------------------------------------ -----------------------------------------
-  `affine_forward/backward`            (Z=XW+b) and gradients for (X), (W), (b)
+| Function | Description |
+| :--- | :--- |
+| `affine_forward` / `backward` | $Z = XW + b$ and gradients for $X, W, b$ |
+| `relu_forward` / `backward`<br>`sigmoid_forward` / `backward` | Activations and their gradients |
+| `softmax_ce_loss(S, y)`<br>`hinge_loss(S, y)` | Mean loss over the batch and $\frac{\partial J}{\partial S}$ |
+| `numerical_gradient(f, x, h=1e-5)` | Centered finite differences |
 
-  `relu_forward/backward`,             Activations and their gradients
-  `sigmoid_forward/backward`           
+## 3. Tasks
 
-  `softmax_ce_loss(S, y)`,             Mean loss over the batch and
-  `hinge_loss(S, y)`                   (`\partial `{=tex}J/`\partial `{=tex}S)
+### (a) Gradient Check
 
-  `numerical_gradient(f, x, h=1e-5)`   Centered finite differences
-  ------------------------------------------------------------------------------
+Vectorize all functions (no loops over examples). On a small random network in `float64`, report the relative error: $\max_i \frac{|a_i - n_i|}{\max(10^{-8}, |a_i| + |n_i|)}$ between analytic ($a_i$) and numerical ($n_i$) gradients for every layer and both losses. Each should be below $10^{-6}$.
 
-### 3. Tasks
+### (b) Training
 
-#### (a) Gradient Check (15 points)
+Train a two-layer `affine` – `ReLU` – `affine` network with L2 regularization and mini-batch SGD. First, overfit 50 images as a sanity check.Then tune the hidden size, learning rate, and regularization on the validation set, report at least four configurations in one table, and plot the loss and accuracy curves of your best model, which must beat the TA baseline (100 hidden units, weights drawn from $\mathcal{N}(0, 10^{-4})$, zero biases, no regularization, softmax loss, plain SGD with learning rate $10^{-3}$, batch size 200, 10 epochs) for full marks. Finally, compare softmax and hinge loss as the output loss.
 
-Vectorize all functions (no loops over examples). On a small random
-network in `float64`, report the relative error
+### (c) Design Issues
 
-\[ `\max`{=tex}\_i `\frac{|a_i-n_i|}{\max(10^{-8},|a_i|+|n_i|)}`{=tex}
-\]
-
-between analytic and numerical gradients for every layer and both
-losses. Each should be below (10\^{-6}).
-
-#### (b) Training (15 points)
-
-Train a two-layer affine--ReLU--affine network with L2 regularization
-and mini-batch SGD.
-
-1.  First, overfit 50 images as a sanity check.
-2.  Then tune the hidden size, learning rate, and regularization on the
-    validation set.
-3.  Report at least four configurations in one table.
-4.  Plot the loss and accuracy curves of your best model.
-
-For full marks, your model must beat the TA baseline:
-
--   100 hidden units
--   Weights drawn from (N(0,10\^{-4}))
--   Zero biases
--   No regularization
--   Softmax loss
--   Plain SGD with learning rate (10\^{-3})
--   Batch size 200
--   10 epochs
-
-Finally, compare softmax and hinge loss as the output loss.
-
-#### (c) Design Issues (15 points)
-
-With five hidden layers, compare:
-
-1.  **Weight initialization:** zero, small (std (=10\^{-2})), large (std
-    (=1)) and He (std (=`\sqrt{2/\text{fan\_in}}`{=tex})) Gaussian
-    initialization.
-2.  **Activation functions:** sigmoid and ReLU under the same
-    initialization. Plot the mean absolute gradient of each layer's
-    weights at the start of training.
-3.  **L2 regularization:** at least three L2 strengths.
-
-Explain each result using the design issues from lecture, such as
-vanishing gradients and overfitting.
+With five hidden layers, compare: (i) zero, small (std (=10\^{-2})), large (std (=1)) and He (std (=`\sqrt{2/\text{fan\_in}}`{=tex})) Gaussian initialization, (ii) sigmoid and ReLU under the same initialization, plotting the mean absolute gradient of each layer's weights at the start of training, and (iii) at least three L2 strengths. Explain each result using the design issues from lecture, such as vanishing gradients and overfitting.
 
 ### References
 
-1.  A. Krizhevsky. *Learning Multiple Layers of Features from Tiny
-    Images*. Technical Report, University of Toronto, 2009.
+1.  A. Krizhevsky. *Learning Multiple Layers of Features from Tiny Images*. Technical Report, University of Toronto, 2009.
 2.  [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
-3.  [torchvision.datasets.CIFAR10
-    documentation](https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html)
+3.  [torchvision.datasets.CIFAR10 documentation] https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html)
 
 ------------------------------------------------------------------------
 
