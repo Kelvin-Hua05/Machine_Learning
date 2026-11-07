@@ -69,9 +69,6 @@ convert it to NumPy, scale pixel values to (\[0,1\]), flatten each image
 to 3072 values, and subtract the mean training image (computed on the
 45,000 training images only).
 
-Dataset reference:
-[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html).
-
 ## 2. The Module
 
 Implement the following in `nn_numpy.py`, with each forward function
