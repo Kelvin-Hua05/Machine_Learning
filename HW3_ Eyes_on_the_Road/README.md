@@ -5,41 +5,11 @@
 3.  Hold out the last 5,000 training images as the validation set for all model selection, and evaluate on the test set only once. TA baseline accuracies on this split are announced on e3.
 4.  Keep notebook outputs and fix all random seeds to `0`.
 
-### General Instructions
+# Part I: Neurons by Hand
 
-The assignment consists of three compulsory components:
+Before trusting a camera with thousands of images, every engineer traces one input through a tiny network by hand. **Round all values to four decimal places and show your working.**
 
-1.  **Part I: Neurons by Hand** --- 20 points
-2.  **Part II: A Neural Network from Scratch** --- 45 points
-3.  **Part III: Convolutional Networks** --- 35 points
-
-### Submission Guidelines
-
-Submit your work through the e3 submission system, including the
-following files:
-
-1.  `A3_[ID].zip`: Your notebook(s) with all outputs and `nn_numpy.py`.
-2.  `A3_[ID].pdf`: Your solutions to Part I, all requested tables and
-    plots, your written analysis, and a viewable link to your Colab
-    notebook.
-
-### Late Submission Policy
-
-  Penalty   Submission time
-  --------- -------------------------------
-  25%       From 15 minutes to 1 day late
-  50%       From 1 day to 2 days late
-  100%      More than 2 days late
-
-------------------------------------------------------------------------
-
-## Part I: Neurons by Hand \[20 marks\]
-
-Before trusting a camera with thousands of images, every engineer traces
-one input through a tiny network by hand. **Round all values to four
-decimal places and show your working.**
-
-### 1. The Toy Network
+## 1. The Toy Network
 
 A 2--2--1 network has sigmoid hidden units, an identity output and the
 loss
