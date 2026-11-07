@@ -60,7 +60,7 @@ The team's first prototype uses no deep learning library, so that every engineer
 
 ## 1. The Dataset: CIFAR-10
 
-CIFAR-10 has 60,000 color images of size $32 \times 32$ in 10 classes, split into 50,000 training and 10,000 test images. Download it with `torchvision.datasets.CIFAR10`, convert it to NumPy, scale pixel values to $[0, 1]$, flatten each image to 3072 values, and subtract the mean training image (computed on the 45,000 training images only).
+CIFAR-10 [^1] has 60,000 color images of size $32 \times 32$ in 10 classes, split into 50,000 training and 10,000 test images [^2]. Download it with `torchvision.datasets.CIFAR10` [^3], convert it to NumPy, scale pixel values to $[0, 1]$, flatten each image to 3072 values, and subtract the mean training image (computed on the 45,000 training images only).
 
 ## 2. The Module
 
