@@ -95,12 +95,6 @@ Train a two-layer `affine` – `ReLU` – `affine` network with L2 regularizatio
 
 With five hidden layers, compare: (i) zero, small (std (=10\^{-2})), large (std (=1)) and He (std (=`\sqrt{2/\text{fan\_in}}`{=tex})) Gaussian initialization, (ii) sigmoid and ReLU under the same initialization, plotting the mean absolute gradient of each layer's weights at the start of training, and (iii) at least three L2 strengths. Explain each result using the design issues from lecture, such as vanishing gradients and overfitting.
 
-### References
-
-1.  A. Krizhevsky. *Learning Multiple Layers of Features from Tiny Images*. Technical Report, University of Toronto, 2009.
-2.  [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
-3.  [torchvision.datasets.CIFAR10 documentation] https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html)
-
 # Part III: Convolutional Networks
 
 A fully connected network ignores the structure of images. You will now measure how much a CNN improves and test it on the test set once.
@@ -120,3 +114,9 @@ Vary one configuration (e.g., learning rate, depth, dropout, batch normalization
 ### (d) Final Evaluation
 
 Evaluate your final model once on the test set. It must beat the TA baseline CNN's test accuracy for full marks. Compare it with Part II and briefly comment on whether your validation accuracy was a reliable estimate.
+
+# References
+
+[^1]: A. Krizhevsky. *Learning Multiple Layers of Features from Tiny Images*. Technical Report, University of Toronto, 2009.
+[^2]: https://www.cs.toronto.edu/~kriz/cifar.html
+[^3]: https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html
