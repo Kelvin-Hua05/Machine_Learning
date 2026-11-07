@@ -11,91 +11,48 @@ Before trusting a camera with thousands of images, every engineer traces one inp
 
 ## 1. The Toy Network
 
-A 2--2--1 network has sigmoid hidden units, an identity output and the
-loss
+A 2-2-1 network has sigmoid hidden units, an identity output and the loss $J = \frac{1}{2}(y - \hat{y})^2$ :
 
-\[ J = `\frac{1}{2}`{=tex}(y-`\hat{y}`{=tex})\^2. \]
+$$
+h = \sigma \left( W^{(1)}x + b^{(1)} \right), \qquad \hat{y} = W^{(2)}h + b^{(2)}
+$$
 
-Its forward equations are
-
-\[ h = `\sigma`{=tex}`\left`{=tex}(W^{(1)}x+b^{(1)}`\right`{=tex}),
-`\qquad`{=tex} `\hat{y}`{=tex}=W^{(2)}h+b^{(2)}. \]
-
-The parameters are
-
-\[ W\^{(1)} =
-```{=tex}
+$$
+W^{(1)} = 
 \begin{bmatrix}
-0.1 & 0.3\\
+0.1 & 0.3 \\
 0.2 & 0.4
-\end{bmatrix}
-```
-, `\qquad `{=tex}b\^{(1)}=0, \]
+\end{bmatrix},
+\qquad b^{(1)} = 0
+$$
 
-\[ W\^{(2)} =
-```{=tex}
+$$
+W^{(2)} = 
 \begin{bmatrix}
 0.5 & -0.3
-\end{bmatrix}
-```
-, `\qquad `{=tex}b\^{(2)}=0. \]
+\end{bmatrix},
+\qquad b^{(2)} = 0,
+$$
 
-The input is (x=(1.0,0.5)\^`\top`{=tex}), and the target is (y=1).
+with input $x = (1.0, 0.5)^\top$ and target $y = 1$
 
-### 2. Tasks
+## 2. Tasks
 
-#### (a) Architecture (4 points)
+### (a) Architecture
 
-A two-layer network has
+A two-layer network has $\mathbf{W}^{(1)} \in \mathbb{R}^{K \times (S+1)}$ and $\mathbf{W}^{(2)} \in \mathbb{R}^{I \times (K+1)}$, with biases in column 0. Draw the network, including bias units, and count its parameters for CIFAR-10 images ($S = 3072, K = 100, I = 10$).
 
-\[ W^{(1)}`\in`{=tex}`\mathbb{R}`{=tex}^{K`\times`{=tex}(S+1)},
-`\qquad`{=tex}
-W^{(2)}`\in`{=tex}`\mathbb{R}`{=tex}^{I`\times`{=tex}(K+1)}, \]
+### (b) Backpropagation
 
-with biases in column 0. Draw the network, including bias units, and
-count its parameters for CIFAR-10 images ((S=3072), (K=100), (I=10)).
+For the toy network, compute the forward pass ($\mathbf{h}, \hat{y}, J$), all gradients via $\delta^{(2)} = \hat{y} - y$ and $\delta_i^{(1)} = \delta^{(2)} W_i^{(2)} \sigma'(z_i^{(1)})$, and one gradient descent step with $\lambda = 0.5$. Confirm that the loss decreases, and explain what goes wrong if all weights start at zero.
 
-#### (b) Backpropagation (8 points)
+### (c) Loss Functions
 
-For the toy network:
+For predicted probabilities $\hat{y} = [0.3, 0.2, 0.5]$ and label $y = [0, 1, 0]$, give the predicted class, the squared loss and the cross-entropy loss. For scores $s = [1.2, 1.8, 0.6]$ with true class 1, compute the multiclass hinge loss $\sum_{j \neq y} \max(0, s_j - s_y + 1)$ and $\partial L / \partial s$, and relate it to the SVM hinge loss.
 
--   Compute the forward pass ((h,`\hat{y}`{=tex},J)).
--   Compute all gradients via
+### (d) Connections
 
-\[ `\delta`{=tex}\^{(2)}=`\hat{y}`{=tex}-y, `\qquad`{=tex}
-`\delta`{=tex}\_i^{(1)}=`\delta`{=tex}^{(2)}W_i\^{(2)}`\sigma`{=tex}'(z_i).
-\]
-
--   Perform one gradient descent step with (`\lambda=0.5`{=tex}).
--   Confirm that the loss decreases, and explain what goes wrong if all
-    weights start at zero.
-
-#### (c) Loss Functions (4 points)
-
-For predicted probabilities (`\hat{y}`{=tex}=\[0.3,0.2,0.5\]) and label
-(y=\[0,1,0\]):
-
--   Give the predicted class.
--   Compute the squared loss and the cross-entropy loss.
-
-For scores (s=\[1.2,1.8,0.6\]) with true class 1:
-
--   Compute the multiclass hinge loss
-
-\[ `\sum`{=tex}\_{j`\ne `{=tex}y}`\max`{=tex}(0,s_j-s_y+1) \]
-
-and (`\partial `{=tex}L/`\partial `{=tex}s). - Relate it to the SVM
-hinge loss.
-
-#### (d) Connections (4 points)
-
-With Gaussian noise (N(0,`\sigma`{=tex}\^2)) and prior
-(w`\sim `{=tex}N(0,`\tau`{=tex}\^2I)):
-
--   Show that MAP estimation equals L2-regularized least squares and
-    find (`\lambda`{=tex}).
--   Explain whether a network with five linear hidden layers and a
-    softmax output is more expressive than logistic regression.
+With Gaussian noise $\mathcal{N}(0, \sigma^2)$ and prior $\mathbf{w} \sim \mathcal{N}(\mathbf{0}, \tau^2 \mathbf{I})$, show that MAP estimation equals L2-regularized least squares and find $\lambda$. Then explain whether a network with five linear hidden layers and a softmax output is more expressive than logistic regression.
 
 ------------------------------------------------------------------------
 
