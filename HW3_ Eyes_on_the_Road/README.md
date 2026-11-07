@@ -54,14 +54,11 @@ For predicted probabilities $\hat{y} = [0.3, 0.2, 0.5]$ and label $y = [0, 1, 0]
 
 With Gaussian noise $\mathcal{N}(0, \sigma^2)$ and prior $\mathbf{w} \sim \mathcal{N}(\mathbf{0}, \tau^2 \mathbf{I})$, show that MAP estimation equals L2-regularized least squares and find $\lambda$. Then explain whether a network with five linear hidden layers and a softmax output is more expressive than logistic regression.
 
-------------------------------------------------------------------------
+# Part II: A Neural Network from Scratch
 
-## Part II: A Neural Network from Scratch \[45 marks\]
+The team's first prototype uses no deep learning library, so that every engineer understands what happens inside.
 
-The team's first prototype uses no deep learning library, so that every
-engineer understands what happens inside.
-
-### 1. The Dataset: CIFAR-10
+## 1. The Dataset: CIFAR-10
 
 CIFAR-10 has 60,000 color images of size (32`\times32`{=tex}) in 10
 classes, split into 50,000 training and 10,000 test images.
