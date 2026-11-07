@@ -101,65 +101,22 @@ With five hidden layers, compare: (i) zero, small (std (=10\^{-2})), large (std 
 2.  [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
 3.  [torchvision.datasets.CIFAR10 documentation] https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html)
 
-------------------------------------------------------------------------
+# Part III: Convolutional Networks
 
-## Part III: Convolutional Networks \[35 marks\]
+A fully connected network ignores the structure of images. You will now measure how much a CNN improves and test it on the test set once.
 
-A fully connected network ignores the structure of images. You will now
-measure how much a CNN improves and test it on the test set once.
+### (a) From Pixels to Filters
 
-### (a) From Pixels to Filters (5 points)
+Six $5 \times 5 \times 3$ filters with stride 1 and no padding are applied to a $32 \times 32 \times 3$ image. Give the output size and parameter count, compare them with a fully connected layer of the same output size, and explain why weight sharing helps.
 
-Six (5`\times5`{=tex}`\times3`{=tex}) filters with stride 1 and no
-padding are applied to a (32`\times32`{=tex}`\times3`{=tex}) image.
+### (b) Your CNN
 
--   Give the output size and parameter count.
--   Compare them with a fully connected layer of the same output size.
--   Explain why weight sharing helps.
+Design and train your own CNN. Report its layers (output shape and parameter count) in one table, justify your design choices, plot its loss and accuracy curves. For full marks, it must beat the TA baseline CNN (`conv3x3(32)` – `ReLU` – `maxpool2x2` – `conv3x3(64)` – `ReLU` – `maxpool2x2` – `linear(10)` with padding 1, Adam, learning rate $10^{-3}$, batch size 64, 10 epochs, no augmentation) on the validation set.
 
-### (b) Your CNN (15 points)
+### (c) Sensitivity Study
 
-Design and train your own CNN.
+Vary one configuration (e.g., learning rate, depth, dropout, batch normalization, or augmentation) over at least four values. Plot validation accuracy against it, identify the best value, and relate your findings to underfitting and overfitting.
 
--   Report its layers (output shape and parameter count) in one table.
--   Justify your design choices.
--   Plot its loss and accuracy curves.
+### (d) Final Evaluation
 
-For full marks, it must beat the TA baseline CNN on the validation set:
-
-``` text
-conv3x3(32)
-→ ReLU
-→ maxpool2x2
-→ conv3x3(64)
-→ ReLU
-→ maxpool2x2
-→ linear(10)
-```
-
-Baseline settings:
-
--   Padding: 1
--   Optimizer: Adam
--   Learning rate: (10\^{-3})
--   Batch size: 64
--   Epochs: 10
--   No augmentation
-
-### (c) Sensitivity Study (10 points)
-
-Vary one configuration (e.g., learning rate, depth, dropout, batch
-normalization or augmentation) over at least four values.
-
--   Plot validation accuracy against it.
--   Identify the best value.
--   Relate your findings to underfitting and overfitting.
-
-### (d) Final Evaluation (5 points)
-
-Evaluate your final model once on the test set.
-
--   It must beat the TA baseline CNN's test accuracy for full marks.
--   Compare it with Part II.
--   Briefly comment on whether your validation accuracy was a reliable
-    estimate.
+Evaluate your final model once on the test set. It must beat the TA baseline CNN's test accuracy for full marks. Compare it with Part II and briefly comment on whether your validation accuracy was a reliable estimate.
