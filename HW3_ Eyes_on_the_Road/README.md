@@ -1,21 +1,9 @@
-You have joined the vision team of a Hsinchu startup that builds
-low-cost roadside cameras. The team wants to know how much it gains by
-moving from a hand-built neural network to a convolutional one. You will
-derive backpropagation by hand, connect neural networks to SVM and
-Bayesian learning, implement a neural network from scratch, and design a
-CNN.
+# Constraints
 
-### Constraints
-
-1.  **Part II:** NumPy only (no PyTorch, autograd or scikit-learn
-    models). **Part III:** PyTorch, with no pretrained weights or
-    external data.
-2.  Hold out the last 5,000 training images as the validation set for
-    all model selection, and evaluate on the test set only once. TA
-    baseline accuracies on this split are announced on e3.
-3.  All code must run on Google Colab (a free-tier GPU, when available,
-    is sufficient). Keep notebook outputs and fix all random seeds to
-    `0`.
+1.  **Part II:** NumPy only (no PyTorch, autograd or `scikit-learn` models).
+2.  **Part III:** PyTorch, with no pretrained weights or external data.
+3.  Hold out the last 5,000 training images as the validation set for all model selection, and evaluate on the test set only once. TA baseline accuracies on this split are announced on e3.
+4.  Keep notebook outputs and fix all random seeds to `0`.
 
 ### General Instructions
 
