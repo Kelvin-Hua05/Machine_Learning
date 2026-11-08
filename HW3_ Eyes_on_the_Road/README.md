@@ -86,7 +86,7 @@ Train a two-layer `affine` – `ReLU` – `affine` network with L2 regularizatio
 
 ### (c) Design Issues
 
-With five hidden layers, compare: (i) zero, small (std = $10^{-2}$), large (std = $1$), and He (std = $\sqrt{2/\text{fan_in}}$) Gaussian initialization, (ii) sigmoid and ReLU under the same initialization, plotting the mean absolute gradient of each layer's weights at the start of training, and (iii) at least three L2 strengths. Explain each result using the design issues from lecture, such as vanishing gradients and overfitting.
+With five hidden layers, compare: (i) zero, small (std = $10^{-2}$), large (std = $1$), and He (std = $\sqrt{2/\text{fan\_in}}$) Gaussian initialization, (ii) sigmoid and ReLU under the same initialization, plotting the mean absolute gradient of each layer's weights at the start of training, and (iii) at least three L2 strengths. Explain each result using the design issues from lecture, such as vanishing gradients and overfitting.
 
 # Part III: Convolutional Networks
 
