@@ -430,7 +430,7 @@ Consider the following four SVM decision boundaries (a)-(d) as a result of diffe
 Recall that in hard-margin primal SVM, we have the following kernelized SVM in its dual form with the product of $x_i \cdot x_j$ replaced by $k(x_i, x_j)$, where $k(\cdot,\cdot)$ can be any kernel function:
 
 $$
-\max_{\alpha} \left(-\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_j y_i y_j k(x_i,x_j)+\sum_{i=1}^{n}\alpha_i\right)
+\max_{\alpha} \left\lbrace -\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_j y_i y_j k(x_i,x_j)+\sum_{i=1}^{n}\alpha_i \right\rbrace
 $$
 
 $$
