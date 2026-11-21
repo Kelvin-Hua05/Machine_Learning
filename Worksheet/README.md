@@ -227,7 +227,7 @@ As we increase $\gamma$ from 0 to infinity, describe how each of the following c
 
 # 13 Naïve Bayes
 
-(A) Assume that the following likelihoods for each word are part of a positive or negative movie review and equal prior probabilities for each class. What class will Naïve Bayes assign to the sentence "I always like sci-fi movies."?
+## (A) Assume that the following likelihoods for each word are part of a positive or negative movie review and equal prior probabilities for each class. What class will Naïve Bayes assign to the sentence "I always like sci-fi movies."?
 
 |        | pos  | neg  |
 |--------|------|------|
@@ -237,7 +237,11 @@ As we increase $\gamma$ from 0 to infinity, describe how each of the following c
 | sci-fi | 0.04 | 0.15 |
 | movies | 0.08 | 0.11 |
 
-(B) Suppose that you are trying to solve a binary classification problem, and your data set has four attributes. Each attribute can take three possible values. If you modeled the full joint distribution of the attributes and the class label, how many parameters would you need?
+### Ans
+
+## (B) Suppose that you are trying to solve a binary classification problem, and your data set has four attributes. Each attribute can take three possible values. If you modeled the full joint distribution of the attributes and the class label, how many parameters would you need?
+
+### Ans
 
 # 14 Naïve Bayes
 
@@ -254,18 +258,22 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 | G | 1 | 0 | 0 | 1 | - |
 | H | 0 | 0 | 1 | 0 | + |
 
-(A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., P(IsRound | ¬Poisonous)) and the class priors.
+## (A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., $P(IsRound | ¬Poisonous)$) and the class priors.
 
-(B) You have no labels for U and V. Using a naive Bayes classifier trained in (A), predict the labels for berries U and V. Try both without and with smoothing corrections.
+### Ans
+
+## (B) You have no labels for U and V. Using a naive Bayes classifier trained in (A), predict the labels for berries U and V. Try both without and with smoothing corrections.
 
 | Example | IsRound | IsBlueOrPurple | IsClustered | HasCalyxCrown | Poisonous |
 |---------|---------|----------------|-------------|---------------|-----------|
 | U | 1 | 1 | 0 | 0 | ? |
 | V | 1 | 0 | 0 | 1 | ? |
 
-# 15 k-Nearest Neighbors
+### Ans
 
-Consider k-NN using Euclidean distance on the following dataset, where each point belongs to one of two classes: red or blue.
+# 15 $k$-Nearest Neighbors
+
+Consider $k$-NN using Euclidean distance on the following dataset, where each point belongs to one of two classes: red or blue.
 
 <p align="center">
   <img src="fig.1.png" alt="fig1_reference" width="50%">
