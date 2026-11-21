@@ -251,7 +251,11 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 
 Consider k-NN using Euclidean distance on the following dataset, where each point belongs to one of two classes: red or blue.
 
-*(圖：散點圖，見原 PDF 第 5 頁)*
+<p align="center">
+  <img src="fig.1.png" alt="fig1_reference" width="50%">
+  <br>
+  <em>Figure 1: Scatter Plot</em>
+</p>
 
 (A) Please draw the decision boundary for the following dataset using the 1-NN classification rule.
 
@@ -273,7 +277,11 @@ $$
 d_M(x, y) = \sum_{1}^{D} |(x_i - y_i)| \tag{4}
 $$
 
-*(圖：決策邊界 (a)–(d)，見原 PDF 第 5 頁)*
+<p align="center">
+  <img src="fig.2.png" alt="fig2_reference" width="70%">
+  <br>
+  <em>Figure 2: Decision Boundary</em>
+</p>
 
 (A) k = 1, Euclidean Distance.
 
@@ -337,7 +345,11 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
 
 # 20 Decision Boundaries
 
-*(圖：SVM 決策邊界 (a)–(d)，見原 PDF 第 7 頁)*
+<p align="center">
+  <img src="fig.3.png" alt="fig3_reference" width="50%">
+  <br>
+  <em>Figure 3: SVM Decision Boundary</em>
+</p>
 
 Consider the following four SVM decision boundaries (a)-(d) as a result of different kernels and/or slack penalties. The two classes of training data with labels $y_i \in \{-1, 1\}$ are represented by triangles and squares, respectively. The support vectors are depicted as solid triangle and squares. Please match each decision boundary with the most possible optimization setting below (A)-(D) and briefly provide the justification for your pairing.
 
@@ -375,7 +387,11 @@ Consider two multi-class classifiers, C1 and C2. C1 is a multi-layer neural netw
 
 (A) Please draw neural network architectures for both C1 and C2.
 
-*(圖：C1 與 C2 的網路架構，見原 PDF 第 8 頁)*
+<p align="center">
+  <img src="fig.4.png" alt="fig4_reference" width="50%">
+  <br>
+  <em>Figure 4: Network Architecture of $C_1$ and $C_2$</em>
+</p>
 
 (B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
 
@@ -458,7 +474,11 @@ Recall three main GNN variants introduced in our lecture week 13: Graph Convolut
 
 The figure below shows two binary SVM classifiers h1, h2 in a 2D space. These classifiers have been trained and will be used as weak learners in the AdaBoost algorithm. Initially, each training example is assigned an equal weight. In each iteration, AdaBoost selects the weak learner with the minimum weighted classification error, and computes its corresponding importance weight $\alpha_t$ is using the standard AdaBoost formula. The distribution $w_t(i)$ over the training examples $\{(x^{(i)}, y^{(i)})\}_{i=1}^{n}$ is updated at every step according to whether each example is correctly or incorrectly classified. Use the information below to answer the following questions.
 
-*(圖：二維空間中的 h1、h2 與區域 (a)–(d)，標示 + / −，見原 PDF 第 10 頁)*
+<p align="center">
+  <img src="fig.5.png" alt="fig5_reference" width="50%">
+  <br>
+  <em>Figure 5: $h_1$, $h_2$, and regions (a)–(d) in 2D space, labeled + / −</em>
+</p>
 
 (A) Using only the initial weights (i.e., uniform over all training examples), which of the regions among (a) to (d) would be classified as +1 by the AdaBoost classifier after the first round, if the selected weak learner is h1. (Hint: Use the decision boundary of h1 and assume the AdaBoost classifier is just $\text{sign}(\alpha_1 h_1(x^{(i)}))$ after the first round.)
 
