@@ -6,6 +6,8 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 
 ### Ans
 
+test，這是測試用的
+
 ## (B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
 
 ### Ans
