@@ -6,8 +6,6 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 
 ### Ans
 
-test，這是測試用的
-
 ## (B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
 
 ### Ans
@@ -43,21 +41,33 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 and MinPoints=2 to cluster the eight points. Show the clustering process at each iteration, listing the clusters and their member points. Please highlight the points that are classified as outliers if any.
 
+### Ans
+
 # 4 Cluster Evaluation
 
 Evaluate and compare the clusters discovered in (i) the agglomerative clustering task with a single-link policy and (ii) DBSCAN using the internal measurement: Silhouette Coefficient. You may need to determine an appropriate cutting threshold for the agglomerative clustering task with a single-link policy.
 
-(A) What does it mean if the silhouette coefficient is low/high at the individual level, cluster level, and overall clustering?
+## (A) What does it mean if the silhouette coefficient is low/high at the individual level, cluster level, and overall clustering?
 
-(B) Which clustering algorithm delivers the resulting clustering with the lowest and the highest silhouette coefficient?
+### Ans
 
-(C) Which clustering algorithm delivers balanced resulting clusters (i.e., each cluster has a similar number of points)?
+## (B) Which clustering algorithm delivers the resulting clustering with the lowest and the highest silhouette coefficient?
+
+### Ans
+
+## (C) Which clustering algorithm delivers balanced resulting clusters (i.e., each cluster has a similar number of points)?
+
+### Ans
 
 # 5 Anomaly Detection
 
-(A) Supervised outlier detection approaches build a classification model to classify unseen events. Discuss a major challenge that classification-based techniques must address. Explain how to resolve the specific challenge.
+## (A) Supervised outlier detection approaches build a classification model to classify unseen events. Discuss a major challenge that classification-based techniques must address. Explain how to resolve the specific challenge.
 
-(B) Proximity-based technique is one of the unsupervised learning approaches for point-based anomaly detection. Discuss a scenario where density-based outlier detection may fail. Explain how to resolve the specific case.
+### Ans
+
+## (B) Proximity-based technique is one of the unsupervised learning approaches for point-based anomaly detection. Discuss a scenario where density-based outlier detection may fail. Explain how to resolve the specific case.
+
+### Ans
 
 # 6 ROC
 
@@ -72,17 +82,27 @@ Given the table below, plot the ROC curve for 0, 0.2, 0.4, 0.6, 0.8, and 1 on th
 | N     | 0.32 | 0.38 |
 | N     | 0.22 | 0.28 |
 
+### Ans
+
 # 7 Evaluation Protocols
 
 You will evaluate a fixed classifier on a binary classification dataset using four protocols: 2-fold CV, 10-fold CV, Leave-One-Out CV (LOOCV), and a single 70%/30% train/validation split. Unless otherwise stated, assume i.i.d. samples and use stratified splits to preserve class ratios.
 
-(A) What effect will this have on your results?
+## (A) What effect will this have on your results?
 
-(B) Which will give you the best representative value to the "unseen test set"?
+### Ans
 
-(C) Does it matter how large your original dataset is? Will you get a different answer for a very large or a tiny dataset?
+## (B) Which will give you the best representative value to the "unseen test set"?
 
-(D) Which will be the fastest in terms of computation?
+### Ans
+
+## (C) Does it matter how large your original dataset is? Will you get a different answer for a very large or a tiny dataset?
+
+### Ans
+
+## (D) Which will be the fastest in terms of computation?
+
+### Ans
 
 # 8 Normalization
 
@@ -99,17 +119,23 @@ $$
 
 Use Min-Max scaling to normalize these data to the interval [0, 1] (represented using real numbers).
 
+### Ans
+
 # 9 PCA
 
 Given 3 data points in two-dimensional space, (1, 1), (2, 2), and (3, 3),
 
-(A) What is the first principal component?
+## (A) What is the first principal component?
 
-(B) If we want to project the original data points into a 1-d space by the main component you choose, what is the variance of the projected data?
+### Ans
+
+## (B) If we want to project the original data points into a 1-d space by the main component you choose, what is the variance of the projected data?
+
+### Ans
 
 # 10 Decision Tree
 
-We consider a toy dataset from an online retail e-commerce platform. The task is to predict whether an order qualifies for free shipping (binary class {T, F}) based on three Boolean features: IsPrimeMember, Over\$35Cart, and IsMarketplaceSeller.
+We consider a toy dataset from an online retail e-commerce platform. The task is to predict whether an order qualifies for free shipping (binary class {T, F}) based on three Boolean features: `IsPrimeMember`, `Over\$35Cart`, and `IsMarketplaceSeller`.
 
 | ID | IsPrimeMember | Over\$35Cart | IsMarketplaceSeller | Class |
 |----|---------------|-------------|---------------------|-------|
@@ -119,11 +145,17 @@ We consider a toy dataset from an online retail e-commerce platform. The task is
 | 4  | 1 | 1 | 1 | F |
 | 5  | 1 | 1 | 0 | T |
 
-(A) What is the entropy of the root node? Show your working.
+## (A) What is the entropy of the root node? Show your working.
 
-(B) Draw the complete decision tree.
+### Ans
 
-(C) Are there feature(s) that are redundant?
+## (B) Draw the complete decision tree.
+
+### Ans
+
+## (C) Are there feature(s) that are redundant?
+
+### Ans
 
 # 11 Decision Tree
 
