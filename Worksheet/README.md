@@ -405,7 +405,7 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
   <em>Figure 3: SVM Decision Boundary</em>
 </p>
 
-Consider the following four SVM decision boundaries (a)-(d) as a result of different kernels and/or slack penalties. The two classes of training data with labels $y_i \in \{-1, 1\}$ are represented by triangles and squares, respectively. The support vectors are depicted as solid triangle and squares. Please match each decision boundary with the most possible optimization setting below (A)-(D) and briefly provide the justification for your pairing.
+Consider the following four SVM decision boundaries (a)-(d) as a result of different kernels and/or slack penalties. The two classes of training data with labels $y_i \in \lbrace -1, 1 \rbrace$ are represented by triangles and squares, respectively. The support vectors are depicted as solid triangle and squares. Please match each decision boundary with the most possible optimization setting below (A)-(D) and briefly provide the justification for your pairing.
 
 ## (A) A soft-margin linear SVM with $C = 10^{-1}$.
 
