@@ -430,7 +430,7 @@ Consider the following four SVM decision boundaries (a)-(d) as a result of diffe
 Recall that in hard-margin primal SVM, we have the following kernelized SVM in its dual form with the product of $x_i \cdot x_j$ replaced by $k(x_i, x_j)$, where $k(\cdot,\cdot)$ can be any kernel function:
 
 $$
-\max_{\alpha} \left\{ -\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_j y_i y_j k(x_i, x_j) + \sum_{i=1}^{n}\alpha_i \right\}
+\max_{\alpha} \left(-\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_j y_i y_j k(x_i,x_j)+\sum_{i=1}^{n}\alpha_i\right)
 $$
 
 $$
@@ -441,9 +441,13 @@ $$
 \alpha_i \ge 0, \quad \forall i = 1, 2, ..., n
 $$
 
-(A) Given the raw features vectors $x_i$ and $x_j$ in a 2-dimensional plane, do you think that $k(x_i, x_j) = x_{i1}^2 x_{j1}^2 + x_{i2}^2 x_{j2}^2$ is a valid kernel function? Why and why not?
+### (A) Given the raw features vectors $x_i$ and $x_j$ in a 2-dimensional plane, do you think that $k(x_i, x_j) = x_{i1}^2 x_{j1}^2 + x_{i2}^2 x_{j2}^2$ is a valid kernel function? Why and why not?
 
-(B) Suppose we train an RBF kernelized SVM with kernel function defined as $k(x_i, x_j) = \exp\left(\frac{-\|x_i - x_j\|_2^2}{\sigma^2}\right)$ for a classification problem. We find that the training accuracy is 0.99 but the testing accuracy is only 0.61. What measures on the kernel width σ would you suggest to improve the testing accuracy?
+### Ans
+
+### (B) Suppose we train an RBF kernelized SVM with kernel function defined as $k(x_i, x_j) = \exp\left(\frac{-\|x_i - x_j\|_2^2}{\sigma^2}\right)$ for a classification problem. We find that the training accuracy is 0.99 but the testing accuracy is only 0.61. What measures on the kernel width σ would you suggest to improve the testing accuracy?
+
+### Ans
 
 ## 22 Connection to Shallow Machine Learning
 
