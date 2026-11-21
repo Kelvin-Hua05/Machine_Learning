@@ -388,9 +388,9 @@ Consider two multi-class classifiers, C1 and C2. C1 is a multi-layer neural netw
 (A) Please draw neural network architectures for both C1 and C2.
 
 <p align="center">
-  <img src="fig.4.png" alt="fig4_reference" width="50%">
+  <img src="./fig.4.png" alt="fig4_reference" width="50%">
   <br>
-  <em>Figure 4: Network Architecture of $C_1$ and $C_2$</em>
+  <em>Figure 4: Network Architecture of C₁ and C₂</em>
 </p>
 
 (B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
@@ -475,9 +475,11 @@ Recall three main GNN variants introduced in our lecture week 13: Graph Convolut
 The figure below shows two binary SVM classifiers h1, h2 in a 2D space. These classifiers have been trained and will be used as weak learners in the AdaBoost algorithm. Initially, each training example is assigned an equal weight. In each iteration, AdaBoost selects the weak learner with the minimum weighted classification error, and computes its corresponding importance weight $\alpha_t$ is using the standard AdaBoost formula. The distribution $w_t(i)$ over the training examples $\{(x^{(i)}, y^{(i)})\}_{i=1}^{n}$ is updated at every step according to whether each example is correctly or incorrectly classified. Use the information below to answer the following questions.
 
 <p align="center">
-  <img src="fig.5.png" alt="fig5_reference" width="50%">
-  <br>
-  <em>Figure 5: $h_1$, $h_2$, and regions (a)–(d) in 2D space, labeled + / −</em>
+  <img src="./fig.5.png" alt="fig5_reference" width="50%">
+</p>
+
+<p align="center">
+  <em>Figure 5: h₁, h₂, and regions (a)–(d) in 2D space, labeled + / −</em>
 </p>
 
 (A) Using only the initial weights (i.e., uniform over all training examples), which of the regions among (a) to (d) would be classified as +1 by the AdaBoost classifier after the first round, if the selected weak learner is h1. (Hint: Use the decision boundary of h1 and assume the AdaBoost classifier is just $\text{sign}(\alpha_1 h_1(x^{(i)}))$ after the first round.)
