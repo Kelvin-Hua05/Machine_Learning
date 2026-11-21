@@ -135,7 +135,7 @@ Given 3 data points in two-dimensional space, (1, 1), (2, 2), and (3, 3),
 
 # 10 Decision Tree
 
-We consider a toy dataset from an online retail e-commerce platform. The task is to predict whether an order qualifies for free shipping (binary class {T, F}) based on three Boolean features: `IsPrimeMember`, `Over\$35Cart`, and `IsMarketplaceSeller`.
+We consider a toy dataset from an online retail e-commerce platform. The task is to predict whether an order qualifies for free shipping (binary class {T, F}) based on three Boolean features: `IsPrimeMember`, `Over$35Cart`, and `IsMarketplaceSeller`.
 
 | ID | IsPrimeMember | Over\$35Cart | IsMarketplaceSeller | Class |
 |----|---------------|-------------|---------------------|-------|
