@@ -554,12 +554,22 @@ The figure below shows two binary SVM classifiers h1, h2 in a 2D space. These cl
 
 Consider random forest, which of the following statement is True? Select All that apply.
 
-(A) It is generally better for the trees to be highly correlated, as this reduces the variance of the ensemble.
+## (A) It is generally better for the trees to be highly correlated, as this reduces the variance of the ensemble.
 
-(B) The number of trees in the forest is a hyperparameter that can be tuned.
+### Ans
 
-(C) The number of training examples used to train each individual tree is a hyperparameter that can be tuned in a random forest.
+## (B) The number of trees in the forest is a hyperparameter that can be tuned.
 
-(D) The size of the feature subset considered at each split is a hyperparameter that can be tuned in a random forest.
+### Ans
 
-(E) The specific features selected for splits in each tree is a hyperparameter that can be tuned in a random forest.
+## (C) The number of training examples used to train each individual tree is a hyperparameter that can be tuned in a random forest.
+
+### Ans
+
+## (D) The size of the feature subset considered at each split is a hyperparameter that can be tuned in a random forest.
+
+### Ans
+
+## (E) The specific features selected for splits in each tree is a hyperparameter that can be tuned in a random forest.
+
+### Ans
