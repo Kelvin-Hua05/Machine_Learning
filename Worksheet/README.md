@@ -447,9 +447,9 @@ $$
 
 ## 22 Connection to Shallow Machine Learning
 
-Consider two multi-class classifiers, C1 and C2. C1 is a multi-layer neural network with five hidden layers. The linear activation function is chosen for its hidden units across five hidden layers and the linear activation for its last layer. C2 is a multi-class logistic regression classifier.
+Consider two multi-class classifiers, $C_1$ and $C_2$. $C_1$ is a multi-layer neural network with five hidden layers. The linear activation function is chosen for its hidden units across five hidden layers and the linear activation for its last layer. $C_2$ is a multi-class logistic regression classifier.
 
-(A) Please draw neural network architectures for both C1 and C2.
+### (A) Please draw neural network architectures for both $C_1$ and $C_2$.
 
 <p align="center">
   <img src="./fig.4.png" alt="fig4_reference" width="50%">
@@ -457,11 +457,15 @@ Consider two multi-class classifiers, C1 and C2. C1 is a multi-layer neural netw
   <em>Figure 4: Network Architecture of C₁ and C₂</em>
 </p>
 
-(B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
+### Ans
+
+### (B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
+
+### Ans
 
 ## 23 Feed Forward and Backpropagation
 
-Given a two-layer neural network, let S be the number of input features, K be the number of hidden units, and I be the number of outputs. Suppose we have parameter matrices $W^{(1)}$ in the first layer and $W^{(2)}$ in the second layer. The shapes of $W^{(1)}$ and $W^{(2)}$ are $K \times (S + 1)$ and $I \times (K + 1)$, respectively.
+Given a two-layer neural network, let $S$ be the number of input features, $K$ be the number of hidden units, and $I$ be the number of outputs. Suppose we have parameter matrices $W^{(1)}$ in the first layer and $W^{(2)}$ in the second layer. The shapes of $W^{(1)}$ and $W^{(2)}$ are $K \times (S + 1)$ and $I \times (K + 1)$, respectively.
 
 $$
 \mathbf{W^{(1)}} = \begin{bmatrix}
@@ -515,11 +519,11 @@ Complete the following questions in order to derive the matrix and vector forms 
 
 ### Ans
 
-### (C) What are the partial derivatives for parameters $W^{(1)}_{ij}$ ($\partial J / \partial W^{(1)}_{ij}$) in terms of $\hat{y}$ and $y$?
+### (C) What are the partial derivatives for parameters $W^{(1)}_{ij}$ ($\frac{\partial J}{\partial W^{(1)}_{ij}}$) in terms of $\hat{y}$ and $y$?
 
 **Ans**
 
-### (D) What are the partial derivatives for parameters $W^{(2)}_{jk}$ ($\partial J / \partial W^{(2)}_{jk}$) in terms of $\hat{y}$ and $y$?
+### (D) What are the partial derivatives for parameters W_{ij}^{(1)} \quad \left(\frac{\partial J}{\partial W_{ij}^{(1)}}\right)$ in terms of $\hat{y}$ and $y$?
 
 **Ans**
 
