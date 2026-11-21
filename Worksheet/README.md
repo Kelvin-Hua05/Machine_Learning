@@ -1,10 +1,4 @@
-# Week 2-12 Tutorial Worksheet
-
-Introduction to Machine Learning 2026-11-20
-
----
-
-## 1 k-means Algorithm
+# 1 k-means Algorithm
 
 Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9). Perform k-means clustering with k=2 to group the eight points into clusters C1 and C2.
 
@@ -12,7 +6,7 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 
 (B) What are the member points of C1 and C2 after the second iteration of k-means?
 
-## 2 Agglomerative Clustering Algorithm
+# 2 Agglomerative Clustering Algorithm
 
 Consider the distance matrix shown below. Use agglomerative algorithm to group the data with the following agglomerate policy.
 
@@ -33,11 +27,11 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 | A7 |    |    |    |    |    |    | 0  | 53 |
 | A8 |    |    |    |    |    |    |    | 0  |
 
-## 3 Density-based Clustering Algorithm
+# 3 Density-based Clustering Algorithm
 
 Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 and MinPoints=2 to cluster the eight points. Show the clustering process at each iteration, listing the clusters and their member points. Please highlight the points that are classified as outliers if any.
 
-## 4 Cluster Evaluation
+# 4 Cluster Evaluation
 
 Evaluate and compare the clusters discovered in (i) the agglomerative clustering task with a single-link policy and (ii) DBSCAN using the internal measurement: Silhouette Coefficient. You may need to determine an appropriate cutting threshold for the agglomerative clustering task with a single-link policy.
 
@@ -47,13 +41,13 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 
 (C) Which clustering algorithm delivers balanced resulting clusters (i.e., each cluster has a similar number of points)?
 
-## 5 Anomaly Detection
+# 5 Anomaly Detection
 
 (A) Supervised outlier detection approaches build a classification model to classify unseen events. Discuss a major challenge that classification-based techniques must address. Explain how to resolve the specific challenge.
 
 (B) Proximity-based technique is one of the unsupervised learning approaches for point-based anomaly detection. Discuss a scenario where density-based outlier detection may fail. Explain how to resolve the specific case.
 
-## 6 ROC
+# 6 ROC
 
 Given the table below, plot the ROC curve for 0, 0.2, 0.4, 0.6, 0.8, and 1 on the graph in the answer booklet. Please explain whether you would choose to use Classifier 1 or Classifier 2 and why.
 
@@ -66,7 +60,7 @@ Given the table below, plot the ROC curve for 0, 0.2, 0.4, 0.6, 0.8, and 1 on th
 | N     | 0.32 | 0.38 |
 | N     | 0.22 | 0.28 |
 
-## 7 Evaluation Protocols
+# 7 Evaluation Protocols
 
 You will evaluate a fixed classifier on a binary classification dataset using four protocols: 2-fold CV, 10-fold CV, Leave-One-Out CV (LOOCV), and a single 70%/30% train/validation split. Unless otherwise stated, assume i.i.d. samples and use stratified splits to preserve class ratios.
 
@@ -78,7 +72,7 @@ You will evaluate a fixed classifier on a binary classification dataset using fo
 
 (D) Which will be the fastest in terms of computation?
 
-## 8 Normalization
+# 8 Normalization
 
 Suppose that we have some 8-bit grayscale image data encoded as a matrix:
 
@@ -93,7 +87,7 @@ $$
 
 Use Min-Max scaling to normalize these data to the interval [0, 1] (represented using real numbers).
 
-## 9 PCA
+# 9 PCA
 
 Given 3 data points in two-dimensional space, (1, 1), (2, 2), and (3, 3),
 
@@ -101,7 +95,7 @@ Given 3 data points in two-dimensional space, (1, 1), (2, 2), and (3, 3),
 
 (B) If we want to project the original data points into a 1-d space by the main component you choose, what is the variance of the projected data?
 
-## 10 Decision Tree
+# 10 Decision Tree
 
 We consider a toy dataset from an online retail e-commerce platform. The task is to predict whether an order qualifies for free shipping (binary class {T, F}) based on three Boolean features: IsPrimeMember, Over\$35Cart, and IsMarketplaceSeller.
 
@@ -119,7 +113,7 @@ We consider a toy dataset from an online retail e-commerce platform. The task is
 
 (C) Are there feature(s) that are redundant?
 
-## 11 Decision Tree
+# 11 Decision Tree
 
 Consider the matrix below, which summarizes six online orders. Each column of $M^T$ is one order (sample), and each row is a feature:
 
@@ -155,7 +149,7 @@ We would like to build a decision tree of depth 2 by hand to classify the data.
 
 (D) Should you have a third split? Explain your answer.
 
-## 12 Linear Regression
+# 12 Linear Regression
 
 Suppose that we have a regularized form of linear regression, where we wish to minimize the following loss:
 
@@ -171,7 +165,7 @@ As we increase γ from 0 to infinity, describe how each of the following changes
 
 (C) the bias and variance of the model (Note: here bias is not referring to b).
 
-## 13 Naïve Bayes
+# 13 Naïve Bayes
 
 (A) Assume that the following likelihoods for each word are part of a positive or negative movie review and equal prior probabilities for each class. What class will Naïve Bayes assign to the sentence "I always like sci-fi movies."?
 
@@ -185,7 +179,7 @@ As we increase γ from 0 to infinity, describe how each of the following changes
 
 (B) Suppose that you are trying to solve a binary classification problem, and your data set has four attributes. Each attribute can take three possible values. If you modeled the full joint distribution of the attributes and the class label, how many parameters would you need?
 
-## 14 Naïve Bayes
+# 14 Naïve Bayes
 
 You are hiking a section of the Appalachian Trail in the United States. Along the way, you notice various wild berries. Some are safe, while others are not. Using fictitious prior knowledge in the following table (Note: The table is entirely fabricated and does not reflect real life; do not use it to identify wild berries), determine which berries are poisonous.
 
@@ -209,7 +203,7 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 | U | 1 | 1 | 0 | 0 | ? |
 | V | 1 | 0 | 0 | 1 | ? |
 
-## 15 k-Nearest Neighbors
+# 15 k-Nearest Neighbors
 
 Consider k-NN using Euclidean distance on the following dataset, where each point belongs to one of two classes: red or blue.
 
@@ -219,7 +213,7 @@ Consider k-NN using Euclidean distance on the following dataset, where each poin
 
 (B) Would the decision boundary be different if another blue point was added to the data set at (6.1; 3.1)? Why or why not?
 
-## 16 Decision Boundaries
+# 16 Decision Boundaries
 
 Consider the following k-NN classification decision boundaries (a)-(d) as a result of different values of k and distance metrics. The three classes of training data are represented by {red, green, yellow}, respectively. Please match each decision boundary with the most possible k-NN settings below (A)-(D) and briefly provide the justification for your pairing. (Note: Euclidean and Manhattan distance measures can be formally defined as follows.)
 
@@ -245,11 +239,11 @@ $$
 
 (D) k = 15, Manhattan Distance.
 
-## 17 Bias and Variance
+# 17 Bias and Variance
 
 As k in the k-NN model increases, what behavior would you expect for bias and variance? Please provide your justification for your answer.
 
-## 18 Linearly Separable Data: Hard-margin SVMs
+# 18 Linearly Separable Data: Hard-margin SVMs
 
 Recall that the desirable decision boundary in linear hard-margin SVMs is the linear hyperplane that maximizes the distance/margin from its closest points. Please complete the following questions with your reasons provided.
 
@@ -271,7 +265,7 @@ $$
 | x2=1  | y2=1  |
 | x3=-1 | y3=-1 |
 
-## 19 Non-Linearly Separable Data: Soft-margin SVMs
+# 19 Non-Linearly Separable Data: Soft-margin SVMs
 
 Recall that soft-margin SVMs allow the possibility of errors in classification. This is realized by relaxing the optimization constraints with the introduction of slack variables ξi ≥> 0 ∀i = 1, ..., n. The soft-margin SVM in its primal form is formulated as follows with ξi ≥ 0 for all i:
 
@@ -297,7 +291,7 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
 
 (D) Increasing the hyperparameter C tends to decrease the sensitivity to outliers.
 
-## 20 Decision Boundaries
+# 20 Decision Boundaries
 
 *(圖：SVM 決策邊界 (a)–(d)，見原 PDF 第 7 頁)*
 
@@ -311,7 +305,7 @@ Consider the following four SVM decision boundaries (a)-(d) as a result of diffe
 
 (D) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{2}\|u - v\|^2\right)$
 
-## 21 Kernelization
+# 21 Kernelization
 
 Recall that in hard-margin primal SVM, we have the following kernelized SVM in its dual form with the product of $x_i \cdot x_j$ replaced by $k(x_i, x_j)$, where $k(\cdot,\cdot)$ can be any kernel function:
 
@@ -331,7 +325,7 @@ $$
 
 (B) Suppose we train an RBF kernelized SVM with kernel function defined as $k(x_i, x_j) = \exp\left(\frac{-\|x_i - x_j\|_2^2}{\sigma^2}\right)$ for a classification problem. We find that the training accuracy is 0.99 but the testing accuracy is only 0.61. What measures on the kernel width σ would you suggest to improve the testing accuracy?
 
-## 22 Connection to Shallow Machine Learning
+# 22 Connection to Shallow Machine Learning
 
 Consider two multi-class classifiers, C1 and C2. C1 is a multi-layer neural network with five hidden layers. The linear activation function is chosen for its hidden units across five hidden layers and the linear activation for its last layer. C2 is a multi-class logistic regression classifier.
 
@@ -341,7 +335,7 @@ Consider two multi-class classifiers, C1 and C2. C1 is a multi-layer neural netw
 
 (B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
 
-## 23 Feed Forward and Backpropagation
+# 23 Feed Forward and Backpropagation
 
 Given a two-layer neural network, let S be the number of input features, K be the number of hidden units, and I be the number of outputs. Suppose we have parameter matrices $W^{(1)}$ in the first layer and $W^{(2)}$ in the second layer. The shapes of $W^{(1)}$ and $W^{(2)}$ are $K \times (S + 1)$ and $I \times (K + 1)$, respectively.
 
@@ -363,7 +357,7 @@ W^{(2)}_{I0} & W^{(2)}_{I1} & \cdots & W^{(2)}_{IK}
 \end{bmatrix}
 $$
 
-### 23.1 Network Details
+## 23.1 Network Details
 
 Recall the gradient computation for a multi-layer neural network in weeks 10-11; complete the following backward pass on the neural network.
 
@@ -373,7 +367,7 @@ Recall the gradient computation for a multi-layer neural network in weeks 10-11;
 
 (C) How many output neurons does our neural network have?
 
-## 24 Backward Propagation
+# 24 Backward Propagation
 
 Let y represent our true output in the form of a one-hot vector, and $\hat{y}$ represent the predicted output of the network. Suppose our loss function $J(y, \hat{y})$ is defined as follows:
 
@@ -391,7 +385,7 @@ Complete the following questions in order to derive the matrix and vector forms 
 
 (D) What are the partial derivatives for parameters $W^{(2)}_{jk}$ ($\partial J / \partial W^{(2)}_{jk}$) in terms of $\hat{y}$ and y?
 
-## 25 NN Prediction
+# 25 NN Prediction
 
 Recall that for prediction, the model estimates one probability per class for each instance. We typically use the argmax of the output layer. Given a new instance x, let the predicted outputs for x be $\hat{y}$ and the true class in one-hot vector form for x be y. Suppose the values of $\hat{y}$ and y are as follows, respectively:
 
@@ -400,7 +394,7 @@ Recall that for prediction, the model estimates one probability per class for ea
 
 Which class would the model predict for the new instance x? What is the estimated loss in this example according to Eq. (5)?
 
-## 26 GNN and CNN Analogy
+# 26 GNN and CNN Analogy
 
 Graph Neural Networks (GNNs) can be understood through the lens of message passing. Recall the materials and draw an analogy between CNNs operating on image grids and GNNs operating on graphs. Please briefly explain your answer to the following questions.
 
@@ -408,7 +402,7 @@ Graph Neural Networks (GNNs) can be understood through the lens of message passi
 
 (B) What fundamental property of graphs makes GNNs more flexible but also more challenging than CNNs?
 
-## 27 GNN Variants
+# 27 GNN Variants
 
 Recall three main GNN variants introduced in our lecture week 13: Graph Convolutional Networks (GCNs), Graph Attention Networks (GATs), and Neural Message Passing with edge embeddings. Each has different capabilities and computational characteristics. Compare GCNs and Neural Message Passing with edge embeddings for the following questions.
 
@@ -416,7 +410,7 @@ Recall three main GNN variants introduced in our lecture week 13: Graph Convolut
 
 (B) Explaining ONE significant disadvantage of Neural Message Passing and why this matters in practice.
 
-## 28 AdaBoost II
+# 28 AdaBoost II
 
 The figure below shows two binary SVM classifiers h1, h2 in a 2D space. These classifiers have been trained and will be used as weak learners in the AdaBoost algorithm. Initially, each training example is assigned an equal weight. In each iteration, AdaBoost selects the weak learner with the minimum weighted classification error, and computes its corresponding importance weight $\alpha_t$ is using the standard AdaBoost formula. The distribution $w_t(i)$ over the training examples $\{(x^{(i)}, y^{(i)})\}_{i=1}^{n}$ is updated at every step according to whether each example is correctly or incorrectly classified. Use the information below to answer the following questions.
 
