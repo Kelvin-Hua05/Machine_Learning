@@ -161,9 +161,11 @@ We consider a toy dataset from an online retail e-commerce platform. The task is
 
 Consider the matrix below, which summarizes six online orders. Each column of $M^T$ is one order (sample), and each row is a feature:
 
-f1 = a normalized Order Value Index (1–10),
-f2 = a normalized Items per Order Index (1–10), and
-f3 = a normalized Account Tenure Index (1–10).
+$f_1$ = a normalized Order Value Index (110),
+
+$f_2$ = a normalized Items per Order Index (110), and
+
+$f_3$ = a normalized Account Tenure Index (110).
 
 The label vector indicates whether an order is flagged for manual review (1) or not (0).
 
@@ -172,26 +174,34 @@ M = \begin{bmatrix}
 3 & 5 & 8 & 1 & 6 & 4 \\
 2 & 7 & 6 & 3 & 4 & 5 \\
 5 & 7 & 9 & 2 & 8 & 6
-\end{bmatrix}^{T} \tag{1}
+\end{bmatrix}
 $$
 
-where $M^T$ represents 6 sample points, each with three features f1, f2, and f3.
+where $M^T$ represents 6 sample points, each with three features $f_1$, $f_2$, and $f_3$.
 
 The data labels are
 
 $$
-\begin{bmatrix} 1 & 0 & 1 & 0 & 1 & 0 \end{bmatrix}^T \tag{2}
+\begin{bmatrix} 1 & 0 & 1 & 0 & 1 & 0 \end{bmatrix}^T
 $$
 
 We would like to build a decision tree of depth 2 by hand to classify the data.
 
-(A) What is the entropy of the root node? Show your working.
+## (A) What is the entropy of the root node? Show your working.
 
-(B) What is the rule for the first split? (Write it in a rule format, e.g., f1 > 2.) Show your working.
+### Ans
 
-(C) What is the rule for the second split? Show your working.
+## (B) What is the rule for the first split? (Write it in a rule format, e.g., $f_1$ > 2.) Show your working.
 
-(D) Should you have a third split? Explain your answer.
+### Ans
+
+## (C) What is the rule for the second split? Show your working.
+
+### Ans
+
+## (D) Should you have a third split? Explain your answer.
+
+### Ans
 
 # 12 Linear Regression
 
@@ -201,13 +211,19 @@ $$
 L(w) = \frac{1}{N}\sum_{i=1}^{N}\left(y_i - (w^T x_i + b)\right)^2 + \gamma \|w\|_2^2
 $$
 
-As we increase γ from 0 to infinity, describe how each of the following changes:
+As we increase $\gamma$ from 0 to infinity, describe how each of the following changes:
 
-(A) the model's overfitting behaviour,
+## (A) the model's overfitting behaviour,
 
-(B) the values and magnitude of w,
+### Ans
 
-(C) the bias and variance of the model (Note: here bias is not referring to b).
+## (B) the values and magnitude of $w$,
+
+### Ans
+
+## (C) the bias and variance of the model (Note: here bias is not referring to b).
+
+### Ans
 
 # 13 Naïve Bayes
 
