@@ -523,13 +523,13 @@ Complete the following questions in order to derive the matrix and vector forms 
 
 ### Ans
 
-### (C) What are the partial derivatives for parameters $`W^{(1)}_{ij}`$ ($\partial J / \partial W^{(1)}_{ij}}$) in terms of $\hat{y}$ and $y$?
+(C) What are the partial derivatives for parameters $`W^{(1)}_{ij}`$ ($`\partial J / \partial W^{(1)}_{ij}`$) in terms of $`\hat{y}`$ and $`y`$?
 
-**Ans**
+Ans
 
-### (D) What are the partial derivatives for parameters $`W^{(2)}_{ij}`$ ($\partial J / \partial W^{(2)}_{ij}}$) in terms of $\hat{y}$ and $y$?
+(D) What are the partial derivatives for parameters $`W^{(2)}_{ij}`$ ($`\partial J / \partial W^{(2)}_{jk}`$) in terms of $`\hat{y}`$ and $`y`$?
 
-**Ans**
+Ans
 
 ## 25 NN Prediction
 
