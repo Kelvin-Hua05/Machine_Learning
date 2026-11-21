@@ -258,7 +258,7 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 | G | 1 | 0 | 0 | 1 | - |
 | H | 0 | 0 | 1 | 0 | + |
 
-## (A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., $P(IsRound | ¬Poisonous)$) and the class priors.
+## (A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., $`P(\text{IsRound} \mid \neg \text{Poisonous})`$) and the class priors.
 
 ### Ans
 
@@ -281,24 +281,28 @@ Consider $k$-NN using Euclidean distance on the following dataset, where each po
   <em>Figure 1: Scatter Plot</em>
 </p>
 
-(A) Please draw the decision boundary for the following dataset using the 1-NN classification rule.
+## (A) Please draw the decision boundary for the following dataset using the 1-NN classification rule.
 
-(B) Would the decision boundary be different if another blue point was added to the data set at (6.1; 3.1)? Why or why not?
+### Ans
+
+## (B) Would the decision boundary be different if another blue point was added to the data set at (6.1; 3.1)? Why or why not?
+
+### Ans
 
 # 16 Decision Boundaries
 
-Consider the following k-NN classification decision boundaries (a)-(d) as a result of different values of k and distance metrics. The three classes of training data are represented by {red, green, yellow}, respectively. Please match each decision boundary with the most possible k-NN settings below (A)-(D) and briefly provide the justification for your pairing. (Note: Euclidean and Manhattan distance measures can be formally defined as follows.)
+Consider the following $k$-NN classification decision boundaries (a)-(d) as a result of different values of $k$ and distance metrics. The three classes of training data are represented by {red, green, yellow}, respectively. Please match each decision boundary with the most possible $k$-NN settings below (A)-(D) and briefly provide the justification for your pairing. (Note: Euclidean and Manhattan distance measures can be formally defined as follows.)
 
-- Euclidean distance is defined as the square root of the sum of the squared differences between the coordinates of a pair of points x and y on a D-dimensional plane.
-
-$$
-d_E(x, y) = \sqrt{\sum_{1}^{D} (x_i - y_i)^2} \tag{3}
-$$
-
-- Manhattan distance is defined as the absolute differences between coordinates of pair of points x and y on D-dimensional plane.
+- Euclidean distance is defined as the square root of the sum of the squared differences between the coordinates of a pair of points x and y on a $D$-dimensional plane.
 
 $$
-d_M(x, y) = \sum_{1}^{D} |(x_i - y_i)| \tag{4}
+d_E(x, y) = \sqrt{\sum_{1}^{D} (x_i - y_i)^2}
+$$
+
+- Manhattan distance is defined as the absolute differences between coordinates of pair of points $x$ and $y$ on $D$-dimensional plane.
+
+$$
+d_M(x, y) = \sum_{1}^{D} |(x_i - y_i)|
 $$
 
 <p align="center">
@@ -307,17 +311,27 @@ $$
   <em>Figure 2: Decision Boundary</em>
 </p>
 
-(A) k = 1, Euclidean Distance.
+## (A) $k$ = 1, Euclidean Distance.
 
-(B) k = 15, Euclidean Distance.
+### Ans
 
-(C) k = 1, Manhattan Distance.
+## (B) $k$ = 15, Euclidean Distance.
 
-(D) k = 15, Manhattan Distance.
+### Ans
+
+## (C) $k$ = 1, Manhattan Distance.
+
+### Ans
+
+## (D) $k$ = 15, Manhattan Distance.
+
+### Ans
 
 # 17 Bias and Variance
 
-As k in the k-NN model increases, what behavior would you expect for bias and variance? Please provide your justification for your answer.
+As $k$ in the $k$-NN model increases, what behavior would you expect for bias and variance? Please provide your justification for your answer.
+
+### Ans
 
 # 18 Linearly Separable Data: Hard-margin SVMs
 
@@ -327,23 +341,31 @@ $$
 \max_{w,b} \frac{2}{\|w\|_2^2} \quad \text{s.t. } (w \cdot x_i + b)y_i \ge 1 \quad \forall i = 1, \ldots, n.
 $$
 
-(A) True or False? The linear hyperplane is defined by support vectors.
+## (A) True or False? The linear hyperplane is defined by support vectors.
 
-(B) True or False? Moving points other than support vectors a little do not affect the decision boundary.
+### Ans
 
-(C) True or False? We only need to store the support vectors to predict labels for new points.
+## (B) True or False? Moving points other than support vectors a little do not affect the decision boundary.
 
-(D) Given the following training set for two-class classification in one-dimension space, what are the values of w and b by a hard-margin SVM?
+### Ans
 
-| point | label |
+## (C) True or False? We only need to store the support vectors to predict labels for new points.
+
+### Ans
+
+## (D) Given the following training set for two-class classification in one-dimension space, what are the values of w and b by a hard-margin SVM?
+
+### Ans
+
+| Point | Label |
 |-------|-------|
-| x1=3  | y1=1  |
-| x2=1  | y2=1  |
-| x3=-1 | y3=-1 |
+| $x_1 = 3$  | $y_1 = 1$  |
+| $x_2 = 1$  | $y_2 = 1$  |
+| $x_3 = -1$ | $y_3 = -1$ |
 
 # 19 Non-Linearly Separable Data: Soft-margin SVMs
 
-Recall that soft-margin SVMs allow the possibility of errors in classification. This is realized by relaxing the optimization constraints with the introduction of slack variables ξi ≥> 0 ∀i = 1, ..., n. The soft-margin SVM in its primal form is formulated as follows with ξi ≥ 0 for all i:
+Recall that soft-margin SVMs allow the possibility of errors in classification. This is realized by relaxing the optimization constraints with the introduction of slack variables $ξ_i$ ≥> 0 ∀i = 1, ..., n. The soft-margin SVM in its primal form is formulated as follows with $ξ_i$ ≥ 0 for all i:
 
 $$
 \min_{w,b,\xi} \frac{1}{2}\|w\|_2^2 + C\sum_{i=1}^{n}\xi_i
@@ -359,13 +381,21 @@ $$
 
 Which of the following are true of soft-margin SVMs? Please provide your justification for your answer.
 
-(A) Increasing the hyperparameter C tends to decrease the training error.
+## (A) Increasing the hyperparameter $C$ tends to decrease the training error.
 
-(B) Increasing the hyperparameter C tends to decrease the margin.
+### Ans
 
-(C) The hard-margin SVM is a special case of the soft-margin with the hyperparameter C set to zero.
+## (B) Increasing the hyperparameter $C$ tends to decrease the margin.
 
-(D) Increasing the hyperparameter C tends to decrease the sensitivity to outliers.
+### Ans
+
+## (C) The hard-margin SVM is a special case of the soft-margin with the hyperparameter $C$ set to zero.
+
+### Ans
+
+## (D) Increasing the hyperparameter $C$ tends to decrease the sensitivity to outliers.
+
+### Ans
 
 # 20 Decision Boundaries
 
@@ -377,13 +407,21 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
 
 Consider the following four SVM decision boundaries (a)-(d) as a result of different kernels and/or slack penalties. The two classes of training data with labels $y_i \in \{-1, 1\}$ are represented by triangles and squares, respectively. The support vectors are depicted as solid triangle and squares. Please match each decision boundary with the most possible optimization setting below (A)-(D) and briefly provide the justification for your pairing.
 
-(A) A soft-margin linear SVM with $C = 10^{-1}$.
+## (A) A soft-margin linear SVM with $C = 10^{-1}$.
 
-(B) A soft-margin linear SVM with $C = 10^{2}$.
+### Ans
 
-(C) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{-1}\|u - v\|^2\right)$
+## (B) A soft-margin linear SVM with $C = 10^{2}$.
 
-(D) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{2}\|u - v\|^2\right)$
+### Ans
+
+## (C) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{-1}\|u - v\|^2\right)$
+
+### Ans
+
+## (D) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{2}\|u - v\|^2\right)$
+
+### Ans
 
 # 21 Kernelization
 
