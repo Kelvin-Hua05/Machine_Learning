@@ -2,19 +2,19 @@
 
 Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9). Perform $k$-means clustering with $k$=2 to group the eight points into clusters $C_1$ and $C_2$.
 
-(A) What are the member points of $C_1$ and $C_2$ after one iteration of $k$-means?
+## (A) What are the member points of $C_1$ and $C_2$ after one iteration of $k$-means?
 
-(B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
+## (B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
 
 # 2 Agglomerative Clustering Algorithm
 
 Consider the distance matrix shown below. Use agglomerative algorithm to group the data with the following agglomerate policy.
 
-(A) Perform agglomerative clustering with single-link and show its dendrogram.
+## (A) Perform agglomerative clustering with single-link and show its dendrogram.
 
-(B) Perform agglomerative clustering with complete-link and show its dendrogram.
+## (B) Perform agglomerative clustering with complete-link and show its dendrogram.
 
-(C) Perform agglomerative clustering with average-link and show its dendrogram.
+## (C) Perform agglomerative clustering with average-link and show its dendrogram.
 
 |    | A1 | A2 | A3 | A4 | A5 | A6 | A7 | A8 |
 |----|----|----|----|----|----|----|----|----|
