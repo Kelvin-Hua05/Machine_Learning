@@ -1,10 +1,10 @@
 # 1 k-means Algorithm
 
-Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9). Perform k-means clustering with k=2 to group the eight points into clusters C1 and C2.
+Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9). Perform $k$-means clustering with $k$=2 to group the eight points into clusters $C_1$ and $C_2$.
 
-(A) What are the member points of C1 and C2 after one iteration of k-means?
+(A) What are the member points of $C_1$ and $C_2$ after one iteration of $k$-means?
 
-(B) What are the member points of C1 and C2 after the second iteration of k-means?
+(B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
 
 # 2 Agglomerative Clustering Algorithm
 
