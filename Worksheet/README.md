@@ -1,16 +1,16 @@
 # Worksheet
 
-## 1 k-means Algorithm
+## 1 $k$-means Algorithm
 
 Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9). Perform $k$-means clustering with $k$=2 to group the eight points into clusters $C_1$ and $C_2$.
 
 ### (A) What are the member points of $C_1$ and $C_2$ after one iteration of $k$-means?
 
-### Ans
+***Ans***
 
 ### (B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
 
-### Ans
+***Ans***
 
 ## 2 Agglomerative Clustering Algorithm
 
@@ -18,15 +18,15 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 ### (A) Perform agglomerative clustering with single-link and show its dendrogram.
 
-### Ans
+***Ans***
 
 ### (B) Perform agglomerative clustering with complete-link and show its dendrogram.
 
-### Ans
+***Ans***
 
 ### (C) Perform agglomerative clustering with average-link and show its dendrogram.
 
-### Ans
+***Ans***
 
 |    | A1 | A2 | A3 | A4 | A5 | A6 | A7 | A8 |
 |----|----|----|----|----|----|----|----|----|
@@ -43,7 +43,7 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 and MinPoints=2 to cluster the eight points. Show the clustering process at each iteration, listing the clusters and their member points. Please highlight the points that are classified as outliers if any.
 
-### Ans
+***Ans***
 
 ## 4 Cluster Evaluation
 
@@ -51,25 +51,25 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 
 ### (A) What does it mean if the silhouette coefficient is low/high at the individual level, cluster level, and overall clustering?
 
-### Ans
+***Ans***
 
 ### (B) Which clustering algorithm delivers the resulting clustering with the lowest and the highest silhouette coefficient?
 
-### Ans
+***Ans***
 
 ### (C) Which clustering algorithm delivers balanced resulting clusters (i.e., each cluster has a similar number of points)?
 
-### Ans
+***Ans***
 
 ## 5 Anomaly Detection
 
 ### (A) Supervised outlier detection approaches build a classification model to classify unseen events. Discuss a major challenge that classification-based techniques must address. Explain how to resolve the specific challenge.
 
-### Ans
+***Ans***
 
 ### (B) Proximity-based technique is one of the unsupervised learning approaches for point-based anomaly detection. Discuss a scenario where density-based outlier detection may fail. Explain how to resolve the specific case.
 
-### Ans
+***Ans***
 
 ## 6 ROC
 
@@ -84,7 +84,7 @@ Given the table below, plot the ROC curve for 0, 0.2, 0.4, 0.6, 0.8, and 1 on th
 | N     | 0.32 | 0.38 |
 | N     | 0.22 | 0.28 |
 
-### Ans
+***Ans***
 
 ## 7 Evaluation Protocols
 
@@ -92,19 +92,19 @@ You will evaluate a fixed classifier on a binary classification dataset using fo
 
 ### (A) What effect will this have on your results?
 
-### Ans
+***Ans***
 
 ### (B) Which will give you the best representative value to the "unseen test set"?
 
-### Ans
+***Ans***
 
 ### (C) Does it matter how large your original dataset is? Will you get a different answer for a very large or a tiny dataset?
 
-### Ans
+***Ans***
 
 ### (D) Which will be the fastest in terms of computation?
 
-### Ans
+***Ans***
 
 ## 8 Normalization
 
@@ -121,7 +121,7 @@ $$
 
 Use Min-Max scaling to normalize these data to the interval [0, 1] (represented using real numbers).
 
-### Ans
+***Ans***
 
 ## 9 PCA
 
@@ -129,11 +129,11 @@ Given 3 data points in two-dimensional space, (1, 1), (2, 2), and (3, 3),
 
 ### (A) What is the first principal component?
 
-### Ans
+***Ans***
 
 ### (B) If we want to project the original data points into a 1-d space by the main component you choose, what is the variance of the projected data?
 
-### Ans
+***Ans***
 
 ## 10 Decision Tree
 
@@ -149,15 +149,15 @@ We consider a toy dataset from an online retail e-commerce platform. The task is
 
 ### (A) What is the entropy of the root node? Show your working.
 
-### Ans
+***Ans***
 
 ### (B) Draw the complete decision tree.
 
-### Ans
+***Ans***
 
 ### (C) Are there feature(s) that are redundant?
 
-### Ans
+***Ans***
 
 ## 11 Decision Tree
 
@@ -191,19 +191,19 @@ We would like to build a decision tree of depth 2 by hand to classify the data.
 
 ### (A) What is the entropy of the root node? Show your working.
 
-### Ans
+***Ans***
 
 ### (B) What is the rule for the first split? (Write it in a rule format, e.g., $f_1$ > 2.) Show your working.
 
-### Ans
+***Ans***
 
 ### (C) What is the rule for the second split? Show your working.
 
-### Ans
+***Ans***
 
 ### (D) Should you have a third split? Explain your answer.
 
-### Ans
+***Ans***
 
 ## 12 Linear Regression
 
@@ -217,15 +217,15 @@ As we increase $\gamma$ from 0 to infinity, describe how each of the following c
 
 ### (A) the model's overfitting behaviour,
 
-### Ans
+***Ans***
 
 ### (B) the values and magnitude of $w$,
 
-### Ans
+***Ans***
 
 ### (C) the bias and variance of the model (Note: here bias is not referring to b).
 
-### Ans
+***Ans***
 
 ## 13 Naïve Bayes
 
@@ -239,11 +239,11 @@ As we increase $\gamma$ from 0 to infinity, describe how each of the following c
 | sci-fi | 0.04 | 0.15 |
 | movies | 0.08 | 0.11 |
 
-### Ans
+***Ans***
 
 ### (B) Suppose that you are trying to solve a binary classification problem, and your data set has four attributes. Each attribute can take three possible values. If you modeled the full joint distribution of the attributes and the class label, how many parameters would you need?
 
-### Ans
+***Ans***
 
 ## 14 Naïve Bayes
 
@@ -262,7 +262,7 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 
 ### (A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., $`P(\text{IsRound} \mid \neg \text{Poisonous})`$) and the class priors.
 
-### Ans
+***Ans***
 
 ### (B) You have no labels for U and V. Using a naive Bayes classifier trained in (A), predict the labels for berries U and V. Try both without and with smoothing corrections.
 
@@ -271,7 +271,7 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 | U | 1 | 1 | 0 | 0 | ? |
 | V | 1 | 0 | 0 | 1 | ? |
 
-### Ans
+***Ans***
 
 ## 15 $k$-Nearest Neighbors
 
@@ -285,11 +285,11 @@ Consider $k$-NN using Euclidean distance on the following dataset, where each po
 
 ### (A) Please draw the decision boundary for the following dataset using the 1-NN classification rule.
 
-### Ans
+***Ans***
 
 ### (B) Would the decision boundary be different if another blue point was added to the data set at (6.1; 3.1)? Why or why not?
 
-### Ans
+***Ans***
 
 ## 16 Decision Boundaries
 
@@ -315,25 +315,25 @@ $$
 
 ### (A) $k$ = 1, Euclidean Distance.
 
-### Ans
+***Ans***
 
 ### (B) $k$ = 15, Euclidean Distance.
 
-### Ans
+***Ans***
 
 ### (C) $k$ = 1, Manhattan Distance.
 
-### Ans
+***Ans***
 
 ### (D) $k$ = 15, Manhattan Distance.
 
-### Ans
+***Ans***
 
 ## 17 Bias and Variance
 
 As $k$ in the $k$-NN model increases, what behavior would you expect for bias and variance? Please provide your justification for your answer.
 
-### Ans
+***Ans***
 
 ## 18 Linearly Separable Data: Hard-margin SVMs
 
@@ -345,19 +345,19 @@ $$
 
 ### (A) True or False? The linear hyperplane is defined by support vectors.
 
-### Ans
+***Ans***
 
 ### (B) True or False? Moving points other than support vectors a little do not affect the decision boundary.
 
-### Ans
+***Ans***
 
 ### (C) True or False? We only need to store the support vectors to predict labels for new points.
 
-### Ans
+***Ans***
 
 ### (D) Given the following training set for two-class classification in one-dimension space, what are the values of w and b by a hard-margin SVM?
 
-### Ans
+***Ans***
 
 | Point | Label |
 |-------|-------|
@@ -385,19 +385,19 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
 
 ### (A) Increasing the hyperparameter $C$ tends to decrease the training error.
 
-### Ans
+***Ans***
 
 ### (B) Increasing the hyperparameter $C$ tends to decrease the margin.
 
-### Ans
+***Ans***
 
 ### (C) The hard-margin SVM is a special case of the soft-margin with the hyperparameter $C$ set to zero.
 
-### Ans
+***Ans***
 
 ### (D) Increasing the hyperparameter $C$ tends to decrease the sensitivity to outliers.
 
-### Ans
+***Ans***
 
 ## 20 Decision Boundaries
 
@@ -411,19 +411,19 @@ Consider the following four SVM decision boundaries (a)-(d) as a result of diffe
 
 ### (A) A soft-margin linear SVM with $C = 10^{-1}$.
 
-### Ans
+***Ans***
 
 ### (B) A soft-margin linear SVM with $C = 10^{2}$.
 
-### Ans
+***Ans***
 
 ### (C) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{-1}\|u - v\|^2\right)$
 
-### Ans
+***Ans***
 
 ### (D) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{2}\|u - v\|^2\right)$
 
-### Ans
+***Ans***
 
 ## 21 Kernelization
 
@@ -443,11 +443,11 @@ $$
 
 ### (A) Given the raw features vectors $x_i$ and $x_j$ in a 2-dimensional plane, do you think that $k(x_i, x_j) = x_{i1}^2 x_{j1}^2 + x_{i2}^2 x_{j2}^2$ is a valid kernel function? Why and why not?
 
-### Ans
+***Ans***
 
 ### (B) Suppose we train an RBF kernelized SVM with kernel function defined as $k(x_i, x_j) = \exp\left(\frac{-\|x_i - x_j\|_2^2}{\sigma^2}\right)$ for a classification problem. We find that the training accuracy is 0.99 but the testing accuracy is only 0.61. What measures on the kernel width σ would you suggest to improve the testing accuracy?
 
-### Ans
+***Ans***
 
 ## 22 Connection to Shallow Machine Learning
 
@@ -461,11 +461,11 @@ Consider two multi-class classifiers, $C_1$ and $C_2$. $C_1$ is a multi-layer ne
   <em>Figure 4: Network Architecture of C₁ and C₂</em>
 </p>
 
-### Ans
+***Ans***
 
 ### (B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
 
-### Ans
+***Ans***
 
 ## 23 Feed Forward and Backpropagation
 
@@ -495,15 +495,15 @@ Recall the gradient computation for a multi-layer neural network in weeks 10-11;
 
 ### (A) By examining the shapes of the parameter matrices, please draw the neural network diagram.
 
-### Ans
+***Ans***
 
 ### (B) How many neurons do we have in the first hidden layer of the neural network without the bias neuron included?
 
-### Ans
+***Ans***
 
 ### (C) How many output neurons does our neural network have?
 
-### Ans
+***Ans***
 
 ## 24 Backward Propagation
 
@@ -517,11 +517,11 @@ Complete the following questions in order to derive the matrix and vector forms 
 
 ### (A) Let the partial derivatives for $W^{(1)}$ in the first layer be $\partial J / \partial W^{(1)}$. What is the shape of $\partial J / \partial W^{(1)}$?
 
-### Ans
+***Ans***
 
 ### (B) Let the partial derivatives for $W^{(2)}$ in the first layer be $\partial J / \partial W^{(2)}$. What is the shape of $\partial J / \partial W^{(2)}$?
 
-### Ans
+***Ans***
 
 ### (C) What are the partial derivatives for parameters $`W^{(1)}_{ij}`$ ($`\partial J / \partial W^{(1)}_{ij}`$) in terms of $`\hat{y}`$ and $`y`$?
 
@@ -540,7 +540,7 @@ Recall that for prediction, the model estimates one probability per class for ea
 
 Which class would the model predict for the new instance $x$? What is the estimated loss in this example according to Eq. (5)?
 
-### Ans
+***Ans***
 
 ## 26 GNN and CNN Analogy
 
@@ -548,11 +548,11 @@ Graph Neural Networks (GNNs) can be understood through the lens of message passi
 
 ### (A) How is the message passing mechanism in GNNs analogous to convolution operations in CNNs (consider what is being aggregated and from where)?
 
-### Ans
+***Ans***
 
 ### (B) What fundamental property of graphs makes GNNs more flexible but also more challenging than CNNs?
 
-### Ans
+***Ans***
 
 ## 27 GNN Variants
 
@@ -560,11 +560,11 @@ Recall three main GNN variants introduced in our lecture week 13: Graph Convolut
 
 ### (A) Identifying ONE key advantage that Neural Message Passing has over GCNs.
 
-### Ans
+***Ans***
 
 ### (B) Explaining ONE significant disadvantage of Neural Message Passing and why this matters in practice.
 
-### Ans
+***Ans***
 
 ## 28 AdaBoost II
 
@@ -580,15 +580,15 @@ The figure below shows two binary SVM classifiers $h_1$, $h_2$ in a 2D space. Th
 
 ### (A) Using only the initial weights (i.e., uniform over all training examples), which of the regions among (a) to (d) would be classified as +1 by the AdaBoost classifier after the first round, if the selected weak learner is h1. (Hint: Use the decision boundary of h1 and assume the AdaBoost classifier is just $\text{sign}(\alpha_1 h_1(x^{(i)}))$ after the first round.)
 
-### Ans
+***Ans***
 
 ### (B) Suppose that after Round 1, h1 is chosen, and it correctly classifies the point in region (c), but misclassifies the point in region (d). Describe qualitatively what happens to the weights $w_2(c)$ and $w_2(d)$ in the updated distribution.
 
-### Ans
+***Ans***
 
 ### (C) In Round 2, based on the updated distribution $w_2$, suppose h2 is selected as the next weak learner. If h2 misclassifies region (c) but correctly classifies region (d), describe the change in weights $w_3(c)$ and $w_3(d)$ after the second update.
 
-### Ans
+***Ans***
 
 ## 29 Random Forest
 
@@ -596,20 +596,20 @@ Consider random forest, which of the following statement is True? Select All tha
 
 ### (A) It is generally better for the trees to be highly correlated, as this reduces the variance of the ensemble.
 
-### Ans
+***Ans***
 
 ### (B) The number of trees in the forest is a hyperparameter that can be tuned.
 
-### Ans
+***Ans***
 
 ### (C) The number of training examples used to train each individual tree is a hyperparameter that can be tuned in a random forest.
 
-### Ans
+***Ans***
 
 ### (D) The size of the feature subset considered at each split is a hyperparameter that can be tuned in a random forest.
 
-### Ans
+***Ans***
 
 ### (E) The specific features selected for splits in each tree is a hyperparameter that can be tuned in a random forest.
 
-### Ans
+***Ans***
