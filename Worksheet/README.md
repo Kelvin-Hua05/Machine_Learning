@@ -4,7 +4,11 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 
 ## (A) What are the member points of $C_1$ and $C_2$ after one iteration of $k$-means?
 
+### Ans
+
 ## (B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
+
+### Ans
 
 # 2 Agglomerative Clustering Algorithm
 
@@ -12,9 +16,15 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 ## (A) Perform agglomerative clustering with single-link and show its dendrogram.
 
+### Ans
+
 ## (B) Perform agglomerative clustering with complete-link and show its dendrogram.
 
+### Ans
+
 ## (C) Perform agglomerative clustering with average-link and show its dendrogram.
+
+### Ans
 
 |    | A1 | A2 | A3 | A4 | A5 | A6 | A7 | A8 |
 |----|----|----|----|----|----|----|----|----|
