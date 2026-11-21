@@ -73,7 +73,7 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 
 Given the table below, plot the ROC curve for 0, 0.2, 0.4, 0.6, 0.8, and 1 on the graph in the answer booklet. Please explain whether you would choose to use Classifier 1 or Classifier 2 and why.
 
-| Class | Pr(P\|A) Classifier1 | Pr(P\|A) for Classifier2 |
+| Class | $Pr(P\|A)$ Classifier1 | $Pr(P\|A)$ for Classifier2 |
 |-------|------|------|
 | P     | 0.83 | 0.92 |
 | N     | 0.78 | 0.62 |
