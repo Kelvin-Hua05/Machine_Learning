@@ -85,7 +85,7 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 ***Ans***
 
-完全鏈：$d(C_i,C_j)=\max$ 成員間距離。
+完全鏈： $d(C_i,C_j)=\max$ 成員間距離。
 
 | 步驟 | 合併 | 高度 | 計算 |
 |---|---|---|---|
@@ -103,7 +103,7 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 ***Ans***
 
-平均鏈：$d(C_i,C_j)=$ 所有跨群成對距離的平均。
+平均鏈： $d(C_i,C_j)=$ 所有跨群成對距離的平均。
 
 | 步驟 | 合併 | 高度 | 計算 |
 |---|---|---|---|
@@ -127,7 +127,7 @@ Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 
 
 ***Ans***
 
-**約定：** 鄰域 $N_\varepsilon(p)=\{q: d(p,q)\le 10\}$ 且包含 $p$ 自己；$|N_\varepsilon(p)|\ge 2$ 即為核心點（core point）。
+**約定：** 鄰域 $N_\varepsilon(p)=\{q: d(p,q)\le 10\}$ 且包含 $p$ 自己； $|N_\varepsilon(p)|\ge 2$ 即為核心點（core point）。
 
 先算每個點的鄰域：
 
@@ -155,7 +155,7 @@ Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 
 | 7 | A3 | 鄰域只有自己，不是 core；也未被任何 core 的鄰域涵蓋 | **A3 = outlier / noise** |
 | 8 | A4…A8 | 皆已歸類 | 結束 |
 
-**最終結果：** $C_1=\{A1,A4,A5,A6,A8\}$，$C_2=\{A2,A7\}$，**Outlier（noise）＝{A3}**。
+**最終結果：**  $C_1=\{A1,A4,A5,A6,A8\}$，$C_2=\{A2,A7\}$，**Outlier（noise）＝{A3}**。
 
 > 若 MinPoints 不計入點本身（需 ≥2 個「其他」鄰居），則 A1、A2、A7 變成非核心點；結果為 $C_1=\{A1,A4,A5,A6,A8\}$（A1 為 border），A2、A3、A7 皆為 noise。
 
@@ -167,10 +167,10 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 
 **設定：** 單鏈合併高度為 2, 5, 5, 5, 6, 11, 11。在高度 6 與 11 之間有明顯的大跳躍，因此把切割門檻設在 **8**（落在 (6, 11) 內任何值結果相同；取 10 可與 DBSCAN 的 ε 對應），得到：
 
-- (i) Single-link：$\{A1,A4,A5,A6,A8\}$、$\{A2,A7\}$、$\{A3\}$
-- (ii) DBSCAN：$\{A1,A4,A5,A6,A8\}$、$\{A2,A7\}$，A3 為 noise
+- (i) Single-link： $\{A1,A4,A5,A6,A8\}$、$\{A2,A7\}$、$\{A3\}$
+- (ii) DBSCAN： $\{A1,A4,A5,A6,A8\}$、$\{A2,A7\}$，A3 為 noise
 
-Silhouette：$s(i)=\dfrac{b(i)-a(i)}{\max\{a(i),b(i)\}}$，$a$＝與同群其他點的平均距離，$b$＝與最近的其他群的平均距離；單點群 $s=0$。
+Silhouette： $s(i)=\dfrac{b(i)-a(i)}{\max\{a(i),b(i)\}}$， $a$＝與同群其他點的平均距離， $b$＝與最近的其他群的平均距離；單點群 $s=0$。
 
 | 點 | Single-link $s(i)$ | DBSCAN $s(i)$（noise 不計） |
 |---|---|---|
@@ -187,7 +187,7 @@ Silhouette：$s(i)=\dfrac{b(i)-a(i)}{\max\{a(i),b(i)\}}$，$a$＝與同群其他
 | 群 {A3} 平均 | 0 | — |
 | **整體平均** | **0.271** | **0.470** |
 
-（例：A2 的 $a=5$，$b=\min\{(45+49+35+11+25)/5=33,\ 55\}=33$，$s=(33-5)/33=0.848$。單鏈中 A4 的 $b$ 是到單點群 {A3} 的距離 11，而 $a=(2+7+5+57)/4=17.75$，所以 $s=(11-17.75)/17.75=-0.38$。）
+（例：A2 的 $a=5$，$b=\min\{(45+49+35+11+25)/5=33,\ 55\}=33$， $s=(33-5)/33=0.848$。單鏈中 A4 的 $b$ 是到單點群 {A3} 的距離 11，而 $a=(2+7+5+57)/4=17.75$，所以 $s=(11-17.75)/17.75=-0.38$。）
 
 ### (A) What does it mean if the silhouette coefficient is low/high at the individual level, cluster level, and overall clustering?
 
