@@ -23,7 +23,7 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 
 **第 1 次 iteration 後：** $C_1=\{A1,A2,A4,A8\}$，$C_2=\{A3,A5,A6,A7\}$
 
-新中心：$c_1=\big(\tfrac{2+2+5+4}{4},\tfrac{10+5+8+9}{4}\big)=(3.25,\,8)$，$c_2=\big(\tfrac{8+7+6+1}{4},\tfrac{4+5+4+2}{4}\big)=(5.5,\,3.75)$
+新中心： $c_1=\big(\tfrac{2+2+5+4}{4},\tfrac{10+5+8+9}{4}\big)=(3.25,\,8)$，$c_2=\big(\tfrac{8+7+6+1}{4},\tfrac{4+5+4+2}{4}\big)=(5.5,\,3.75)$
 
 ### (B) What are the member points of $C_1$ and $C_2$ after the second iteration of $k$-means?
 
