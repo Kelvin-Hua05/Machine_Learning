@@ -77,8 +77,6 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 | 6 | {A2,A7} + {A1,A4,A5,A6,A8} | 11 | A2–A6=11 |
 | 7 | A3 + 其餘 | 11 | A3–A4=11（與步驟 6 平手，順序可互換，最後都在 11） |
 
-![single](figures/q2_single.png)
-
 直覺：單鏈會產生「鏈狀（chaining）」效應，合併高度很低（2~11）。
 
 ### (B) Perform agglomerative clustering with complete-link and show its dendrogram.
@@ -97,8 +95,6 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 | 6 | A3 + {A2,A4,A5,A6,A7} | 55 | max(55,47,11,23,54)=55（< A3–{A1,A8}=65） |
 | 7 | {A1,A8} + 其餘 | 95 | A1–A7=95 |
 
-![complete](figures/q2_complete.png)
-
 ### (C) Perform agglomerative clustering with average-link and show its dendrogram.
 
 ***Ans***
@@ -114,8 +110,6 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 | 5 | {A2,A7} + {A4,A5,A6} | 25.83 | (49+35+11+26+21+13)/6=155/6 |
 | 6 | A3 + {A2,A4,A5,A6,A7} | 38 | (55+47+11+23+54)/5=190/5 |
 | 7 | {A1,A8} + 其餘 | 44.92 | 539/12（12 對距離總和 539） |
-
-![average](figures/q2_average.png)
 
 三種準則比較：single-link 最後在高度 11 全部合併；complete-link 與 average-link 會把 {A1,A8} 當成最後才併入的離群小群（高度 95 / 44.9），A3 次之。
 
@@ -155,7 +149,7 @@ Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 
 | 7 | A3 | 鄰域只有自己，不是 core；也未被任何 core 的鄰域涵蓋 | **A3 = outlier / noise** |
 | 8 | A4…A8 | 皆已歸類 | 結束 |
 
-**最終結果：**  $C_1=\{A1,A4,A5,A6,A8\}$，$C_2=\{A2,A7\}$，**Outlier（noise）＝{A3}**。
+**最終結果：**  $C_1=\{A1,A4,A5,A6,A8\}$， $C_2=\{A2,A7\}$，**Outlier（noise）＝{A3}**。
 
 > 若 MinPoints 不計入點本身（需 ≥2 個「其他」鄰居），則 A1、A2、A7 變成非核心點；結果為 $C_1=\{A1,A4,A5,A6,A8\}$（A1 為 border），A2、A3、A7 皆為 noise。
 
