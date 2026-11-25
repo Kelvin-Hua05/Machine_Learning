@@ -1090,8 +1090,8 @@ Recall the gradient computation for a multi-layer neural network in weeks 10-11;
 
 ***Ans***
 
-- $W^{(1)}$ 為 $K\times(S+1)$：輸入有 $S$ 個特徵 + 1 個偏置（$x_0=1$），共 $S+1$ 欄；隱藏層有 $K$ 個神經元（$K$ 列）。
-- $W^{(2)}$ 為 $I\times(K+1)$：隱藏層 $K$ 個神經元 + 1 個偏置（$a_0^{(1)}=1$），輸出層有 $I$ 個神經元（$I$ 列）。
+- $W^{(1)}$ 為 $K\times(S+1)$：輸入有 $S$ 個特徵 + 1 個偏置（ $x_0=1$），共 $S+1$ 欄；隱藏層有 $K$ 個神經元（ $K$ 列）。
+- $W^{(2)}$ 為 $I\times(K+1)$：隱藏層 $K$ 個神經元 + 1 個偏置（ $a_0^{(1)}=1$），輸出層有 $I$ 個神經元（ $I$ 列）。
 
 ```mermaid
 flowchart LR
@@ -1122,13 +1122,13 @@ flowchart LR
 
 ***Ans***
 
-**$K$ 個**（$W^{(1)}$ 有 $K$ 列；加上偏置神經元則是 $K+1$ 個）。
+**$K$ 個**（ $W^{(1)}$ 有 $K$ 列；加上偏置神經元則是 $K+1$ 個）。
 
 ### (C) How many output neurons does our neural network have?
 
 ***Ans***
 
-**$I$ 個**（$W^{(2)}$ 有 $I$ 列，對應 $I$ 個輸出／類別）。
+**$I$ 個**（ $W^{(2)}$ 有 $I$ 列，對應 $I$ 個輸出／類別）。
 
 ---
 
@@ -1143,7 +1143,7 @@ $$
 Complete the following questions in order to derive the matrix and vector forms for the backpropagation algorithm.
 
 **前向傳播符號（逐列＝目的神經元，逐欄＝來源）：**
-$x_0=1$；$z^{(1)}=W^{(1)}x$（$K$ 維），$a^{(1)}=g(z^{(1)})$，並補 $a^{(1)}_0=1$；$z^{(2)}=W^{(2)}a^{(1)}$（$I$ 維），$\hat y=f(z^{(2)})$。（$g,f$ 為隱藏層／輸出層激活函數，例如 sigmoid：$g'(z)=a(1-a)$、$f'(z)=\hat y(1-\hat y)$。）
+$x_0=1$； $z^{(1)}=W^{(1)}x$（$K$ 維），$a^{(1)}=g(z^{(1)})$，並補 $a^{(1)}_0=1$；$z^{(2)}=W^{(2)}a^{(1)}$（$I$ 維），$\hat y=f(z^{(2)})$。（ $g,f$ 為隱藏層／輸出層激活函數，例如 sigmoid： $g'(z)=a(1-a)$、$f'(z)=\hat y(1-\hat y)$。）
 
 ### (A) Let the partial derivatives for $W^{(1)}$ in the first layer be $\partial J / \partial W^{(1)}$. What is the shape of $\partial J / \partial W^{(1)}$?
 
@@ -1155,14 +1155,14 @@ $x_0=1$；$z^{(1)}=W^{(1)}x$（$K$ 維），$a^{(1)}=g(z^{(1)})$，並補 $a^{(1
 
 ***Ans***
 
-與 $W^{(2)}$ 相同：**$I\times(K+1)$**。（題目中的 "in the first layer" 應為筆誤，$W^{(2)}$ 屬於第二層。）
+與 $W^{(2)}$ 相同：** $I\times(K+1)$ **。（題目中的 "in the first layer" 應為筆誤， $W^{(2)}$ 屬於第二層。）
 
-### (C) What are the partial derivatives for parameters $W^{(1)}_{ij}$ ($\partial J / \partial W^{(1)}_{ij}$) in terms of $\hat{y}$ and $y$?
+### (C) What are the partial derivatives for parameters $W^{(1)}_{ij}$ ( $\partial J / \partial W^{(1)}_{ij}$) in terms of $\hat{y}$ and $y$?
 
 **Ans**
 
 先求輸出層誤差 $\ \delta^{(2)}_l=\dfrac{\partial J}{\partial z^{(2)}_l}=(\hat y_l-y_l)\,f'(z^{(2)}_l)$。（$\dfrac{\partial J}{\partial \hat y_l}=\hat y_l-y_l$。）
-再反傳到隱藏層：$\ \delta^{(1)}_i=\Big[\sum_{l=1}^{I}\delta^{(2)}_l\,W^{(2)}_{li}\Big]g'(z^{(1)}_i)$。
+再反傳到隱藏層： $\ \delta^{(1)}_i=\Big[\sum_{l=1}^{I}\delta^{(2)}_l\,W^{(2)}_{li}\Big]g'(z^{(1)}_i)$。
 
 其中 $W^{(1)}_{ij}$ 連接輸入 $x_j$（$j=0..S$，$x_0=1$）到隱藏神經元 $i$（$i=1..K$）：
 
@@ -1170,21 +1170,21 @@ $$
 \boxed{\frac{\partial J}{\partial W^{(1)}_{ij}}=\Big[\sum_{l=1}^{I}(\hat y_l-y_l)\,f'(z^{(2)}_l)\,W^{(2)}_{li}\Big]\,g'(z^{(1)}_i)\;x_j}
 $$
 
-矩陣形式：$\delta^{(2)}=(\hat y-y)\odot f'(z^{(2)})$；$\delta^{(1)}=\big(W^{(2)}_{[:,1:K]}{}^{T}\delta^{(2)}\big)\odot g'(z^{(1)})$；$\dfrac{\partial J}{\partial W^{(1)}}=\delta^{(1)}\,x^{T}$（$K\times(S+1)$）。
-若兩層都用 sigmoid：$\dfrac{\partial J}{\partial W^{(1)}_{ij}}=\Big[\sum_l(\hat y_l-y_l)\hat y_l(1-\hat y_l)W^{(2)}_{li}\Big]a^{(1)}_i(1-a^{(1)}_i)\,x_j$。
+矩陣形式： $\delta^{(2)}=(\hat y-y)\odot f'(z^{(2)})$； $\delta^{(1)}=\big(W^{(2)}_{[:,1:K]}{}^{T}\delta^{(2)}\big)\odot g'(z^{(1)})$； $\dfrac{\partial J}{\partial W^{(1)}}=\delta^{(1)}\,x^{T}$（$K\times(S+1)$）。
+若兩層都用 sigmoid： $\dfrac{\partial J}{\partial W^{(1)}_{ij}}=\Big[\sum_l(\hat y_l-y_l)\hat y_l(1-\hat y_l)W^{(2)}_{li}\Big]a^{(1)}_i(1-a^{(1)}_i)\,x_j$。
 
 ### (D) What are the partial derivatives for parameters $W^{(2)}_{jk}$ ($\partial J / \partial W^{(2)}_{jk}$) in terms of $\hat{y}$ and $y$?
 
 **Ans**
 
-$W^{(2)}_{jk}$ 連接隱藏神經元 $k$（$k=0..K$，$a_0^{(1)}=1$）到輸出神經元 $j$（$j=1..I$）：
+$W^{(2)}_{jk}$ 連接隱藏神經元 $k$（ $k=0..K$，$a_0^{(1)}=1$）到輸出神經元 $j$（ $j=1..I$）：
 
 $$
 \boxed{\frac{\partial J}{\partial W^{(2)}_{jk}}=(\hat y_j-y_j)\,f'(z^{(2)}_j)\;a^{(1)}_k=\delta^{(2)}_j\,a^{(1)}_k}
 $$
 
-矩陣形式：$\dfrac{\partial J}{\partial W^{(2)}}=\delta^{(2)}\,a^{(1)T}$（$I\times(K+1)$）。
-若輸出為 sigmoid：$(\hat y_j-y_j)\,\hat y_j(1-\hat y_j)\,a^{(1)}_k$；若輸出為線性（$f'=1$）：$(\hat y_j-y_j)\,a^{(1)}_k$。
+矩陣形式： $\dfrac{\partial J}{\partial W^{(2)}}=\delta^{(2)}\,a^{(1)T}$（$I\times(K+1)$）。
+若輸出為 sigmoid： $(\hat y_j-y_j)\,\hat y_j(1-\hat y_j)\,a^{(1)}_k$；若輸出為線性（ $f'=1$）：$(\hat y_j-y_j)\,a^{(1)}_k$。
 
 ---
 
@@ -1200,7 +1200,7 @@ Which class would the model predict for the new instance $x$? What is the estima
 ***Ans***
 
 - **預測類別：** $\arg\max\hat y=$ 第 **3** 類（0.5 最大）。真實類別是第 2 類，所以這個預測是**錯的**。
-- **損失（Eq. 5，$J=\tfrac12\|y-\hat y\|^2$）：**
+- **損失（Eq. 5， $J=\tfrac12\|y-\hat y\|^2$ ）：**
 
 $$
 J=\tfrac12\big[(0-0.3)^2+(1-0.2)^2+(0-0.5)^2\big]=\tfrac12(0.09+0.64+0.25)=\tfrac12(0.98)=\mathbf{0.49}
@@ -1217,8 +1217,8 @@ Graph Neural Networks (GNNs) can be understood through the lens of message passi
 ***Ans***
 
 兩者都是**局部聚合**：
-- **CNN：** 對每個像素，用共享的卷積核對其**空間鄰域（如 3×3 的相鄰像素）**的特徵做加權求和，產生該像素的新特徵；核權重在整張圖共享。
-- **GNN：** 對每個節點，從其**圖上的鄰居節點**收集「訊息」（鄰居特徵，可含邊特徵），用可交換的聚合函數（sum / mean / max）合併，再結合自己的特徵經由可學習的函數更新：$h_v^{(l+1)}=\sigma\big(W\,[\,h_v^{(l)},\ \mathrm{AGG}_{u\in\mathcal N(v)}\,h_u^{(l)}\,]\big)$，權重同樣在所有節點共享。
+- **CNN：** 對每個像素，用共享的卷積核對其 **空間鄰域（如 3×3 的相鄰像素）** 的特徵做加權求和，產生該像素的新特徵；核權重在整張圖共享。
+- **GNN：** 對每個節點，從其**圖上的鄰居節點**收集「訊息」（鄰居特徵，可含邊特徵），用可交換的聚合函數（sum / mean / max）合併，再結合自己的特徵經由可學習的函數更新： $h_v^{(l+1)}=\sigma\big(W\,[\,h_v^{(l)},\ \mathrm{AGG}_{u\in\mathcal N(v)}\,h_u^{(l)}\,]\big)$ ，權重同樣在所有節點共享。
 - 類比：影像是「規則網格圖」（每個像素的鄰居固定且有位置順序），CNN 可視為 GNN 的特例；疊加多層後感受野擴大（CNN 看到更大的區域，GNN 看到 $k$-hop 鄰居）。
 
 ### (B) What fundamental property of graphs makes GNNs more flexible but also more challenging than CNNs?
@@ -1227,7 +1227,7 @@ Graph Neural Networks (GNNs) can be understood through the lens of message passi
 
 **圖的不規則性（irregular, non-Euclidean structure）：** 節點的度數不固定、鄰居**沒有固定數量也沒有天然的排序／方向**，且沒有網格座標。
 - **較有彈性：** 可處理任意拓撲，如分子、社群網路、知識圖譜、交通網路。
-- **較有挑戰：** 無法使用固定大小、位置固定的卷積核，必須設計**排列不變（permutation-invariant）**的聚合；還要處理不同大小的圖的批次化、過度平滑（over-smoothing）、規模與計算效率（高度數節點、大圖需取樣）等問題。
+- **較有挑戰：** 無法使用固定大小、位置固定的卷積核，必須設計 **排列不變（permutation-invariant）** 的聚合；還要處理不同大小的圖的批次化、過度平滑（over-smoothing）、規模與計算效率（高度數節點、大圖需取樣）等問題。
 
 ---
 
@@ -1239,7 +1239,7 @@ Recall three main GNN variants introduced in our lecture week 13: Graph Convolut
 
 ***Ans***
 
-**能直接利用並學習邊的特徵（edge embeddings）。** Neural Message Passing 的訊息函數為 $m_{u\to v}=M\big(h_u,h_v,e_{uv}\big)$，可使用邊的類型／屬性（如化學鍵種類、關係類別、距離）並產生依賴邊的訊息，表達力更強；GCN 只用固定的、由度數正規化的鄰接權重做平均（$\tilde D^{-1/2}\tilde A\tilde D^{-1/2}$），所有鄰居以預先決定的權重相加，無法處理邊特徵，也不能依邊的內容決定訊息。
+**能直接利用並學習邊的特徵（edge embeddings）。** Neural Message Passing 的訊息函數為 $m_{u\to v}=M\big(h_u,h_v,e_{uv}\big)$，可使用邊的類型／屬性（如化學鍵種類、關係類別、距離）並產生依賴邊的訊息，表達力更強；GCN 只用固定的、由度數正規化的鄰接權重做平均（ $\tilde D^{-1/2}\tilde A\tilde D^{-1/2}$ ），所有鄰居以預先決定的權重相加，無法處理邊特徵，也不能依邊的內容決定訊息。
 
 ### (B) Explaining ONE significant disadvantage of Neural Message Passing and why this matters in practice.
 
@@ -1262,7 +1262,7 @@ The figure below shows two binary SVM classifiers $h_1$, $h_2$ in a 2D space. Th
   <em>Figure 5: h₁, h₂, and regions (a)–(d) in 2D space, labeled + / −</em>
 </p>
 
-標準 AdaBoost：$\alpha_t=\tfrac12\ln\dfrac{1-\epsilon_t}{\epsilon_t}$，權重更新 $w_{t+1}(i)=\dfrac{w_t(i)\exp\!\big(-\alpha_t\,y_i\,h_t(x_i)\big)}{Z_t}$：分類正確（$y_ih_t=+1$）的權重乘以 $e^{-\alpha_t}$ 變小；分類錯誤（$y_ih_t=-1$）的權重乘以 $e^{+\alpha_t}$ 變大，$Z_t$ 為正規化常數。
+標準 AdaBoost： $\alpha_t=\tfrac12\ln\dfrac{1-\epsilon_t}{\epsilon_t}$，權重更新 $w_{t+1}(i)=\dfrac{w_t(i)\exp\!\big(-\alpha_t\,y_i\,h_t(x_i)\big)}{Z_t}$：分類正確（ $y_ih_t=+1$）的權重乘以 $e^{-\alpha_t}$ 變小；分類錯誤（ $y_ih_t=-1$ ）的權重乘以 $e^{+\alpha_t}$ 變大， $Z_t$ 為正規化常數。
 
 ### (A) Using only the initial weights (i.e., uniform over all training examples), which of the regions among (a) to (d) would be classified as +1 by the AdaBoost classifier after the first round, if the selected weak learner is $h_1$. (Hint: Use the decision boundary of $h_1$ and assume the AdaBoost classifier is just $\text{sign}(\alpha_1 h_1(x^{(i)}))$ after the first round.)
 
@@ -1279,7 +1279,7 @@ The figure below shows two binary SVM classifiers $h_1$, $h_2$ in a 2D space. Th
 - $w_2(c)$ **下降**：(c) 被正確分類，權重乘上 $e^{-\alpha_1}<1$（再正規化後比初始的 $1/n$ 小）。
 - $w_2(d)$ **上升**：(d) 被誤分類，權重乘上 $e^{+\alpha_1}>1$（再正規化後比初始的 $1/n$ 大）。
 
-所以下一輪弱分類器會被迫更專注於先前分錯的 (d)。又因 $h_1$ 的錯誤率 $\epsilon_1<0.5$（$\alpha_1>0$），更新後被誤分類樣本的總權重剛好占 1/2（正確與錯誤兩邊各 0.5）。
+所以下一輪弱分類器會被迫更專注於先前分錯的 (d)。又因 $h_1$ 的錯誤率 $\epsilon_1<0.5$（ $\alpha_1>0$ ），更新後被誤分類樣本的總權重剛好占 1/2（正確與錯誤兩邊各 0.5）。
 
 ### (C) In Round 2, based on the updated distribution $w_2$, suppose $h_2$ is selected as the next weak learner. If $h_2$ misclassifies region (c) but correctly classifies region (d), describe the change in weights $w_3(c)$ and $w_3(d)$ after the second update.
 
@@ -1288,7 +1288,7 @@ The figure below shows two binary SVM classifiers $h_1$, $h_2$ in a 2D space. Th
 - $w_3(c)$ **上升**：(c) 被 $h_2$ 誤分類，權重乘上 $e^{+\alpha_2}$（它在第 1 輪被降權，現在又被拉回來）。
 - $w_3(d)$ **下降**：(d) 被 $h_2$ 正確分類，權重乘上 $e^{-\alpha_2}$（它在第 1 輪被升權，現在被調低）。
 
-兩者的相對關係：從第 1 輪起算，$w_3(c)\propto e^{-\alpha_1+\alpha_2}$、$w_3(d)\propto e^{+\alpha_1-\alpha_2}$，因此 $w_3(c)/w_3(d)=e^{2(\alpha_2-\alpha_1)}$。若 $\alpha_2>\alpha_1$，(c) 的最終權重會超過 (d)；若 $\alpha_2<\alpha_1$ 則仍是 (d) 較大；兩者相等時兩點權重回到相同。大致上 AdaBoost 把權重不斷移向「目前整體組合仍持續分錯」的樣本。
+兩者的相對關係：從第 1 輪起算， $w_3(c)\propto e^{-\alpha_1+\alpha_2}$、 $w_3(d)\propto e^{+\alpha_1-\alpha_2}$，因此 $w_3(c)/w_3(d)=e^{2(\alpha_2-\alpha_1)}$。若 $\alpha_2>\alpha_1$，(c) 的最終權重會超過 (d)；若 $\alpha_2<\alpha_1$ 則仍是 (d) 較大；兩者相等時兩點權重回到相同。大致上 AdaBoost 把權重不斷移向「目前整體組合仍持續分錯」的樣本。
 
 ---
 
@@ -1300,7 +1300,7 @@ Consider random forest, which of the following statement is True? Select All tha
 
 ***Ans***
 
-**False。** 集成的變異為 $\rho\sigma^2+\frac{1-\rho}{B}\sigma^2$，$\rho$（樹之間的相關係數）越大，增加樹的數目 $B$ 也無法降低第一項。隨機森林要的是**低相關**（透過 bootstrap 抽樣與每次分裂隨機抽特徵子集來去相關），才能有效降低變異。
+**False。** 集成的變異為 $\rho\sigma^2+\frac{1-\rho}{B}\sigma^2$， $\rho$（樹之間的相關係數）越大，增加樹的數目 $B$ 也無法降低第一項。隨機森林要的是**低相關**（透過 bootstrap 抽樣與每次分裂隨機抽特徵子集來去相關），才能有效降低變異。
 
 ### (B) The number of trees in the forest is a hyperparameter that can be tuned.
 
