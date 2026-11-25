@@ -4,7 +4,7 @@
 
 Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9). Perform $k$-means clustering with $k$=2 to group the eight points into clusters $C_1$ and $C_2$.
 
-**假設：** 題目沒有給初始中心點，這裡取 $c_1$=A1=(2,10)、$c_2$=A3=(8,4)，距離用 Euclidean（比較平方距離即可）。一次 iteration = 「指派 → 重算中心」。
+**假設：** 題目沒有給初始中心點，這裡取 $c_1$=A1=(2,10)、 $c_2$=A3=(8,4)，距離用 Euclidean（比較平方距離即可）。一次 iteration = 「指派 → 重算中心」。
 
 ### (A) What are the member points of $C_1$ and $C_2$ after one iteration of $k$-means?
 
@@ -21,7 +21,7 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 | A7 (1,2) | 65 | 53 | C2 |
 | A8 (4,9) | 5 | 41 | C1 |
 
-**第 1 次 iteration 後：** $C_1=\{A1,A2,A4,A8\}$，$C_2=\{A3,A5,A6,A7\}$
+**第 1 次 iteration 後：** $C_1=\{A1,A2,A4,A8\}$， $C_2=\{A3,A5,A6,A7\}$
 
 新中心： $c_1=\big(\tfrac{2+2+5+4}{4},\tfrac{10+5+8+9}{4}\big)=(3.25,\,8)$， $c_2=\big(\tfrac{8+7+6+1}{4},\tfrac{4+5+4+2}{4}\big)=(5.5,\,3.75)$
 
@@ -40,7 +40,7 @@ Consider eight data points: A1=(2,10), A2=(2,5), A3=(8,4), A4=(5,8), A5=(7,5), A
 | A7 | 41.06 | 23.31 | C2 |
 | A8 | 1.56 | 25.06 | C1 |
 
-**第 2 次 iteration 後：** $C_1=\{A1,A2,A4,A8\}$，$C_2=\{A3,A5,A6,A7\}$，與第 1 次相同，中心點不再改變，**演算法已收斂**。
+**第 2 次 iteration 後：** $C_1=\{A1,A2,A4,A8\}$， $C_2=\{A3,A5,A6,A7\}$，與第 1 次相同，中心點不再改變，**演算法已收斂**。
 
 > 補充： $k$-means 對初始值敏感。若改用 A1、A2 當初始中心，兩次 iteration 都得到 $C_1=\{A1,A4,A8\}$ 、 $C_2=\{A2,A3,A5,A6,A7\}$ （SSE≈51.5，比上面的 54.5 更低）。實務上要多次隨機初始化（或 $k$-means++）取 SSE 最小者。
 
