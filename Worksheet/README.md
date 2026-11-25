@@ -65,7 +65,7 @@ Consider the distance matrix shown below. Use agglomerative algorithm to group t
 
 ***Ans***
 
-單鏈：$d(C_i,C_j)=\min$ 成員間距離。
+單鏈： $d(C_i,C_j)=\min$ 成員間距離。
 
 | 步驟 | 合併 | 高度 | 說明 |
 |---|---|---|---|
