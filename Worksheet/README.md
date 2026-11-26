@@ -255,7 +255,7 @@ Given the table below, plot the ROC curve for 0, 0.2, 0.4, 0.6, 0.8, and 1 on th
 
 ***Ans***
 
-資料中有 2 個 P、4 個 N。門檻 $t$：預測分數 $\ge t$ 為 Positive。$\text{TPR}=TP/2$，$\text{FPR}=FP/4$。
+資料中有 2 個 P、4 個 N。門檻 $t$：預測分數 $\ge t$ 為 Positive。 $\text{TPR}=TP/2$， $\text{FPR}=FP/4$。
 
 | 門檻 $t$ | C1：TP / FP | C1：(FPR, TPR) | C2：TP / FP | C2：(FPR, TPR) |
 |---|---|---|---|---|
