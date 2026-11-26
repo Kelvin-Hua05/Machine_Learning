@@ -707,11 +707,11 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 - **U = (1,1,0,0)**
   - $+$： $0.5\times0.5\times0.5\times(1-0.833)\times(1-0.167)=0.5\times0.5\times0.5\times0.1667\times0.8333=\mathbf{0.0174}$
   - $-$： $0.5\times0.667\times0.5\times(1-0.167)\times(1-0.667)=0.5\times0.667\times0.5\times0.8333\times0.3333=\mathbf{0.0463}$
-  - 正規化： $P(+\mid U)\approx0.273$，$P(-\mid U)\approx0.727$ ⇒ 預測 **−**
+  - 正規化： $P(+\mid U)\approx0.273$， $P(-\mid U)\approx0.727$ ⇒ 預測 **−**
 - **V = (1,0,0,1)**
   - $+$： $0.5\times0.5\times0.5\times0.1667\times0.1667=\mathbf{0.00347}$
   - $-$： $0.5\times0.667\times0.5\times0.8333\times0.667=\mathbf{0.0926}$
-  - 正規化： $P(+\mid V)\approx0.036$，$P(-\mid V)\approx0.964$ ⇒ 預測 **−**
+  - 正規化： $P(+\mid V)\approx0.036$， $P(-\mid V)\approx0.964$ ⇒ 預測 **−**
 
 **結論：** 無論有無平滑，U 與 V 都被判為 **not poisonous（−）**；平滑後 + 不再被硬性歸零，機率估計較合理（U 有約 27% 的毒性機率，較不確定；V 非常確定是 −）。
 
@@ -778,38 +778,38 @@ $$
 
 **判斷依據：**
 1. **距離度量：** Euclidean 的等距線是圓，Voronoi 邊界為任意角度的斜線／平滑曲線；Manhattan 的等距線是菱形，邊界以水平、垂直、45° 的折線為主，圖形呈「階梯／方塊狀」。→ (a)(b) 是斜向平滑邊界 ⇒ Euclidean；(c)(d) 是水平垂直的直角邊界 ⇒ Manhattan。
-2. **$k$ 值：** $k=1$ 時每個訓練點都自成一個小區域，邊界很貼資料、鋸齒狀，並有被離群點「挖出」的小島／尖刺（例如 (6.0, 1.5–1.8) 附近的綠色尖角）；$k=15$ 時多數決使邊界平滑、忽略個別離群點。
+2. **$k$ 值：**  $k=1$ 時每個訓練點都自成一個小區域，邊界很貼資料、鋸齒狀，並有被離群點「挖出」的小島／尖刺（例如 (6.0, 1.5–1.8) 附近的綠色尖角）； $k=15$ 時多數決使邊界平滑、忽略個別離群點。
 
 | 圖 | 觀察 | 對應設定 |
 |---|---|---|
 | (a) | 斜向、很平滑，沒有被離群點影響（如 (4.9, 1.7) 的綠點不產生小島） | **(B) $k=15$, Euclidean** |
 | (b) | 斜向但較曲折，邊界貼著個別資料點，有小凹凸與孤立點的影響 | **(A) $k=1$, Euclidean** |
 | (c) | 水平／垂直的直角邊界，且邊界相對平滑（如藍/黃交界是一條水平線） | **(D) $k=15$, Manhattan** |
-| (d) | 直角邊界，且有尖刺與階梯狀凹凸（如 $x\approx6$ 處的垂直尖角、$x\approx7$ 的垂直邊） | **(C) $k=1$, Manhattan** |
+| (d) | 直角邊界，且有尖刺與階梯狀凹凸（如 $x\approx6$ 處的垂直尖角、 $x\approx7$ 的垂直邊） | **(C) $k=1$, Manhattan** |
 
 ### (A) $k$ = 1, Euclidean Distance.
 
 ***Ans***
 
-**對應 (b)。** 斜向邊界（Euclidean）且曲折、貼合個別訓練點（$k=1$，低偏差高變異）。
+**對應 (b)。** 斜向邊界（Euclidean）且曲折、貼合個別訓練點（ $k=1$，低偏差高變異）。
 
 ### (B) $k$ = 15, Euclidean Distance.
 
 ***Ans***
 
-**對應 (a)。** 斜向邊界且最平滑（$k=15$ 多數決平均掉雜訊與離群點）。
+**對應 (a)。** 斜向邊界且最平滑（ $k=15$ 多數決平均掉雜訊與離群點）。
 
 ### (C) $k$ = 1, Manhattan Distance.
 
 ***Ans***
 
-**對應 (d)。** 直角（軸向對齊）邊界，並且鋸齒、有尖刺（$k=1$）。
+**對應 (d)。** 直角（軸向對齊）邊界，並且鋸齒、有尖刺（ $k=1$）。
 
 ### (D) $k$ = 15, Manhattan Distance.
 
 ***Ans***
 
-**對應 (c)。** 直角邊界但較平滑、較大的矩形區塊（$k=15$）。
+**對應 (c)。** 直角邊界但較平滑、較大的矩形區塊（ $k=15$）。
 
 ---
 
@@ -840,13 +840,13 @@ $$
 
 ***Ans***
 
-**True。** 在對偶解中 $w=\sum_i\alpha_i y_i x_i$，只有支持向量（恰好落在 margin 上、$y_i(w\cdot x_i+b)=1$）的 $\alpha_i>0$，其他點的 $\alpha_i=0$；$b$ 也由支持向量決定。所以超平面完全由支持向量決定。
+**True。** 在對偶解中 $w=\sum_i\alpha_i y_i x_i$，只有支持向量（恰好落在 margin 上、 $y_i(w\cdot x_i+b)=1$）的 $\alpha_i>0$，其他點的 $\alpha_i=0$； $b$ 也由支持向量決定。所以超平面完全由支持向量決定。
 
 ### (B) True or False? Moving points other than support vectors a little do not affect the decision boundary.
 
 ***Ans***
 
-**True。** 非支持向量的 $\alpha_i=0$，對 $w$、$b$ 沒有貢獻；只要它們微移後仍在 margin 之外（不越過 margin、不變成支持向量），最佳解不變。
+**True。** 非支持向量的 $\alpha_i=0$，對 $w$、 $b$ 沒有貢獻；只要它們微移後仍在 margin 之外（不越過 margin、不變成支持向量），最佳解不變。
 
 ### (C) True or False? We only need to store the support vectors to predict labels for new points.
 
@@ -872,8 +872,8 @@ $$
 
 兩式相加得 $2b=0\Rightarrow b=0$，所以 $w=1$。
 
-**答案：$w=1,\ b=0$**（決策邊界 $x=0$，margin $=2/|w|=2$）。
-驗證：$x_1=3$：$3\cdot1+0=3\ge1$ ✓（不是支持向量）；$x_2=1$：$1$ ✓（SV）；$x_3=-1$：$-(-1)=1$ ✓（SV）。
+**答案： $w=1,\ b=0$**（決策邊界 $x=0$，margin $=2/|w|=2$）。
+驗證： $x_1=3$： $3\cdot1+0=3\ge1$ ✓（不是支持向量）； $x_2=1$： $1$ ✓（SV）； $x_3=-1$： $-(-1)=1$ ✓（SV）。
 
 ---
 
@@ -899,25 +899,25 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
 
 ***Ans***
 
-**True。** $C$ 是對 slack（違規）的懲罰權重；$C$ 越大，優化越不願意容忍違規與誤分類，會更努力把訓練點分對，所以訓練誤差傾向下降（代價是更容易過擬合）。
+**True。** $C$ 是對 slack（違規）的懲罰權重； $C$ 越大，優化越不願意容忍違規與誤分類，會更努力把訓練點分對，所以訓練誤差傾向下降（代價是更容易過擬合）。
 
 ### (B) Increasing the hyperparameter $C$ tends to decrease the margin.
 
 ***Ans***
 
-**True。** 為了減少 $\sum\xi_i$，$C$ 大時模型願意犧牲較寬的 margin（$\tfrac12\|w\|^2$ 項相對變得不重要，$\|w\|$ 變大）來換取更少的違規，因此 margin $2/\|w\|$ 變窄。
+**True。** 為了減少 $\sum\xi_i$， $C$ 大時模型願意犧牲較寬的 margin（ $\tfrac12\|w\|^2$ 項相對變得不重要， $\|w\|$ 變大）來換取更少的違規，因此 margin $2/\|w\|$ 變窄。
 
 ### (C) The hard-margin SVM is a special case of the soft-margin with the hyperparameter $C$ set to zero.
 
 ***Ans***
 
-**False。** 硬間隔 SVM 相當於 $C\to\infty$（完全不容許 slack）。$C=0$ 時 slack 完全不被懲罰，最小化 $\tfrac12\|w\|^2$ 會得到 $w=0$ 的平凡解，毫無分類能力。
+**False。** 硬間隔 SVM 相當於 $C\to\infty$（完全不容許 slack）。 $C=0$ 時 slack 完全不被懲罰，最小化 $\tfrac12\|w\|^2$ 會得到 $w=0$ 的平凡解，毫無分類能力。
 
 ### (D) Increasing the hyperparameter $C$ tends to decrease the sensitivity to outliers.
 
 ***Ans***
 
-**False。** 恰好相反：$C$ 越大，離群點的違規代價越高，決策邊界會被離群點拉動以遷就它們，**對離群點更敏感**；$C$ 小則容忍離群點，邊界更穩定、margin 更寬。
+**False。** 恰好相反： $C$ 越大，離群點的違規代價越高，決策邊界會被離群點拉動以遷就它們，**對離群點更敏感**； $C$ 小則容忍離群點，邊界更穩定、margin 更寬。
 
 ---
 
@@ -931,26 +931,26 @@ Which of the following are true of soft-margin SVMs? Please provide your justifi
 
 Consider the following four SVM decision boundaries (a)-(d) as a result of different kernels and/or slack penalties. The two classes of training data with labels $y_i \in \lbrace -1, 1 \rbrace$ are represented by triangles and squares, respectively. The support vectors are depicted as solid triangle and squares. Please match each decision boundary with the most possible optimization setting below (A)-(D) and briefly provide the justification for your pairing.
 
-**判斷依據：** 直線邊界 ⇒ 線性 SVM；封閉曲線 ⇒ RBF 核。**線性 SVM：** $C$ 小 ⇒ margin 寬、很多點落在 margin 內／上而成為支持向量（實心點多）；$C$ 大 ⇒ margin 窄、支持向量少。**RBF 核 $\exp(-\gamma\|u-v\|^2)$：** $\gamma$ 小（0.1）⇒ 平滑、寬鬆的邊界；$\gamma$ 大（100）⇒ 每個點只影響極小範圍，邊界緊貼各點、彎曲，幾乎所有點都成為支持向量（過擬合）。
+**判斷依據：** 直線邊界 ⇒ 線性 SVM；封閉曲線 ⇒ RBF 核。**線性 SVM：** $C$ 小 ⇒ margin 寬、很多點落在 margin 內／上而成為支持向量（實心點多）； $C$ 大 ⇒ margin 窄、支持向量少。**RBF 核 $\exp(-\gamma\|u-v\|^2)$：** $\gamma$ 小（0.1）⇒ 平滑、寬鬆的邊界； $\gamma$ 大（100）⇒ 每個點只影響極小範圍，邊界緊貼各點、彎曲，幾乎所有點都成為支持向量（過擬合）。
 
 | 圖 | 觀察 | 對應 |
 |---|---|---|
-| (a) | 直線，支持向量少（約 4 個：2 方 2 三角），margin 窄 | **(B) 線性，$C=10^2$** |
-| (b) | 平滑、寬鬆包住三角形的封閉曲線，支持向量不多 | **(C) RBF，$\gamma=10^{-1}$** |
-| (c) | 直線，但實心點很多（約 8 個），margin 寬 | **(A) 線性，$C=10^{-1}$** |
-| (d) | 緊貼三角形、彎曲不規則的封閉曲線，幾乎所有點都是支持向量 | **(D) RBF，$\gamma=10^{2}$** |
+| (a) | 直線，支持向量少（約 4 個：2 方 2 三角），margin 窄 | **(B) 線性， $C=10^2$** |
+| (b) | 平滑、寬鬆包住三角形的封閉曲線，支持向量不多 | **(C) RBF， $\gamma=10^{-1}$** |
+| (c) | 直線，但實心點很多（約 8 個），margin 寬 | **(A) 線性， $C=10^{-1}$** |
+| (d) | 緊貼三角形、彎曲不規則的封閉曲線，幾乎所有點都是支持向量 | **(D) RBF， $\gamma=10^{2}$** |
 
 ### (A) A soft-margin linear SVM with $C = 10^{-1}$.
 
 ***Ans***
 
-**對應 (c)。** 線性邊界；$C$ 小，容忍違規、margin 寬，更多點落在 margin 內或其上，成為支持向量。
+**對應 (c)。** 線性邊界； $C$ 小，容忍違規、margin 寬，更多點落在 margin 內或其上，成為支持向量。
 
 ### (B) A soft-margin linear SVM with $C = 10^{2}$.
 
 ***Ans***
 
-**對應 (a)。** 線性邊界；$C$ 大，margin 窄，支持向量少，只有最貼近邊界的幾個點。
+**對應 (a)。** 線性邊界； $C$ 大，margin 窄，支持向量少，只有最貼近邊界的幾個點。
 
 ### (C) A hard-margin kernel SVM with $K(u, v) = \exp\left(-10^{-1}\|u - v\|^2\right)$
 
@@ -992,7 +992,7 @@ $$
 \phi(x_i)\cdot\phi(x_j)=x_{i1}^2x_{j1}^2+x_{i2}^2x_{j2}^2=k(x_i,x_j).
 $$
 
-能寫成某個特徵空間的內積，即滿足 Mercer 條件：$k$ 對稱，且對任意 $c_1..c_n$，$\sum_{i,j}c_ic_jk(x_i,x_j)=\big\|\sum_ic_i\phi(x_i)\big\|^2\ge0$，所以 Gram 矩陣半正定（PSD）。
+能寫成某個特徵空間的內積，即滿足 Mercer 條件： $k$ 對稱，且對任意 $c_1..c_n$， $\sum_{i,j}c_ic_jk(x_i,x_j)=\big\|\sum_ic_i\phi(x_i)\big\|^2\ge0$，所以 Gram 矩陣半正定（PSD）。
 
 ### (B) Suppose we train an RBF kernelized SVM with kernel function defined as $k(x_i, x_j) = \exp\left(\frac{-\|x_i - x_j\|_2^2}{\sigma^2}\right)$ for a classification problem. We find that the training accuracy is 0.99 but the testing accuracy is only 0.61. What measures on the kernel width σ would you suggest to improve the testing accuracy?
 
