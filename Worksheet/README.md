@@ -164,7 +164,7 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 - (i) Single-link： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$、 $\{A3\}$
 - (ii) DBSCAN： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$， $A3$ 為 noise
 
-Silhouette： $s(i)=\dfrac{b(i)-a(i)}{\max \left a(i),b(i) \right}$， $a$＝與同群其他點的平均距離， $b$＝與最近的其他群的平均距離；單點群 $s=0$。
+Silhouette： $s(i)=\dfrac{b(i)-a(i)}{\max \left\{ a(i), b(i) \right\}}$， $a$＝與同群其他點的平均距離， $b$＝與最近的其他群的平均距離；單點群 $s=0$。
 
 | 點 | Single-link $s(i)$ | DBSCAN $s(i)$（noise 不計） |
 |---|---|---|
