@@ -445,7 +445,7 @@ $$
 
 ***Ans***
 
-**有：`Over$35Cart` 是冗餘的。** 它的 IG 在第一層最低（0.020），而且在整棵完整樹中完全沒被用到；僅用 IsMarketplaceSeller 與 IsPrimeMember 就能把訓練資料完全分開（$T \Leftrightarrow \text{Prime}\wedge\neg\text{Marketplace}$）。
+**有：`Over$35Cart` 是冗餘的。** 它的 IG 在第一層最低（0.020），而且在整棵完整樹中完全沒被用到；僅用 IsMarketplaceSeller 與 IsPrimeMember 就能把訓練資料完全分開（ $T \Leftrightarrow \text{Prime}\wedge\neg\text{Marketplace}$）。
 （註：這是以此 5 筆玩具資料為依據；現實中「購物車超過 35 美元」通常與免運直接相關，資料筆數太少才使它看起來無用。）
 
 ---
