@@ -363,13 +363,13 @@ $$
 \Sigma=\frac13\sum x x^T=\begin{bmatrix}2/3&2/3\\2/3&2/3\end{bmatrix}
 $$
 
-特徵值 $\lambda_1=4/3$、$\lambda_2=0$（使用 $1/(N-1)$ 時為 2 與 0）。對應 $\lambda_1$ 的特徵向量：
+特徵值 $\lambda_1=4/3$、 $\lambda_2=0$（使用 $1/(N-1)$ 時為 2 與 0）。對應 $\lambda_1$ 的特徵向量：
 
 $$
 \mathbf{u}_1=\tfrac{1}{\sqrt2}\,(1,\,1)^T \approx (0.707,\,0.707)^T
 $$
 
-即第一主成分是沿 $y=x$ 的方向（正負號均可，$-\mathbf{u}_1$ 也成立）。因為三點共線，第二主成分 $(1,-1)/\sqrt2$ 的變異為 0。
+即第一主成分是沿 $y=x$ 的方向（正負號均可， $-\mathbf{u}_1$ 也成立）。因為三點共線，第二主成分 $(1,-1)/\sqrt2$ 的變異為 0。
 
 ### (B) If we want to project the original data points into a 1-d space by the main component you choose, what is the variance of the projected data?
 
@@ -377,8 +377,8 @@ $$
 
 投影座標 $z_i=\mathbf{u}_1^T(x_i-\mu)$：$-\sqrt2,\ 0,\ \sqrt2$，平均為 0。
 
-- 母體變異（除以 $N$）：$\dfrac{2+0+2}{3}=\dfrac43\approx1.333$ （＝$\lambda_1$）
-- 樣本變異（除以 $N-1$）：$\dfrac{2+0+2}{2}=2$
+- 母體變異（除以 $N$）： $\dfrac{2+0+2}{3}=\dfrac43\approx1.333$ （＝ $\lambda_1$）
+- 樣本變異（除以 $N-1$）： $\dfrac{2+0+2}{2}=2$
 
 答案：**$4/3$**（採 $1/N$ 約定；若課程使用 $1/(N-1)$ 則為 2）。因為資料完全落在一條直線上，這個 1 維投影保留了 **100%** 的變異，無資訊損失。
 
