@@ -334,7 +334,7 @@ Use Min-Max scaling to normalize these data to the interval [0, 1] (represented 
 
 ***Ans***
 
-公式：$x'=\dfrac{x-x_{\min}}{x_{\max}-x_{\min}}$，其中 $x_{\min}=0$、$x_{\max}=255$，所以 $x'=x/255$。
+公式： $x'=\dfrac{x-x_{\min}}{x_{\max}-x_{\min}}$，其中 $x_{\min}=0$、 $x_{\max}=255$，所以 $x'=x/255$。
 
 $$
 X' \approx \begin{bmatrix}
@@ -345,7 +345,7 @@ X' \approx \begin{bmatrix}
 \end{bmatrix}
 $$
 
-（例：$120/255=0.4706$，$56/255=0.2196$，$200/255=0.7843$，$186/255=0.7294$，$160/255=0.6275$。）
+（例： $120/255=0.4706$， $56/255=0.2196$， $200/255=0.7843$， $186/255=0.7294$， $160/255=0.6275$。）
 
 ---
 
