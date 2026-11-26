@@ -594,7 +594,7 @@ $\|w\|_2$ 會隨 $\gamma$ 增加而**單調遞減**：各係數往 0 **收縮（
 
 ***Ans***
 
-**偏差（bias）上升、變異（variance）下降。** $\gamma=0$：低偏差、高變異；$\gamma$ 增大：模型被限制，對訓練資料的擾動較不敏感 → 變異下降，但無法貼近真實函數 → 偏差上升；$\gamma\to\infty$：預測為常數，變異 → 0、偏差最大。最佳 $\gamma$ 落在兩者的折衷點（bias–variance tradeoff）。
+**偏差（bias）上升、變異（variance）下降。** $\gamma=0$：低偏差、高變異； $\gamma$ 增大：模型被限制，對訓練資料的擾動較不敏感 → 變異下降，但無法貼近真實函數 → 偏差上升； $\gamma\to\infty$：預測為常數，變異 → 0、偏差最大。最佳 $\gamma$ 落在兩者的折衷點（bias–variance tradeoff）。
 
 ---
 
@@ -622,7 +622,7 @@ $$
 P(\text{neg})\prod = 0.5\times(0.16\cdot0.06\cdot0.06\cdot0.15\cdot0.11)=0.5\times9.504\times10^{-6}=4.75\times10^{-6}
 $$
 
-$4.75\times10^{-6} > 2.92\times10^{-6}$，正規化後 $P(\text{pos}\mid s)\approx0.381$，$P(\text{neg}\mid s)\approx0.619$。
+$4.75\times10^{-6} > 2.92\times10^{-6}$，正規化後 $P(\text{pos}\mid s)\approx0.381$， $P(\text{neg}\mid s)\approx0.619$。
 
 **Naïve Bayes 判為 Negative（neg）。** 雖然 "like" 強烈偏向正面（0.29 vs 0.06），但 "I"、"sci-fi"、"movies" 的負面似然較高，累積後勝出。
 
@@ -631,7 +631,7 @@ $4.75\times10^{-6} > 2.92\times10^{-6}$，正規化後 $P(\text{pos}\mid s)\appr
 ***Ans***
 
 聯合分佈 $P(X_1,X_2,X_3,X_4,Y)$ 的格子數為 $3^4\times2=81\times2=162$。機率總和須為 1，少一個自由度，所以需要 **$162-1=\mathbf{161}$ 個參數**。
-（對照：Naïve Bayes 只需 $P(Y)$ 的 1 個參數，加上每個類別、每個屬性各 $3-1=2$ 個參數：$1+2\times4\times2=17$ 個。這就是條件獨立假設換來的參數量縮減。）
+（對照：Naïve Bayes 只需 $P(Y)$ 的 1 個參數，加上每個類別、每個屬性各 $3-1=2$ 個參數： $1+2\times4\times2=17$ 個。這就是條件獨立假設換來的參數量縮減。）
 
 ---
 
@@ -650,13 +650,13 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 | G | 1 | 0 | 0 | 1 | - |
 | H | 0 | 0 | 1 | 0 | + |
 
-### (A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., $P(\text{IsRound} \mid \neg \text{Poisonous})$) and the class priors.
+### (A) Train your classifier on the labeled data (A-H). Compute and report the eight conditional probabilities of attributes given the class values (e.g., $`P(\mathrm{IsRound} \mid \neg \mathrm{Poisonous})`$) and the class priors.
 
 ***Ans***
 
 類別：Poisonous(+) = {B, C, F, H}（4 筆），¬Poisonous(−) = {A, D, E, G}（4 筆）。
 
-**Class priors：** $P(+)=4/8=0.5$，$P(-)=4/8=0.5$
+**Class priors：** $P(+)=4/8=0.5$， $P(-)=4/8=0.5$
 
 | 條件機率 | 計算 | 值 |
 |---|---|---|
@@ -681,17 +681,17 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 **(1) 無平滑（MLE）**，分數 $=P(c)\prod_k P(x_k\mid c)$（0 的屬性機率取 $1-P$）：
 
 - **U = (1,1,0,0)**
-  - $+$：$0.5\times0.5\times0.5\times(1-1.0)\times(1-0)=0.5\times0.5\times0.5\times0\times1=\mathbf{0}$
-  - $-$：$0.5\times0.75\times0.5\times(1-0)\times(1-0.75)=0.5\times0.75\times0.5\times1\times0.25=\mathbf{0.0469}$
+  - $+$： $0.5\times0.5\times0.5\times(1-1.0)\times(1-0)=0.5\times0.5\times0.5\times0\times1=\mathbf{0}$
+  - $-$： $0.5\times0.75\times0.5\times(1-0)\times(1-0.75)=0.5\times0.75\times0.5\times1\times0.25=\mathbf{0.0469}$
   - ⇒ 預測 **−（not poisonous）**
 - **V = (1,0,0,1)**
-  - $+$：$0.5\times0.5\times(1-0.5)\times(1-1.0)\times0=\mathbf{0}$
-  - $-$：$0.5\times0.75\times0.5\times1\times0.75=\mathbf{0.1406}$
+  - $+$： $0.5\times0.5\times(1-0.5)\times(1-1.0)\times0=\mathbf{0}$
+  - $-$： $0.5\times0.75\times0.5\times1\times0.75=\mathbf{0.1406}$
   - ⇒ 預測 **−（not poisonous）**
 
 問題：IsClustered 在 − 類為 0、HasCalyxCrown 在 + 類為 0，造成「一個 0 就把整個乘積抹成 0」，+ 的分數被這些 0 直接否決，這是零機率問題。
 
-**(2) Laplace（add-1）平滑**：$P(x=1\mid c)=\dfrac{n_{1,c}+1}{n_c+2}$（每個二元屬性 2 個取值，$n_c=4$）
+**(2) Laplace（add-1）平滑**： $P(x=1\mid c)=\dfrac{n_{1,c}+1}{n_c+2}$（每個二元屬性 2 個取值， $n_c=4$）
 
 | 條件機率 | 平滑後 |
 |---|---|
@@ -705,13 +705,13 @@ You are hiking a section of the Appalachian Trail in the United States. Along th
 | $P(\text{Calyx}=1\mid-)$ | 4/6 ≈ 0.667 |
 
 - **U = (1,1,0,0)**
-  - $+$：$0.5\times0.5\times0.5\times(1-0.833)\times(1-0.167)=0.5\times0.5\times0.5\times0.1667\times0.8333=\mathbf{0.0174}$
-  - $-$：$0.5\times0.667\times0.5\times(1-0.167)\times(1-0.667)=0.5\times0.667\times0.5\times0.8333\times0.3333=\mathbf{0.0463}$
-  - 正規化：$P(+\mid U)\approx0.273$，$P(-\mid U)\approx0.727$ ⇒ 預測 **−**
+  - $+$： $0.5\times0.5\times0.5\times(1-0.833)\times(1-0.167)=0.5\times0.5\times0.5\times0.1667\times0.8333=\mathbf{0.0174}$
+  - $-$： $0.5\times0.667\times0.5\times(1-0.167)\times(1-0.667)=0.5\times0.667\times0.5\times0.8333\times0.3333=\mathbf{0.0463}$
+  - 正規化： $P(+\mid U)\approx0.273$，$P(-\mid U)\approx0.727$ ⇒ 預測 **−**
 - **V = (1,0,0,1)**
-  - $+$：$0.5\times0.5\times0.5\times0.1667\times0.1667=\mathbf{0.00347}$
-  - $-$：$0.5\times0.667\times0.5\times0.8333\times0.667=\mathbf{0.0926}$
-  - 正規化：$P(+\mid V)\approx0.036$，$P(-\mid V)\approx0.964$ ⇒ 預測 **−**
+  - $+$： $0.5\times0.5\times0.5\times0.1667\times0.1667=\mathbf{0.00347}$
+  - $-$： $0.5\times0.667\times0.5\times0.8333\times0.667=\mathbf{0.0926}$
+  - 正規化： $P(+\mid V)\approx0.036$，$P(-\mid V)\approx0.964$ ⇒ 預測 **−**
 
 **結論：** 無論有無平滑，U 與 V 都被判為 **not poisonous（−）**；平滑後 + 不再被硬性歸零，機率估計較合理（U 有約 27% 的毒性機率，較不確定；V 非常確定是 −）。
 
