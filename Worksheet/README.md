@@ -161,8 +161,8 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 
 **設定：** 單鏈合併高度為 2, 5, 5, 5, 6, 11, 11。在高度 6 與 11 之間有明顯的大跳躍，因此把切割門檻設在 **8**（落在 (6, 11) 內任何值結果相同；取 10 可與 DBSCAN 的 ε 對應），得到：
 
-- (i) Single-link： $\{A1,A4,A5,A6,A8\}$、$\{A2,A7\}$、$\{A3\}$
-- (ii) DBSCAN： $\{A1,A4,A5,A6,A8\}$、$\{A2,A7\}$，A3 為 noise
+- (i) Single-link： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$、 $\{A3\}$
+- (ii) DBSCAN： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$，A3 為 noise
 
 Silhouette： $s(i)=\dfrac{b(i)-a(i)}{\max\{a(i),b(i)\}}$， $a$＝與同群其他點的平均距離， $b$＝與最近的其他群的平均距離；單點群 $s=0$。
 
