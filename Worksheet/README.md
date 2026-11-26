@@ -236,7 +236,7 @@ Silhouette 範圍為 [−1, 1]。
 
 另一個常見失效：**masking / swamping**，一小團彼此靠近的異常點（數量 > $k$）自己形成「密度夠高」的小群，互相掩護而不被偵測。
 
-**解法：** 改用**局部（相對）密度**。例如 **LOF（Local Outlier Factor）**：比較一個點的局部密度與其 $k$ 個鄰居的局部密度，$\text{LOF}\approx 1$ 為正常，$\gg 1$ 為異常，因此不受各群絕對密度影響；也可使用 relative kNN-distance、或 DBSCAN 的變體（如 OPTICS／HDBSCAN）處理不同密度，並適當選擇 $k$ 使其大於可能的異常小群大小以避免 masking。
+**解法：** 改用**局部（相對）密度**。例如 **LOF（Local Outlier Factor）**：比較一個點的局部密度與其 $k$ 個鄰居的局部密度， $\text{LOF}\approx 1$ 為正常， $\gg 1$ 為異常，因此不受各群絕對密度影響；也可使用 relative kNN-distance、或 DBSCAN 的變體（如 OPTICS／HDBSCAN）處理不同密度，並適當選擇 $k$ 使其大於可能的異常小群大小以避免 masking。
 
 ---
 
