@@ -1122,7 +1122,7 @@ flowchart LR
 
 ## 24 Backward Propagation
 
-Let y represent our true output in the form of a one-hot vector, and $\hat{y}$ represent the predicted output of the network. Suppose our loss function $J(y, \hat{y})$ is defined as follows:
+Let $`y`$ represent our true output in the form of a one-hot vector, and $`\hat{y}`$ represent the predicted output of the network. Suppose our loss function $`J(y, \hat{y})`$ is defined as follows:
 
 $$
 J(\hat{y}, y) = \frac{1}{2}\|y - \hat{y}\|^2.
@@ -1131,50 +1131,64 @@ $$
 Complete the following questions in order to derive the matrix and vector forms for the backpropagation algorithm.
 
 **前向傳播符號（逐列＝目的神經元，逐欄＝來源）：**
-$x_0=1$； $z^{(1)}=W^{(1)}x$（$K$ 維），$a^{(1)}=g(z^{(1)})$，並補 $a^{(1)}_0=1$；$z^{(2)}=W^{(2)}a^{(1)}$（$I$ 維），$\hat y=f(z^{(2)})$。（ $g,f$ 為隱藏層／輸出層激活函數，例如 sigmoid： $g'(z)=a(1-a)$、$f'(z)=\hat y(1-\hat y)$。）
 
-### (A) Let the partial derivatives for $W^{(1)}$ in the first layer be $\partial J / \partial W^{(1)}$. What is the shape of $\partial J / \partial W^{(1)}$?
+$`x_0=1`$；$`z^{(1)}=W^{(1)}x`$（$`K`$ 維），$`a^{(1)}=g(z^{(1)})`$，並補 $`a^{(1)}_0=1`$；$`z^{(2)}=W^{(2)}a^{(1)}`$（$`I`$ 維），$`\hat y=f(z^{(2)})`$。（$`g,f`$ 為隱藏層／輸出層激活函數，例如 sigmoid：$`g'(z)=a(1-a)`$、$`f'(z)=\hat y(1-\hat y)`$。）
 
-***Ans***
-
-與 $W^{(1)}$ 相同：**$K\times(S+1)$**（梯度的形狀與參數的形狀一致，才能做 $W\leftarrow W-\eta\,\partial J/\partial W$）。
-
-### (B) Let the partial derivatives for $W^{(2)}$ in the first layer be $\partial J / \partial W^{(2)}$. What is the shape of $\partial J / \partial W^{(2)}$?
+### (A) Let the partial derivatives for $`W^{(1)}`$ in the first layer be $`\partial J / \partial W^{(1)}`$. What is the shape of $`\partial J / \partial W^{(1)}`$?
 
 ***Ans***
 
-與 $W^{(2)}$ 相同：** $I\times(K+1)$ **。（題目中的 "in the first layer" 應為筆誤， $W^{(2)}$ 屬於第二層。）
+與 $`W^{(1)}`$ 相同：**$`K\times(S+1)`$**（梯度的形狀與參數的形狀一致，才能做 $`W\leftarrow W-\eta\,\partial J/\partial W`$）。
 
-### (C) What are the partial derivatives for parameters $W^{(1)}_{ij}$ ( $\partial J / \partial W^{(1)}_{ij}$) in terms of $\hat{y}$ and $y$?
+### (B) Let the partial derivatives for $`W^{(2)}`$ in the first layer be $`\partial J / \partial W^{(2)}`$. What is the shape of $`\partial J / \partial W^{(2)}`$?
 
-**Ans**
+***Ans***
 
-先求輸出層誤差 $\ \delta^{(2)}_l=\dfrac{\partial J}{\partial z^{(2)}_l}=(\hat y_l-y_l)\,f'(z^{(2)}_l)$。（$\dfrac{\partial J}{\partial \hat y_l}=\hat y_l-y_l$。）
-再反傳到隱藏層： $\ \delta^{(1)}_i=\Big[\sum_{l=1}^{I}\delta^{(2)}_l\,W^{(2)}_{li}\Big]g'(z^{(1)}_i)$。
+與 $`W^{(2)}`$ 相同：**$`I\times(K+1)`$**。（題目中的 "in the first layer" 應為筆誤，$`W^{(2)}`$ 屬於第二層。）
 
-其中 $W^{(1)}_{ij}$ 連接輸入 $x_j$（$j=0..S$，$x_0=1$）到隱藏神經元 $i$（$i=1..K$）：
+### (C) What are the partial derivatives for parameters $`W^{(1)}_{ij}`$ ($`\partial J / \partial W^{(1)}_{ij}`$) in terms of $`\hat{y}`$ and $`y`$?
 
-$$
+***Ans***
+
+先求輸出層誤差 $`\delta^{(2)}_l=\dfrac{\partial J}{\partial z^{(2)}_l}=(\hat y_l-y_l)\,f'(z^{(2)}_l)`$。（$`\dfrac{\partial J}{\partial \hat y_l}=\hat y_l-y_l`$。）
+
+再反傳到隱藏層：$`\delta^{(1)}_i=\Big[\sum_{l=1}^{I}\delta^{(2)}_l\,W^{(2)}_{li}\Big]g'(z^{(1)}_i)`$。
+
+其中 $`W^{(1)}_{ij}`$ 連接輸入 $`x_j`$（$`j=0..S`$，$`x_0=1`$）到隱藏神經元 $`i`$（$`i=1..K`$）：
+
+```math
 \boxed{\frac{\partial J}{\partial W^{(1)}_{ij}}=\Big[\sum_{l=1}^{I}(\hat y_l-y_l)\,f'(z^{(2)}_l)\,W^{(2)}_{li}\Big]\,g'(z^{(1)}_i)\;x_j}
-$$
+```
 
-矩陣形式： $\delta^{(2)}=(\hat y-y)\odot f'(z^{(2)})$； $\delta^{(1)}=\big(W^{(2)}_{[:,1:K]}{}^{T}\delta^{(2)}\big)\odot g'(z^{(1)})$； $\dfrac{\partial J}{\partial W^{(1)}}=\delta^{(1)}\,x^{T}$（$K\times(S+1)$）。
-若兩層都用 sigmoid： $\dfrac{\partial J}{\partial W^{(1)}_{ij}}=\Big[\sum_l(\hat y_l-y_l)\hat y_l(1-\hat y_l)W^{(2)}_{li}\Big]a^{(1)}_i(1-a^{(1)}_i)\,x_j$。
+矩陣形式：
 
-### (D) What are the partial derivatives for parameters $W^{(2)}_{jk}$ ($\partial J / \partial W^{(2)}_{jk}$) in terms of $\hat{y}$ and $y$?
+```math
+\delta^{(2)}=(\hat y-y)\odot f'(z^{(2)}),\quad
+\delta^{(1)}=\big(W^{(2)T}_{[:,1:K]}\,\delta^{(2)}\big)\odot g'(z^{(1)}),\quad
+\frac{\partial J}{\partial W^{(1)}}=\delta^{(1)}\,x^{T}
+```
 
-**Ans**
+其中 $`\partial J/\partial W^{(1)}`$ 的形狀為 $`K\times(S+1)`$。
 
-$W^{(2)}_{jk}$ 連接隱藏神經元 $k$（ $k=0..K$，$a_0^{(1)}=1$）到輸出神經元 $j$（ $j=1..I$）：
+若兩層都用 sigmoid：
 
-$$
+```math
+\frac{\partial J}{\partial W^{(1)}_{ij}}=\Big[\sum_l(\hat y_l-y_l)\hat y_l(1-\hat y_l)W^{(2)}_{li}\Big]a^{(1)}_i(1-a^{(1)}_i)\,x_j
+```
+
+### (D) What are the partial derivatives for parameters $`W^{(2)}_{jk}`$ ($`\partial J / \partial W^{(2)}_{jk}`$) in terms of $`\hat{y}`$ and $`y`$?
+
+***Ans***
+
+$`W^{(2)}_{jk}`$ 連接隱藏神經元 $`k`$（$`k=0..K`$，$`a_0^{(1)}=1`$）到輸出神經元 $`j`$（$`j=1..I`$）：
+
+```math
 \boxed{\frac{\partial J}{\partial W^{(2)}_{jk}}=(\hat y_j-y_j)\,f'(z^{(2)}_j)\;a^{(1)}_k=\delta^{(2)}_j\,a^{(1)}_k}
-$$
+```
 
-矩陣形式： $\dfrac{\partial J}{\partial W^{(2)}}=\delta^{(2)}\,a^{(1)T}$（$I\times(K+1)$）。
-若輸出為 sigmoid： $(\hat y_j-y_j)\,\hat y_j(1-\hat y_j)\,a^{(1)}_k$；若輸出為線性（ $f'=1$）：$(\hat y_j-y_j)\,a^{(1)}_k$。
+矩陣形式：$`\dfrac{\partial J}{\partial W^{(2)}}=\delta^{(2)}\,a^{(1)T}`$（$`I\times(K+1)`$）。
 
----
+若輸出為 sigmoid：$`(\hat y_j-y_j)\,\hat y_j(1-\hat y_j)\,a^{(1)}_k`$；若輸出為線性（$`f'=1`$）：$`(\hat y_j-y_j)\,a^{(1)}_k`$。
 
 ## 25 NN Prediction
 
