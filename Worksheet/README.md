@@ -149,7 +149,7 @@ Consider the same distance matrix in Question 2. Perform DBSCAN with Epsilon=10 
 | 7 | A3 | 鄰域只有自己，不是 core；也未被任何 core 的鄰域涵蓋 | **A3 = outlier / noise** |
 | 8 | A4…A8 | 皆已歸類 | 結束 |
 
-**最終結果：**  $C_1=\{A1,A4,A5,A6,A8\}$， $C_2=\{A2,A7\}$，**Outlier（noise）＝{A3}**。
+**最終結果：**  $C_1=\{A1,A4,A5,A6,A8\}$， $C_2=\{A2,A7\}$，**Outlier（noise）＝ ${A3}$**。
 
 > 若 MinPoints 不計入點本身（需 ≥2 個「其他」鄰居），則 A1、A2、A7 變成非核心點；結果為 $C_1=\{A1,A4,A5,A6,A8\}$（A1 為 border），A2、A3、A7 皆為 noise。
 
@@ -162,7 +162,7 @@ Evaluate and compare the clusters discovered in (i) the agglomerative clustering
 **設定：** 單鏈合併高度為 2, 5, 5, 5, 6, 11, 11。在高度 6 與 11 之間有明顯的大跳躍，因此把切割門檻設在 **8**（落在 (6, 11) 內任何值結果相同；取 10 可與 DBSCAN 的 ε 對應），得到：
 
 - (i) Single-link： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$、 $\{A3\}$
-- (ii) DBSCAN： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$，A3 為 noise
+- (ii) DBSCAN： $\{A1,A4,A5,A6,A8\}$、 $\{A2,A7\}$， $A3$ 為 noise
 
 Silhouette： $s(i)=\dfrac{b(i)-a(i)}{\max\{a(i),b(i)\}}$， $a$＝與同群其他點的平均距離， $b$＝與最近的其他群的平均距離；單點群 $s=0$。
 
