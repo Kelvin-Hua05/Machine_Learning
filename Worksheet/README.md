@@ -181,7 +181,7 @@ Silhouette： $`s(i)=\dfrac{b(i)-a(i)}{\max\lbrace a(i), b(i)\rbrace}`$， $a$�
 | 群 {A3} 平均 | 0 | — |
 | **整體平均** | **0.271** | **0.470** |
 
-（例：A2 的 $a=5$，$b=\min\{(45+49+35+11+25)/5=33,\ 55\}=33$， $s=(33-5)/33=0.848$。單鏈中 A4 的 $b$ 是到單點群 {A3} 的距離 11，而 $a=(2+7+5+57)/4=17.75$，所以 $s=(11-17.75)/17.75=-0.38$。）
+（例：A2 的 $a=5$， $b=\min\{(45+49+35+11+25)/5=33,\ 55\}=33$， $s=(33-5)/33=0.848$。單鏈中 A4 的 $b$ 是到單點群 {A3} 的距離 11，而 $a=(2+7+5+57)/4=17.75$，所以 $s=(11-17.75)/17.75=-0.38$。）
 
 ### (A) What does it mean if the silhouette coefficient is low/high at the individual level, cluster level, and overall clustering?
 
