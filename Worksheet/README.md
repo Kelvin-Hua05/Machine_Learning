@@ -313,7 +313,7 @@ You will evaluate a fixed classifier on a binary classification dataset using fo
 
 ***Ans***
 
-**單次 70%/30% split 最快**，只需訓練 1 次（訓練 70% 的資料）。依成本排序：70/30（1 次訓練）< 2-fold（2 次，各用 50%）< 10-fold（10 次，各用 90%）< LOOCV（$n$ 次，各用 $n-1$ 筆，最慢）。
+**單次 70%/30% split 最快**，只需訓練 1 次（訓練 70% 的資料）。依成本排序：70/30（1 次訓練）< 2-fold（2 次，各用 50%）< 10-fold（10 次，各用 90%）< LOOCV（ $n$ 次，各用 $n-1$ 筆，最慢）。
 
 ---
 
