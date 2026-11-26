@@ -360,7 +360,7 @@ Given 3 data points in two-dimensional space, (1, 1), (2, 2), and (3, 3),
 平均值 $\mu=(2,2)$，中心化後的資料為 $(-1,-1),(0,0),(1,1)$。共變異數矩陣（1/N 版）
 
 $$
-\Sigma=\frac13\sum x x^T=\begin{bmatrix}2/3&2/3\\2/3&2/3\end{bmatrix}
+\Sigma=\frac13\sum x x^T=\begin{bmatrix}2/3&2/3\ \2/3&2/3\end{bmatrix}
 $$
 
 特徵值 $\lambda_1=4/3$、 $\lambda_2=0$（使用 $1/(N-1)$ 時為 2 與 0）。對應 $\lambda_1$ 的特徵向量：
@@ -375,7 +375,7 @@ $$
 
 ***Ans***
 
-投影座標 $z_i=\mathbf{u}_1^T(x_i-\mu)$：$-\sqrt2,\ 0,\ \sqrt2$，平均為 0。
+投影座標 $z_i=\mathbf{u}_1^T(x_i-\mu)$： $-\sqrt2,\ 0,\ \sqrt2$，平均為 0。
 
 - 母體變異（除以 $N$）： $\dfrac{2+0+2}{3}=\dfrac43\approx1.333$ （＝ $\lambda_1$）
 - 樣本變異（除以 $N-1$）： $\dfrac{2+0+2}{2}=2$
