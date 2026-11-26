@@ -200,7 +200,7 @@ Silhouette 範圍為 [−1, 1]。
 - **最高：DBSCAN，整體 ≈ 0.470。**
 - **最低：Single-link（門檻 8），整體 ≈ 0.271。**
 
-原因：兩者的 {A1,A4,A5,A6,A8} 與 {A2,A7} 完全相同，差別只在 A3。Single-link 強制把 A3 當成單點群，而它使 A4 的最近鄰群變成 {A3}（ $b$ 變小，$s=-0.38$）；DBSCAN 把 A3 標成 noise 並排除，不拉低分數。
+原因：兩者的 {A1,A4,A5,A6,A8} 與 {A2,A7} 完全相同，差別只在 A3。Single-link 強制把 A3 當成單點群，而它使 A4 的最近鄰群變成 {A3}（ $b$ 變小， $s=-0.38$ ）；DBSCAN 把 A3 標成 noise 並排除，不拉低分數。
 注意：若把 DBSCAN 的 noise 也當成一個群一起算，兩者結果會相同（0.271）。所以 DBSCAN 較高有一部分是「排除離群點」的結果，比較時要說明這一點。
 
 ### (C) Which clustering algorithm delivers balanced resulting clusters (i.e., each cluster has a similar number of points)?
