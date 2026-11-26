@@ -1031,7 +1031,7 @@ flowchart LR
 ```
 
 - **$C_1$：** Input → H1 → H2 → H3 → H4 → H5 → Output，層與層之間全連接，每層 $a^{(l)}=W^{(l)}a^{(l-1)}+b^{(l)}$（恆等／線性激活）。
-- **$C_2$：** Input 直接全連接到輸出層，每個輸出對應一個類別，輸出再做 softmax：$\hat y=\mathrm{softmax}(Wx+b)$（即題圖：只有 Input Layer 與 Output Layer）。
+- **$C_2$：** Input 直接全連接到輸出層，每個輸出對應一個類別，輸出再做 softmax： $\hat y=\mathrm{softmax}(Wx+b)$（即題圖：只有 Input Layer 與 Output Layer）。
 
 ### (B) Are both of them capable of approximating the same set of functions? Please briefly provide your reasons.
 
@@ -1044,7 +1044,7 @@ $$
 $$
 
 所以 $C_1$ 只等價於**一層**線性模型，與 $C_2$ 的 logits $Wx+b$ 屬同一個函數族；兩者的決策邊界都是線性的，並且都不能解決 XOR 這類非線性可分問題。深度在沒有**非線性**激活函數時不增加表達能力，只增加參數數目與優化難度（多層參數化的 $W_{\text{eff}}$ 還受最窄隱藏層的秩限制，只會更受限、不會更強）。
-細微差別：$C_2$ 最後有 softmax 輸出機率，$C_1$ 的輸出是線性分數；若對 $C_1$ 的輸出也套 softmax，兩者就完全等價，直接用 argmax 分類時兩者的預測類別函數族一樣。要真正提升能力，隱藏層需使用 ReLU、tanh 等非線性激活。
+細微差別： $C_2$ 最後有 softmax 輸出機率， $C_1$ 的輸出是線性分數；若對 $C_1$ 的輸出也套 softmax，兩者就完全等價，直接用 argmax 分類時兩者的預測類別函數族一樣。要真正提升能力，隱藏層需使用 ReLU、tanh 等非線性激活。
 
 ---
 
