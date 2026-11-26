@@ -1190,6 +1190,8 @@ $`W^{(2)}_{jk}`$ 連接隱藏神經元 $`k`$（$`k=0..K`$，$`a_0^{(1)}=1`$）�
 
 若輸出為 sigmoid：$`(\hat y_j-y_j)\,\hat y_j(1-\hat y_j)\,a^{(1)}_k`$；若輸出為線性（$`f'=1`$）：$`(\hat y_j-y_j)\,a^{(1)}_k`$。
 
+---
+
 ## 25 NN Prediction
 
 Recall that for prediction, the model estimates one probability per class for each instance. We typically use the argmax of the output layer. Given a new instance x, let the predicted outputs for x be $\hat{y}$ and the true class in one-hot vector form for x be y. Suppose the values of $\hat{y}$ and y are as follows, respectively:
